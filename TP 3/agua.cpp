@@ -1,7 +1,5 @@
 #include "agua.h"
 
-//holaaaaa
-
 Agua::Agua(string nombre, int escudo, int vida, int fila, int columna)
     : Personaje(nombre, escudo, vida, fila, columna) {
   alimento = "plancton";
