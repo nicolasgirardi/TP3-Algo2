@@ -15,21 +15,25 @@ void Juego::definirPreliminares(Mapa* mapa) {
 void Juego::coorValidas(Coordenada* coor,){
 	int fila,columna;
 	bool valida = false;
-	while(!valida)
-	cout<<"Ingrese fila: ";
-	cin>>fila;
-	cout<<"Ingrese columna: ";
-	cin>>columna;
-	while(fila < 1 || fila > 8){
-		cout<<"valor incorrecto, debe ingresar una fila entre 1 y 8: ";
-		cin>>*fila;
+	while(!valida){
+		cout<<"Ingrese fila: ";
+		cin>>fila;
+		while(fila < 1 || fila > 8){
+			cout<<"valor incorrecto, debe ingresar una fila entre 1 y 8: ";
+			cin>>*fila;
+		}
+		cout<<"Ingrese columna: ";
+		cin>>columna;		
+		while(columna < 1 || columna > 8){
+			cout<<"valor incorrecto, debe ingresar una columna entre 1 y 8: ";
+			cin>>*columna;
+		}
+		coor->cambiarFilaYColumna(fila,columna);
+		if(mapaPartida->ocupado(coor))
+			cout<<"El lugar elegido se encuentra ocupado, vuelva a elegir uno";
+		else
+			valida = true;	
 	}
-	while(columna < 1 || columna > 8){
-		cout<<"valor incorrecto, debe ingresar una columna entre 1 y 8: ";
-		cin>>*columna;
-	for	
-	}
-		
 }
 void Juego::ubicarPersonajes() {
   // IMprimir tablero
@@ -47,16 +51,19 @@ void Juego::ubicarPersonajes() {
       cout << "Jugador 2, indique en que fila desea posicionar a " <<personajesJugadorDos[i]->obtenerNombre() <<":" << endl;
 	  coorValidas(coor);
 	  personajesJugadorDos[i]->asignarCoordenada(fila,columna);
+	  mapaPartida->consulta(*coor)->obtenerDato()->ocupar(personajesJugadorUno[i]);
       }
   }
   else{
  	  cout << "Jugador 2, indique en que fila desea posicionar a " <<personajesJugadorDos[i]->obtenerNombre() <<":" << endl;
 	  coorValidas(&fila,&columna);
-	  personajesJugadorDos[i]->asignarCoordenada(fila,columna);	
+	  personajesJugadorDos[i]->asignarCoordenada(fila,columna);
+	  mapaPartida->consulta(*coor)->obtenerDato()->ocupar(personajesJugadorUno[i]);
 	  
 	  cout << "Jugador 1, indique las coordenadas donde desea posicionar a "<<personajesJugadorUno[i]->obtenerNombre() <<":" << endl; 
 	  coorValidas(&fila,&columna);
 	  personajesJugadorUno[i]->asignarCoordenada(fila,columna);
+	  mapaPartida->consulta(*coor)->obtenerDato()->ocupar(personajesJugadorUno[i]);
   }
    
 }
