@@ -4,63 +4,88 @@
 #include "menu.h"
 
 class Juego {
-private:
-    Menu menuPartida;
-    Mapa mapaPartida;
-    Archivo archivoPartida;
-    char estadoJuego;
-    Personaje *personajesJugadorUno[MAX_PERSONAJES];
-    int cantidadPersonajesUno;
-    Personaje *personajesJugadorDos[MAX_PERSONAJES];
-    int cantidadPersonajesDos;
+ private:
+  Menu menuPartida;
+  Mapa mapaPartida;
+  Archivo archivoPartida;
+  char estadoJuego;
+  Personaje* personajesJugadorUno[MAX_PERSONAJES];
+  int cantidadPersonajesUno;
+  Personaje* personajesJugadorDos[MAX_PERSONAJES];
+  int cantidadPersonajesDos;
 
-public:
-    //POST: construye un menu. Se inicializa opcion con un valor distinto a la salida (6) para asegurarse entrar al ciclo aunque sea una vez
-    //constuye un menu o un juego???
-    Juego();
+ public:
+  // POST: construye un menu. Se inicializa opcion con un valor distinto a la
+  // salida (6) para asegurarse entrar al ciclo aunque sea una vez constuye un
+  // menu o un juego???
+  Juego();
 
-    void definirPreliminares(Mapa* mapa);
+  // POST: se encarga de definir y procesar los preliminares. Se encarga
+  // de procesar el archivo de los "personajes.csv" que brinda el juego y
+  // tambien procesa el menu principal.
+  void definirPreliminares();
 
-    void ubicarPersonajes();
+  // POST: verifica si la coordenada ingresada es valida.
+  void coorValidas(Coordenada* coor);
 
-    void elegirPersonajes();
+  void ubicarPersonajes();
 
-    void elegirPrimerLugar(bool* empiezaUno);
+  // POST: elige los personajes de cada jugador.
+  void elegirPersonajes();
 
-    Mapa obtenerMapa();
+  // POST: devuelve un valor que define el primer turno del juego. (Define quien
+  // arranca a jugar)
+  bool elegirPrimerLugar();
 
-    int contarMuertos(Personaje* personajes[MAX_PERSONAJES],int tope);
+  // POST: devuelve el mapa de la partida.
+  Mapa obtenerMapa();
 
-    bool consultaEliminado();
+  // POST: devuelve el valor de cuantos jugadores de un equipo no tienen vida.
+  int contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope);
 
-    void asignarEstadoJuego(char estado);
+  // POST: devuelve verdadero en caso de que un jugador ha perdido.
+  bool consultaEliminado();
 
-    void jugarTurno(Personaje* personajes[MAX_PERSONAJES],int topeUno, int* i);
+  void asignarEstadoJuego(char estado);
 
-    bool opcionValida(char opcion);
+  // PRE: siempre se juega el turno si quedan jugadores vivos de ambos equipos.
+  // POST: se realiza el turno de un jugador.
+  void jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i);
 
-    void pedirGuardado(char* opcion);
+  // POST: devuelve si la opcion es valida (entre AFIRMATIVO o NEGATIVO).
+  bool opcionValida(char opcion);
 
-    void procesarGuardado(char opcion, bool* guardo);
+  // POST: pide al usuario si quiere guardar la partida o no.
+  void pedirGuardado(char* opcion);
 
-    void consultarGuardado(bool* guardo);
+  // POST: procesa la partida guardada.
+  void procesarGuardado(char opcion, bool* guardo);
 
-    void procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES],int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos);
+  // POST: administra la partida guardada, llamando a las funciones de
+  // pedirGuardado() y procesarGuardado().
+  void consultarGuardado(bool* guardo);
 
-    void asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope, Personaje* personajeNuevo);
+  // POST: se encarga de procesar los turnos
+  void procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno,
+                      Personaje* personajesSegundo[MAX_PERSONAJES],
+                      int topeDos);
 
-    void cargarPartida();
+  // POST: procesa los personajes de un jugador de una partida guardada y los
+  // asigna al vector personajes[].
+  void asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope,
+                        Personaje* personajeNuevo);
 
-    void revisarPartida();
+  // POST: carga una partida que ya estaba guardada anteriormente.
+  void cargarPartida();
 
-    void procesarJuego();
+  // POST: revisa si existe una partida guardada o no.
+  void revisarPartida();
 
-    //POST: ejecuta todos los métodos principales del menú
-    //void procesarMenu(); y esta funcion????
+  // POST: ejecuta todos los métodos principales del menú
+  void procesarJuego();
 
-    //POST:libera la memoria
-    virtual ~Juego();
-
+  // POST:libera la memoria
+  virtual ~Juego();
 };
 
-#endif //MAIN_CPP_JUEGO_H
+#endif  // MAIN_CPP_JUEGO_H
