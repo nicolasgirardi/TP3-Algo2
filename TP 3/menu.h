@@ -17,7 +17,8 @@ class Menu {
 
  public:
   // POST: construye un menu. Se inicializa opcion con un valor distinto a la
-  // salida (6) para asegurarse entrar al ciclo aunque sea una vez.
+  // salida (6 menu, 4 submenu) para asegurarse entrar al ciclo aunque sea una
+  // vez.
   Menu();
 
   // POST: ejecuta todos los métodos principales del menú principal
@@ -33,6 +34,9 @@ class Menu {
   // POST: procesa cada turno del juego.
   void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos);
 
+  // POST: devuelve el diccionario con los personajes.
+  Diccionario obtenerDiccionario();
+
   // POST:libera la memoria
   virtual ~Menu();
 
@@ -41,8 +45,6 @@ class Menu {
   // aire POST: crea un personaje en la memoria dinámica y lo agrega a la lista
   void crearPersonaje(string elemento, string nombre, int escudo, int vida,
                       int fila, int columna);
-
-  Diccionario obtenerDiccionario();
 
   // POST: pide y guarda la opción ingresada por el usuario
   void elegirOpcion();
@@ -114,6 +116,7 @@ class Menu {
   // POST: imprime por pantalla si un personaje esta usado o no
   void imprimirUsado();
 
+  // POST: se encarga de seleccionar un personaje
   void seleccionarPersonaje(Personaje* jugador[MAX_PERSONAJES], int* tope,
                             string* nombre);
 
@@ -132,8 +135,6 @@ class Menu {
 
   void moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos);
 
-  void ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos);
-
   void ataqueAire(Mapa* mapa, Personaje* personaje);
 
   void ataqueAgua(Mapa* mapa, Personaje* personaje);
@@ -143,6 +144,8 @@ class Menu {
   void ataqueTierra(Mapa* mapa, Personaje* personaje);
 
   void atacarPersonaje(Mapa* mapa, Personaje* personaje);
+
+  void ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos);
 
   void ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje);
 };
