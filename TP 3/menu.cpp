@@ -19,16 +19,6 @@ void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida,
 
 Diccionario Menu::obtenerDiccionario() { return diccionarioPersonajes; }
 
-void Menu::procesarArchivo() {
-  string elemento, nombre;
-  int escudo, vida, fila, columna;
-  Archivo personajesGuardados;
-  while (!personajesGuardados.finArchivo()) {
-    personajesGuardados.descomponerLineaBasica(&elemento, &nombre, &escudo,
-                                               &vida, &fila, &columna);
-    crearPersonaje(elemento, nombre, escudo, vida, fila, columna);
-  }
-}
 
 void Menu::elegirOpcion() {
   cout << "Ingrese la opción que desee llevar a cabo: " << endl;
