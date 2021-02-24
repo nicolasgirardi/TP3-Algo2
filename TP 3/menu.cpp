@@ -310,6 +310,7 @@ void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
 }
 
 void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos) {
+  personaje->reseteoDefensa();
   mostrarSubmenuUno();
   elegirOpcion();
   if (stoi(opcion) != PASAR) {
