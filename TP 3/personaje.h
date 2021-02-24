@@ -82,6 +82,12 @@ class Personaje {
   void daniar(int daniar);
   
   virtual void defensa() = 0;
+  
+  //resetea variables relacionadas a la defensa
+  //PRE:
+  //POS: resetea a falso variables relacionadas con la defensa
+  
+  virtual void reseteoDefensa();
 
   virtual ~Personaje();
 };

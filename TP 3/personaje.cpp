@@ -57,4 +57,6 @@ void Personaje::daniar(int daniar) {
   this->vida = this->vida - daniar;
 }
 
+void Personaje::reseteoDefensa();
+
 void mover() {}

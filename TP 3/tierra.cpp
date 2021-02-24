@@ -66,4 +66,12 @@ void Tierra::ataque(Personaje* enemigos[]) {
 void Tierra::defensa() {
   gastarEnergia(5);
   asignarEscudo(this->escudo + 2);
+  defensaActivada = true;
+}
+
+void Tierra::reseteoDefensa() {
+	if (defensaActivada){
+		asignarEscudo(this->escudo - 2);
+		defensaActivada = false;
+	}
 }

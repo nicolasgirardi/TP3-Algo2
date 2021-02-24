@@ -37,3 +37,8 @@ void Aire::defensa() {
   gastarEnergia(15);
   this->defensaActivada = true;
 }
+
+void Aire::reseteoDefensa(){
+	if(defensaActivada)
+		defensaActivada = false;
+}

@@ -44,6 +44,12 @@ class Tierra : public Personaje {
   // PRE: debe tener energia suficiente para atacar
   // POST: ejecuta la defensa del personaje propio.
   void defensa();
+  
+  //resetea variables relacionadas a la defensa
+  //PRE:
+  //POS: resetea a falso variables relacionadas con la defensa
+  
+  void reseteoDefensa();  
 };
 
 #endif  // TP2_TIERRA_H
