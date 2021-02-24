@@ -8,6 +8,7 @@ class Juego {
   Menu menuPartida;
   Mapa mapaPartida;
   Archivo archivoPartida;
+  Archivo archivoPersonajes;
   char estadoJuego;
   Personaje* personajesJugadorUno[MAX_PERSONAJES];
   int cantidadPersonajesUno;
