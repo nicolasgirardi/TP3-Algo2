@@ -125,7 +125,7 @@ void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* 
         (*i) = 0;
     }
     if (personajes[*i]->obtenerVida() != 0) {
-        return menuPartida.procesarTurno(personajes[*i]);  //(Mapa* mapa, Personaje* personaje, Costos* costos)
+        return menuPartida.procesarTurno(&mapaPartida,personajes[*i]);
     }
     (*i)++;
     return jugarTurno(personajes, topeUno, i);
