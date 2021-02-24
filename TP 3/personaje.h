@@ -80,6 +80,8 @@ class Personaje {
   // POS:le quita vida al personaje segun su escudo y el da�o base que recibe
 
   void daniar(int daniar);
+  
+  virtual void defensa() = 0;
 
   virtual ~Personaje();
 };
