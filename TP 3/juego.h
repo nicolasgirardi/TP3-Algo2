@@ -39,6 +39,12 @@ class Juego {
 
   // POST: devuelve el mapa de la partida.
   Mapa obtenerMapa();
+ 
+ //POST:imprime por pantalla un mensaje indicando que el jugador 1 empieza
+ void imprimirMensajeUno();
+ 
+  //POST:imprime por pantalla un mensaje indicando que el jugador 2 empieza
+ void imprimirMensajeDos();
 
   // POST: devuelve el valor de cuantos jugadores de un equipo no tienen vida.
   int contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope);
