@@ -12,6 +12,7 @@ void Juego::definirPreliminares(Mapa* mapa) {
       estadoJuego);  // esto está bien o debo usar el método asignarEstado?
 }
 
+
 void Juego::coorValidas(Coordenada* coor,){
 	int fila,columna;
 	bool valida = false;
@@ -35,10 +36,17 @@ void Juego::coorValidas(Coordenada* coor,){
 			valida = true;	
 	}
 }
+
+
+
 void Juego::ubicarPersonajes() {
   // IMprimir tablero
   int i;
   Coordenada* coor = new Coordenada(0,0);
+	
+	
+	
+	
   
   bool* empiezaUno;
   if(empiezaUno){
@@ -69,8 +77,7 @@ void Juego::ubicarPersonajes() {
 }
 
 void Juego::elegirPersonajes() {
-  menuPartida.procesarMenuJuego(personajesJugadorUno, &cantidadPersonajesUno,
-                                personajesJugadorDos, &cantidadPersonajesDos);
+  menuPartida.procesarMenuJuego(personajesJugadorUno, &cantidadPersonajesUno, personajesJugadorDos, &cantidadPersonajesDos);
   ubicarPersonajes();
 }
 
@@ -87,22 +94,21 @@ int Juego::contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope) {
 }
 
 bool Juego::consultaEliminado() {
-  if (contarMuertos(personajesJugadorUno, cantidadPersonajesUno) ==
-      cantidadPersonajesUno) {
+  if (contarMuertos(personajesJugadorUno, cantidadPersonajesUno) == cantidadPersonajesUno) {
     return true;
-  } else if (contarMuertos(personajesJugadorDos, cantidadPersonajesDos) ==
-             cantidadPersonajesDos) {
+  } else if (contarMuertos(personajesJugadorDos, cantidadPersonajesDos) == cantidadPersonajesDos) {
     return true;
   } else {
     return false;
   }
 }
 
-void Juego::asignarEstadoJuego(char estado) { estadoJuego = estado; }
+void Juego::asignarEstadoJuego(char estado){ 
+	estadoJuego = estado; 
+}
 
 // si entra acá es porque hay alguno con vida
-void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno,
-                       int* i) {
+void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i) {
   if ((*i) >= (topeUno)) {
     (*i) = 0;
   }
@@ -119,9 +125,7 @@ bool Juego::opcionValida(char opcion) {
 }
 
 void Juego::pedirGuardado(char* opcion) {
-  cout << "Desea guardar el progreso de la partida y salir del juego? S para "
-          "Sí, N para no"
-       << endl;
+  cout << "Desea guardar el progreso de la partida y salir del juego? S para Sí, N para no" << endl;
   cin >> opcion;
   while (!opcionValida(*opcion)) {
     cout << "Ingresó un caracter incorrecto. Vuelva a ingresar" << endl;
@@ -132,8 +136,7 @@ void Juego::pedirGuardado(char* opcion) {
 void Juego::procesarGuardado(char opcion, bool* guardo) {
   if (opcion == AFIRMATIVO) {
     archivoPartida.asignarPath("partida.csv");
-    archivoPartida.escribirArchivo(personajesJugadorUno, cantidadPersonajesUno,
-                                   personajesJugadorDos, cantidadPersonajesDos);
+    archivoPartida.escribirArchivo(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
   }
 }
 
@@ -143,10 +146,7 @@ void Juego::consultarGuardado(bool* guardo) {
   procesarGuardado(opcion, guardo);
 }
 
-void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES],
-                           int topeUno,
-                           Personaje* personajesSegundo[MAX_PERSONAJES],
-                           int topeDos) {
+void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos) {
   int i = 0, j = 0;
   bool guardo = false;
   while (!consultaEliminado() && !guardo) {
@@ -163,8 +163,7 @@ void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES],
   }
 }
 
-void Juego::asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope,
-                             Personaje* personajeNuevo) {
+void Juego::asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope, Personaje* personajeNuevo) {
   personajes[*tope] = personajeNuevo;
   (*tope)++;
 }
@@ -175,18 +174,13 @@ void Juego::cargarPartida() {
   string elemento, nombre;
   int escudo, vida, energia, fila, columna, cant_leidos;
   while (!archivoPartida.finArchivo()) {
-    archivoPartida.descomponerLineaPartida(&elemento, &nombre, &escudo, &vida,
-                                           &energia, &fila, &columna);
-    menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida,
-                                                        energia, fila, columna);
-    Personaje* personajeLeido =
-        menuPartida.obtenerDiccionario().consultaNodo(nombre);
+    archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
+    menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
+    Personaje* personajeLeido = menuPartida.obtenerDiccionario().consultaNodo(nombre);
     if (cant_leidos < MAX_PERSONAJES) {
-      asignarPersonaje(personajesJugadorUno, &cantidadPersonajesUno,
-                       personajeLeido);
+      asignarPersonaje(personajesJugadorUno, &cantidadPersonajesUno, personajeLeido);
     } else {
-      asignarPersonaje(personajesJugadorDos, &cantidadPersonajesDos,
-                       personajeLeido);
+      asignarPersonaje(personajesJugadorDos, &cantidadPersonajesDos, personajeLeido);
     }
   }
 }
@@ -201,16 +195,14 @@ void Juego::revisarPartida() {
 }
 
 void Juego::procesarJuego() {
-  definirPreliminares();  //(Mapa* mapa) ???
+  definirPreliminares();  
   if (estadoJuego == JUGANDO) {
     revisarPartida();
     bool empiezaUno = rand() % 2;
     if (empiezaUno) {
-      procesarTurnos(personajesJugadorUno, cantidadPersonajesUno,
-                     personajesJugadorDos, cantidadPersonajesDos);
+      procesarTurnos(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
     } else {
-      procesarTurnos(personajesJugadorDos, cantidadPersonajesDos,
-                     personajesJugadorUno, cantidadPersonajesUno);
+      procesarTurnos(personajesJugadorDos, cantidadPersonajesDos, personajesJugadorUno, cantidadPersonajesUno);
     }
   }
   if (estadoJuego == FINALIZADO) {
