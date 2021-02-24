@@ -4,6 +4,7 @@ Tierra::Tierra(string nombre, int escudo, int vida, int fila, int columna)
     : Personaje(nombre, escudo, vida, fila, columna) {
   alimento = "hierbas";
   elemento = "tierra";
+  defensaActivada = false;
 }
 
 string Tierra::obtenerElemento() { return "tierra"; }

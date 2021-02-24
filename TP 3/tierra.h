@@ -6,6 +6,7 @@ class Tierra : public Personaje {
  private:
   string alimento;
   string elemento;
+  bool defensaActivada;
 
  public:
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
