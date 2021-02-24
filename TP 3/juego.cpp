@@ -3,13 +3,19 @@
 Juego::Juego() {
     cantidadPersonajesUno = 0;
     cantidadPersonajesDos = 0;
-    mapaPartida.mapear("mapa.csv"); //crea el tablero
+    mapaPartida.mapear("mapa.csv");//crea el tablero
+    cargarPersonajes();
 }
 
-void Juego::definirPreliminares(Mapa* mapa) {
-    menuPartida.procesarArchivo();
-    menuPartida.procesarMenuPrincipal(
-            estadoJuego);  // esto está bien o debo usar el método asignarEstado?
+void Menu::cargarPersonajes() {
+  string elemento, nombre;
+  int escudo, vida, fila, columna;
+  archivoPersonajes.asignarPath("personajes.csv");
+  if(archivoPersonajes.procesarArchivo()){
+    while (!archivoPersonajes.finArchivo()) {
+        archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida, &fila, &columna);
+        menuPartida.crearPersonaje(elemento, nombre, escudo, vida, fila, columna);
+  }
 }
 
 
@@ -214,7 +220,7 @@ void Juego::imprimirMensajeDos(){
 }
 
 void Juego::procesarJuego() {
-    definirPreliminares();
+    menuPartida.procesarMenuPrincipal(estadoJuego);
     if (estadoJuego == JUGANDO) {
         revisarPartida();
         bool empiezaUno;
