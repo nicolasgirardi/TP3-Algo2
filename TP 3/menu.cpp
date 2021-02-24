@@ -291,10 +291,10 @@ void Menu::atacarPersonaje(Mapa* mapa, Personaje* personaje) {
 void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
   switch (stoi(opcion)) {
     case OPCION_ATACAR:
-      atacarPersonaje(mapa, personaje);
+      personaje->ataque(enemigos);
       break;
     case OPCION_DEFENDER:
-      // defenderPersonaje(mapa, personaje);
+      personaje->defensa();
       break;
   }
 }
