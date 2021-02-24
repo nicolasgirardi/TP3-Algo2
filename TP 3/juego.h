@@ -61,6 +61,24 @@ class Juego {
 
   // POST: devuelve si la opcion es valida (entre AFIRMATIVO o NEGATIVO).
   bool opcionValida(char opcion);
+ 
+  void cargarPersonajes();
+ 
+  bool filaValida(int fila);
+ 
+  bool columnaValida(int columna);
+  
+  void pedirFila(int* fila);
+   
+  void pedirColumna(int* columna);
+    
+  void consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int* i);
+     
+  void posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* i);
+ 
+  void procesarUbicacion(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos);
+
+  void ubicarPersonajes();
 
   // POST: pide al usuario si quiere guardar la partida o no.
   void pedirGuardado(char* opcion);
