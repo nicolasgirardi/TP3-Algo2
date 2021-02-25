@@ -1,9 +1,7 @@
 #include "tierra.h"
 
-Tierra::Tierra(string nombre, int escudo, int vida, int fila, int columna)
-    : Personaje(nombre, escudo, vida, fila, columna) {
+Tierra::Tierra(string nombre, int escudo, int vida): Personaje(nombre, escudo, vida) {
   alimento = "hierbas";
-  elemento = "tierra";
   defensaActivada = false;
 }
 
@@ -43,8 +41,7 @@ int Tierra::zona(Coordenada* objetivo) {
   int dfila;
   int dcolumna;
   dfila = abs(this->coordenada->obtenerFila() - objetivo->obtenerFila());
-  dcolumna =
-      abs(this->coordenada->obtenerColumna() - objetivo->obtenerColumna());
+  dcolumna = abs(this->coordenada->obtenerColumna() - objetivo->obtenerColumna());
   if (dfila <= 2 && dcolumna <= 2)
     return 0;
   else if (dfila <= 4 && dcolumna <= 4)
@@ -55,11 +52,10 @@ int Tierra::zona(Coordenada* objetivo) {
 
 void Tierra::ataque(Personaje* enemigos[]) {
   gastarEnergia(ENERGIA_ATAQUE_TIERRA);
-  int i, zona;
-  for (i = 0; i < MAX_PERSONAJES; i++) {
+  int zona;
+  for (int i = 0; i < MAX_PERSONAJES; i++) {
     zona = this->zona(enemigos[i]->obtenerCoordenada());
-    enemigos[i]->daniar(
-        this->obtenerDanio(enemigos[i]->obtenerElemento(), zona));
+    enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento(),zona));
     }
 }
 
