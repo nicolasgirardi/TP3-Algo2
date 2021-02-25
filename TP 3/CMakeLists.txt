@@ -12,7 +12,6 @@ add_executable(tp3
         aire.h
         archivo.cpp
         archivo.h
-        asdas.cpp
         ataques.cpp
         camino.cpp
         camino.h
@@ -38,7 +37,7 @@ add_executable(tp3
         menu.cpp
         menu.h
         montana.h
-        montaña.cpp
+        montana.cpp
         nodo.cpp
         nodo.h
         nodo_grafo.cpp
