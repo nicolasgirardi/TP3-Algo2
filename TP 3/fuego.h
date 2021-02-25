@@ -5,13 +5,12 @@
 class Fuego : public Personaje {
  private:
   string alimento;
-  string elemento;
 
  public:
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje de fuego con el nombre, escudo, energía y vida
   // adecuados
-  Fuego(string nombre, int escudo, int vida, int fila, int columna);
+  Fuego(string nombre, int escudo, int vida);
 
   // POST: deja el personaje alimentado, con 15 puntos más de vida. La vida no
   // superará los 100 puntos.
