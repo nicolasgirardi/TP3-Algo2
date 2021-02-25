@@ -5,14 +5,13 @@
 class Tierra : public Personaje {
  private:
   string alimento;
-  string elemento;
   bool defensaActivada;
 
  public:
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje de tierra con el nombre, escudo, energía y
   // vida adecuados
-  Tierra(string nombre, int escudo, int vida, int fila, int columna);
+  Tierra(string nombre, int escudo, int vida);
 
   // POST: deja al personaje alimentado, aumentando 8 puntos de energía. La
   // energía no superará los 20 puntos.
