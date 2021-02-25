@@ -73,6 +73,7 @@ void Costos::consultarCaminoMinimo(Coordenada* inicial,Coordenada* final) {
   while(!camino.vacia()){
   	cout<<i<<"º: "<<camino.consultar()->obtenerFila()<<" - "<<camino.consultar()->obtenerColumna()<<endl;
   	camino.desapilar();
+  	i++;
   }
 }
 
