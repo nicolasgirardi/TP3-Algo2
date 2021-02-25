@@ -256,3 +256,7 @@ void Juego::procesarJuego() {
         archivoPartida.eliminarArchivo();
     }
 }
+
+Juego::~Juego(){
+
+}
