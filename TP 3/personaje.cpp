@@ -56,5 +56,9 @@ void Personaje::daniar(int daniar) {
   this->vida = this->vida - daniar;
 }
 
-void Personaje::reseteoDefensa(){};
+void Personaje::reseteoDefensa(){}
+
+Personaje::~Personaje(){
+
+}
 
