@@ -1,8 +1,6 @@
 #include "aire.h"
 
-Aire::Aire(string nombre, int escudo, int vida, int fila, int columna)
-    : Personaje(nombre, escudo, vida, fila, columna) {
-  elemento = "aire";
+Aire::Aire(string nombre, int escudo, int vida): Personaje(nombre, escudo, vida) {
   alimento = "aire";
   defensaActivada = false;
 }
@@ -11,7 +9,7 @@ void Aire::alimentar() {
   cout << "No se pueden alimentar los personajes de aire" << endl;
 }
 
-string Aire::obtenerElemento() { return elemento; }
+string Aire::obtenerElemento() { return "aire"; }
 
 string Aire::obtenerAlimento() { return alimento; }
 
@@ -26,9 +24,7 @@ int Aire::obtenerDanio(string elemento) {
 
 void Aire::ataque(Personaje* enemigos[]) {
   gastarEnergia(ENERGIA_ATAQUE_AIRE);
-
-  int i;
-  for (i = 0; i < MAX_PERSONAJES; i++) {
+  for (int i = 0; i < MAX_PERSONAJES; i++) {
     enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
   }
 }
