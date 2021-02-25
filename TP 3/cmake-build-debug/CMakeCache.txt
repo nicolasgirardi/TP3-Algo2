@@ -227,6 +227,12 @@ ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
 //Value Computed by CMake
+TP_3_BINARY_DIR:STATIC=/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug
+
+//Value Computed by CMake
+TP_3_SOURCE_DIR:STATIC=/home/facundo/Downloads/TP3-Algo2/TP 3
+
+//Value Computed by CMake
 tp3_BINARY_DIR:STATIC=/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug
 
 //Value Computed by CMake

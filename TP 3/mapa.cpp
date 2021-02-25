@@ -100,7 +100,7 @@ void Mapa::mapear(string nombreArchivo) {
     for (j = 1; j <= 8; j++) {
       coor.cambiarColumna(j);
       if (j < 8) {
-        getline(archivo, tipo, ';');
+        getline(archivo, tipo);
         this->alta(coor, tipo);
       } else {
         getline(archivo, tipo);
