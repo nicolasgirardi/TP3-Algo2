@@ -17,13 +17,13 @@ class Casilla {
   // PRE:
   // pos:devuelve true si esta ocupada, false si no
 
-  bool Ocupacion();
+  bool ocupacion();
 
   // ocupa la casilla con un personaje
   // PRE: Ocupaci�n debe ser falso
   // POS: pone a un personaje que se pasa dentro de la casilla
 
-  void Ocupar(Personaje* personaje);
+  void ocupar(Personaje* personaje);
 
   // consulta que personaje esta en la casilla
   // PRE: ocupacion debe ser true
@@ -31,11 +31,11 @@ class Casilla {
 
   Personaje* obtenerPersonaje();
 
-  // vac�a la casilla de quien la ocupe
+  // vacia la casilla de quien la ocupe
   // pre:
   // pos: ocupante pasa a apuntar a null
 
-  void Vaciar();
+  void vaciar();
 
   // devuelve el coste de llegar a esta casilla desde una vecina para cada
   // elemento pre: pos: devuelve el coste de llegar a esta casilla desde una

@@ -2,6 +2,7 @@
 
 Costos::Costos(string elemento, Mapa* mapa) {
   int i, j;
+  this->elemento = elemento;
   Coordenada* coor = new Coordenada(0);
   costo = new int*[64];
   recorridos = new int*[64];
@@ -11,14 +12,17 @@ Costos::Costos(string elemento, Mapa* mapa) {
     coor->cambiarFila(i);
     for (j = 0; j < 64; j++) {
       coor->cambiarColumna(j);
-      if (j == i) {
-        costo[i][j] = 0;
-      } else if (((j == i + 1 || j == i - 1) && ((j / 8 == i / 8))) ||
-                 j == i + 8 || j == i - 8)
-        costo[i][j] =
-            mapa->consulta(*coor)->obtenerDato()->obtenerCosto(elemento);
-      else
-        costo[i][j] = 0xffff;
+      if (j == i){
+          costo[i][j] = 0;
+      }
+
+      else if (((j == i + 1 || j == i - 1) && ((j / 8 == i / 8))) || j == i + 8 || j == i - 8){
+          costo[i][j] = mapa->consulta(*coor)->obtenerDato()->obtenerCosto(elemento);
+      }
+
+      else{
+          costo[i][j] = 0xffff;
+      }
       recorridos[i][j] = j;
     }
   }
@@ -68,9 +72,9 @@ void Costos::consultarCaminoMinimo(Pila* camino, Coordenada* inicial,
 Costos::~Costos() {
   int i;
   for (i = 0; i < 64; i++) {
-    delete[] costo[i];
-    delete[] recorridos[i];
-    delete[] costo;
-    delete[] recorridos;
+      delete[] costo[i];
+      delete[] recorridos[i];
   }
+  delete[] costo;
+  delete[] recorridos;
 }

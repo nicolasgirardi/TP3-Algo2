@@ -33,7 +33,7 @@ class Menu {
   void crearPersonaje(string elemento, string nombre, int escudo, int vida);
 
   // POST: procesa cada turno del juego.
-  void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos);
+  void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4]);
 
   // POST: devuelve el diccionario con los personajes.
   Diccionario obtenerDiccionario();

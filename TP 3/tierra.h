@@ -37,12 +37,12 @@ class Tierra : public Personaje {
   // Realiza el ataque
   // PRE: debe tener energia suficiente para atacar
   // POS: ejecuta su acaque sobre el equipo enemigo
-  void ataque(Personaje* enemigos[]);
+  void ataque(Personaje* enemigos[MAX_PERSONAJES]);
 
   // Realiza la defensa
   // PRE: debe tener energia suficiente para atacar
   // POST: ejecuta la defensa del personaje propio.
-  void defensa();
+  void defensa(Personaje* aliados[MAX_PERSONAJES]);
   
   //resetea variables relacionadas a la defensa
   //PRE:

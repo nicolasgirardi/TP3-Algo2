@@ -76,7 +76,7 @@ void Agua::pedirObjetivo(Coordenada* lugar) {
 
 
 
-void Agua::ataque(Personaje* enemigos[]) {
+void Agua::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_AGUA);
   int i;
   Coordenada* lugar = new Coordenada(0);
@@ -89,7 +89,7 @@ void Agua::ataque(Personaje* enemigos[]) {
   delete lugar;
 }
 
-void Agua::defensa() {
+void Agua::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   int i;
   gastarEnergia(ENERGIA_DEFENSA_AGUA);
   asignarVida(this->vida + 50);

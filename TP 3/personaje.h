@@ -73,7 +73,7 @@ class Personaje {
   // Realiza el ataque
   // PRE: debe tener energia suficiente para atacar
   // POS: ejecuta su acaque sobre el equipo enemigo
-  virtual void ataque(Personaje* enemigos[]) = 0;
+  virtual void ataque(Personaje* enemigos[MAX_PERSONAJES]) = 0;
 
   // le quita la vida al personaje segun su escudo y el da�o base que recibe
   // PRE:
@@ -81,7 +81,7 @@ class Personaje {
 
   void daniar(int daniar);
   
-  virtual void defensa() = 0;
+  virtual void defensa(Personaje* aliados[MAX_PERSONAJES]) = 0;
   
   //resetea variables relacionadas a la defensa
   //PRE:

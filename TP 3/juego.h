@@ -14,6 +14,8 @@ class Juego {
   int cantidadPersonajesUno;
   Personaje* personajesJugadorDos[MAX_PERSONAJES];
   int cantidadPersonajesDos;
+  Costos* costos[4];
+
 
  public:
   // POST: construye un menu. Se inicializa opcion con un valor distinto a la
@@ -21,6 +23,9 @@ class Juego {
   // menu o un juego???
   Juego();
 
+  void inicializarCostos();
+
+  void borrarCostos();
   // POST: se encarga de definir y procesar los preliminares. Se encarga
   // de procesar el archivo de los "personajes.csv" que brinda el juego y
   // tambien procesa el menu principal.
@@ -36,7 +41,7 @@ class Juego {
 
   // POST: devuelve un valor que define el primer turno del juego. (Define quien
   // arranca a jugar)
-  bool elegirPrimerLugar();
+  void elegirPrimerLugar(bool* empiezaUno);
 
   // POST: devuelve el mapa de la partida.
   Mapa obtenerMapa();

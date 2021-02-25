@@ -46,12 +46,12 @@ class Agua : public Personaje {
   // Realiza el ataque
   // PRE: debe tener energia suficiente para atacar
   // POS: ejecuta su acaque sobre el equipo enemigo
-  void ataque(Personaje* enemigos[]);
+  void ataque(Personaje* enemigos[MAX_PERSONAJES]);
 
   // Realiza la defensa
   // PRE: debe tener energia suficiente para atacar
   // POST: ejecuta la defensa sobre el equipo aliado y sobre si mismo.
-  void defensa();
+  void defensa(Personaje* aliados[MAX_PERSONAJES]);
   
   //dice si el personaje tiene energia suficiente para atacar
   //PRE:

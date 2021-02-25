@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp
-agua.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
-
 /home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
 personaje.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
@@ -149,10 +145,6 @@ nodo_pila.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
 casilla.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
-
-/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.cpp
-tierra.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
 personaje.h

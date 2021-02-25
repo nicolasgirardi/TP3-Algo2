@@ -8,6 +8,7 @@ class Costos {
  private:
   int** costo;
   int** recorridos;
+  string elemento;
 
  public:
   // POS: crea la matriz con costos y direcciones segun el elemento que va a

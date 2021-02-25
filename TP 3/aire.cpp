@@ -22,14 +22,14 @@ int Aire::obtenerDanio(string elemento) {
   return danio;
 }
 
-void Aire::ataque(Personaje* enemigos[]) {
+void Aire::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_AIRE);
   for (int i = 0; i < MAX_PERSONAJES; i++) {
     enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
   }
 }
 
-void Aire::defensa() {
+void Aire::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_DEFENSA_AIRE);
   this->defensaActivada = true;
 }

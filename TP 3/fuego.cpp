@@ -33,7 +33,7 @@ int Fuego::obtenerDanio(string elemento) {
   return danio;
 }
 
-void Fuego::ataque(Personaje* enemigos[]) {
+void Fuego::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_FUEGO);
   for (int i = 0; i < MAX_PERSONAJES; i++) {
     if (abs(this->coordenada.obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
@@ -42,7 +42,7 @@ void Fuego::ataque(Personaje* enemigos[]) {
   }
 }
 
-void Fuego::defensa() {
+void Fuego::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_DEFENSA_FUEGO);
   asignarVida(this->vida + 10);
 }

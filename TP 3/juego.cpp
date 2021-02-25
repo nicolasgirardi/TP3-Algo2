@@ -6,7 +6,24 @@ Juego::Juego() {
 
     mapaPartida.mapear("mapa.csv");//crea el tablero
     cargarPersonajes();
+    inicializarCostos();
 }
+
+void Juego::inicializarCostos(){
+    this->costos[0] = new Costos("agua", &this->mapaPartida);
+    this->costos[1] = new Costos("fuego", &this->mapaPartida);
+    this->costos[2] = new Costos("tierra", &this->mapaPartida);
+    this->costos[3] = new Costos("aire", &this->mapaPartida);
+}
+
+void Juego::borrarCostos(){
+    for (int i = 0; i < 4; ++i) {
+        delete this->costos[i];
+    }
+}
+
+
+
 
 void Juego::cargarPersonajes() {
   string elemento, nombre;
@@ -31,19 +48,19 @@ bool Juego::columnaValida(int columna){
 
 void Juego::pedirFila(int* fila){
     cout << "Ingrese fila: ";
-    cin >> fila;
+    cin >> *fila;
     while (!filaValida(*fila)){
         cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
-        cin >> fila;
+        cin >> *fila;
     }
 }
 
 void Juego::pedirColumna(int* columna){
     cout << "Ingrese columna: ";
-    cin >> columna;
+    cin >> *columna;
     while (!columnaValida(*columna)){
         cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
-        cin >> columna;
+        cin >> *columna;
     }
 }
 
@@ -55,7 +72,7 @@ void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERS
         pedirFila(&fila);
         pedirColumna(&columna);
         coor->cambiarFilaYColumna(fila,columna);
-        if(mapaPartida->ocupado(coor)) {
+        if(mapaPartida.ocupado(*coor)) {
             cout << "El lugar elegido se encuentra ocupado, vuelva a elegir uno.";
         } else {
             puedoConsultar = false;
@@ -70,7 +87,7 @@ void Juego::posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* i){
     //MUESTRO EL MAPA POR PANTALLA
     consultarCoordenada(coor,personajes,i);
     personajes[*i]->asignarCoordenada(coor->obtenerFila(),coor->obtenerColumna());
-    mapaPartida->consulta(*coor)->obtenerDato()->ocupar(personajes[*i]);
+    mapaPartida.consulta(*coor)->obtenerDato()->ocupar(personajes[*i]);
     (*i)++;
     delete coor;
 }
@@ -133,7 +150,7 @@ void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* 
         (*i) = 0;
     }
     if (personajes[*i]->obtenerVida() != 0) {
-        return menuPartida.procesarTurno(&mapaPartida,personajes[*i]);
+        return menuPartida.procesarTurno(&mapaPartida,personajes[*i], this->costos);//Costos* costos)
     }
     (*i)++;
     return jugarTurno(personajes, topeUno, i);
