@@ -1,11 +1,10 @@
 #include "precipicio.h"
 
 Precipicio::Precipicio() : Casilla() {
-  tipo = "precipicio";
   costo = 1;
 }
 
-string Precipicio::Tipo() { return tipo; }
+string Precipicio::Tipo() { return "precipicio"; }
 
 int Precipicio::obtenerCosto(string elemento) {
   if (elemento == "aire") {

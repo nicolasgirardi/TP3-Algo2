@@ -4,7 +4,6 @@
 
 class Montana : public Casilla {
  private:
-  string tipo;
   int costo;
 
  public:

@@ -4,7 +4,6 @@
 
 class Camino : public Casilla {
  private:
-  string tipo;
   int costo;
 
  public:

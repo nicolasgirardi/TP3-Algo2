@@ -4,7 +4,6 @@
 
 class Vacio : public Casilla {
  private:
-  string tipo;
   int costo;
 
  public:

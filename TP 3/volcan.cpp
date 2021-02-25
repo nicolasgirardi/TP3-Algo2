@@ -1,11 +1,10 @@
 #include "volcan.h"
 
 Volcan::Volcan() : Casilla() {
-  tipo = "volcan";
   costo = 1;
 }
 
-string Volcan::Tipo() { return tipo; }
+string Volcan::Tipo() { return "volcan"; }
 
 int Volcan::obtenerCosto(string elemento) {
   if (elemento == "fuego") {

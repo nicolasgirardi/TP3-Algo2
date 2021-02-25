@@ -4,7 +4,6 @@
 
 class Volcan : public Casilla {
  private:
-  string tipo;
   int costo;
 
  public:

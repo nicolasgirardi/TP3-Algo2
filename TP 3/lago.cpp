@@ -1,11 +1,10 @@
 #include "lago.h"
 
 Lago::Lago() : Casilla() {
-  tipo = "lago";
   costo = 1;
 }
 
-string Lago::Tipo() { return tipo; }
+string Lago::Tipo() { return "lago"; }
 
 int Lago::obtenerCosto(string elemento) {
   if (elemento == "agua") {

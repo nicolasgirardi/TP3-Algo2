@@ -1,12 +1,11 @@
 #include "vacio.h"
 
 Vacio::Vacio(): Casilla(){
-	tipo = "vacio";
 	costo = 15;
 }
 
 string Vacio::Tipo(){
-	return tipo;
+	return "vacio";
 }
 
 int Vacio::obtenerCosto(string elemento){
