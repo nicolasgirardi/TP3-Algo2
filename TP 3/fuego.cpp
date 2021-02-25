@@ -2,7 +2,6 @@
 
 Fuego::Fuego(string nombre, int escudo, int vida): Personaje(nombre, escudo, vida) {
   alimento = "madera";
-  elemento = "fuego";
 }
 
 string Fuego::obtenerElemento() { return "fuego"; }

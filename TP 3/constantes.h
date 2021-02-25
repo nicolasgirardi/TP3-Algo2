@@ -3,6 +3,7 @@
 #include <cstring>
 
 const int TOPE_ENERGIA = 20;
+const int ENERGIA_LIMITE = 10;
 const int TOPE_VIDA = 100;
 const int AUMENTO_TIERRA = 8;
 const int AUMENTO_AGUA = 10;

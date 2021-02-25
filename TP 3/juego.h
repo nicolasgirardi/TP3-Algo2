@@ -78,7 +78,7 @@ class Juego {
  
   void procesarUbicacion(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos);
 
-  void ubicarPersonajes();
+
 
   // POST: pide al usuario si quiere guardar la partida o no.
   void pedirGuardado(char* opcion);

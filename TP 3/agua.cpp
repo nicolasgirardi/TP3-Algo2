@@ -49,19 +49,19 @@ bool Agua::columnaValida(int columna){
 
 void Agua::pedirFila(int* fila){
     cout << "Ingrese fila: ";
-    cin >> fila;
+    cin >> *fila;
     while (!filaValida(*fila)){
         cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
-        cin >> fila;
+        cin >> *fila;
     }
 }
 
 void Agua::pedirColumna(int* columna){
     cout << "Ingrese columna: ";
-    cin >> columna;
+    cin >> *columna;
     while (!columnaValida(*columna)){
         cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
-        cin >> columna;
+        cin >> *columna;
     }
 }
 
