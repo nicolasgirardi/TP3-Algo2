@@ -16,7 +16,7 @@ class Personaje {
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje con el nombre, escudo, energía y vida
   // adecuados
-  Personaje(string nombre, int escudo, int vida, int fila, int columna);
+  Personaje(string nombre, int escudo, int vida);
 
   // POST: devuelve el nombre del personaje
   string obtenerNombre();
