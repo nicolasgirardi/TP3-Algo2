@@ -42,3 +42,17 @@ void Aire::reseteoDefensa(){
 	if(defensaActivada)
 		defensaActivada = false;
 }
+
+bool Aire::puedeAtacar(){
+	if(this->energia >= 8)
+		return true;
+	else
+		return false;	
+}
+
+bool Aire::puedeDefender(){
+	if(this->energia >= 15)
+		return true;
+	else
+		return false;	
+}
