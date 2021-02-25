@@ -1,13 +1,17 @@
 #include "agua.h"
 
 
-Agua::Agua(string nombre, int escudo, int vida, int fila, int columna): Personaje(nombre, escudo, vida, fila, columna) {
+Agua::Agua(string nombre, int escudo, int vida): Personaje(nombre, escudo, vida) {
   alimento = "plancton";
   vecesAlimentado = 0;
 }
 
 
 string Agua::obtenerAlimento() { return alimento; }
+
+string Agua::obtenerElemento(){
+	return "agua";
+}
 
 void Agua::alimentar() {
   int energiaSuministrada = 0;
@@ -25,7 +29,6 @@ void Agua::alimentar() {
   }
 }
 
-// nuevo, idea
 
 int Agua::obtenerDanio(string elemento) {
   int danio = 20;
@@ -36,23 +39,42 @@ int Agua::obtenerDanio(string elemento) {
   return danio;
 }
 
+bool Agua::filaValida(int fila){
+    return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
+}
+
+bool Agua::columnaValida(int columna){
+    return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
+}
+
+void Agua::pedirFila(int* fila){
+    cout << "Ingrese fila: ";
+    cin >> fila;
+    while (!filaValida(*fila)){
+        cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
+        cin >> fila;
+    }
+}
+
+void Agua::pedirColumna(int* columna){
+    cout << "Ingrese columna: ";
+    cin >> columna;
+    while (!columnaValida(*columna)){
+        cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
+        cin >> columna;
+    }
+}
+
 void Agua::pedirObjetivo(Coordenada* lugar) {
   int fila, columna;
-  cout << "Ingrese la fila objetivo: ";
-  cin >> fila;
-  while (fila < 1 || fila > 8) {
-    cout << "Fila invalida, ingrese fila entre 1 y 8: ";
-    cin >> fila;
-  }
+  cout << "Ingrese las coordenadas del objetivo: ";
+  pedirFila(&fila);
   lugar->cambiarFila(fila);
-  cout << "Ingrese la columna objetivo: ";
-  cin >> columna;
-  while (columna < 1 || columna > 8) {
-    cout << "columna invalida, ingrese columna entre 1 y 8: ";
-    cin >> columna;
-  }
+  pedirColumna(&columna);
   lugar->cambiarColumna(columna);
 }
+
+
 
 void Agua::ataque(Personaje* enemigos[]) {
   gastarEnergia(ENERGIA_ATAQUE_AGUA);
