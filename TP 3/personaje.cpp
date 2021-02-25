@@ -1,7 +1,6 @@
 #include "personaje.h"
 
-Personaje::Personaje(string nombre, int escudo, int vida, int fila,
-                     int columna) {
+Personaje::Personaje(string nombre, int escudo, int vida) {
   srand(time(0));
   this->nombre = nombre;
   this->escudo = escudo;
@@ -59,4 +58,3 @@ void Personaje::daniar(int daniar) {
 
 void Personaje::reseteoDefensa();
 
-void mover() {}
