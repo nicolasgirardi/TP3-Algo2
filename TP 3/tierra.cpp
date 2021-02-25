@@ -54,7 +54,7 @@ int Tierra::zona(Coordenada* objetivo) {
 }
 
 void Tierra::ataque(Personaje* enemigos[]) {
-  gastarEnergia(6);
+  gastarEnergia(ENERGIA_ATAQUE_TIERRA);
   int i, zona;
   for (i = 0; i < MAX_PERSONAJES; i++) {
     zona = this->zona(enemigos[i]->obtenerCoordenada());
@@ -64,7 +64,7 @@ void Tierra::ataque(Personaje* enemigos[]) {
 }
 
 void Tierra::defensa() {
-  gastarEnergia(5);
+  gastarEnergia(ENERGIA_DEFENSA_TIERRA);
   asignarEscudo(this->escudo + 2);
   defensaActivada = true;
 }
@@ -77,14 +77,14 @@ void Tierra::reseteoDefensa() {
 }
 
 bool Tierra::puedeAtacar(){
-	if(this->energia >= 6)
+	if(this->energia >= ENERGIA_ATAQUE_TIERRA)
 		return true;
 	else
 		return false;	
 }
 
 bool Tierra::puedeDefender(){
-	if(this->energia >= 5)
+	if(this->energia >= ENERGIA_DEFENSA_TIERRA)
 		return true;
 	else
 		return false;	

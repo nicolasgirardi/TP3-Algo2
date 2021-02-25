@@ -25,7 +25,7 @@ int Aire::obtenerDanio(string elemento) {
 }
 
 void Aire::ataque(Personaje* enemigos[]) {
-  gastarEnergia(8);
+  gastarEnergia(ENERGIA_ATAQUE_AIRE);
 
   int i;
   for (i = 0; i < MAX_PERSONAJES; i++) {
@@ -34,7 +34,7 @@ void Aire::ataque(Personaje* enemigos[]) {
 }
 
 void Aire::defensa() {
-  gastarEnergia(15);
+  gastarEnergia(ENERGIA_DEFENSA_AIRE);
   this->defensaActivada = true;
 }
 
@@ -44,14 +44,14 @@ void Aire::reseteoDefensa(){
 }
 
 bool Aire::puedeAtacar(){
-	if(this->energia >= 8)
+	if(this->energia >= ENERGIA_ATAQUE_AIRE)
 		return true;
 	else
 		return false;	
 }
 
 bool Aire::puedeDefender(){
-	if(this->energia >= 15)
+	if(this->energia >= ENERGIA_DEFENSA_AIRE)
 		return true;
 	else
 		return false;	

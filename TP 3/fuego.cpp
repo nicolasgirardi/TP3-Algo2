@@ -37,29 +37,29 @@ int Fuego::obtenerDanio(string elemento) {
 
 void Fuego::ataque(Personaje* enemigos[]) {
   int i;
+  gastarEnergia(ENERGIA_ATAQUE_FUEGO);
   for (i = 0; i < MAX_PERSONAJES; i++) {
     if (abs(this->coordenada->obtenerFila() -
             enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
       enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
-      gastarEnergia(5);
     }
   }
 }
 
 void Fuego::defensa() {
-  gastarEnergia(10);
+  gastarEnergia(ENERGIA_DEFENSA_FUEGO);
   asignarVida(this->vida + 10);
 }
 
 bool Fuego::puedeAtacar(){
-	if(this->energia >= 5)
+	if(this->energia >= ENERGIA_ATAQUE_FUEGO)
 		return true;
 	else
 		return false;	
 }
 
 bool Fuego::puedeDefender(){
-	if(this->energia >= 10)
+	if(this->energia >= ENERGIA_DEFENSA_FUEGO)
 		return true;
 	else
 		return false;	

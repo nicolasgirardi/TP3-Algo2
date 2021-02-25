@@ -55,7 +55,7 @@ void Agua::pedirObjetivo(Coordenada* lugar) {
 }
 
 void Agua::ataque(Personaje* enemigos[]) {
-  gastarEnergia(5);
+  gastarEnergia(ENERGIA_ATAQUE_AGUA);
   int i;
   Coordenada* lugar = new Coordenada(0);
   this->pedirObjetivo(lugar);
@@ -69,7 +69,7 @@ void Agua::ataque(Personaje* enemigos[]) {
 
 void Agua::defensa(Personaje* aliados[]) {
   int i;
-  gastarEnergia(12);
+  gastarEnergia(ENERGIA_DEFENSA_AGUA);
   asignarVida(this->vida + 50);
   for (i = 0; i < MAX_PERSONAJES; i++) {
     aliados[i]->asignarVida(this->vida + 10);
@@ -77,14 +77,14 @@ void Agua::defensa(Personaje* aliados[]) {
 }
 
 bool Agua::puedeAtacar(){
-	if(this->energia >= 5)
+	if(this->energia >= ENERGIA_ATAQUE_AGUA)
 		return true;
 	else
 		return false;	
 }
 
 bool Agua::puedeDefender(){
-	if(this->energia >= 12)
+	if(this->energia >= ENERGIA_DEFENSA_AGUA)
 		return true;
 	else
 		return false;	
