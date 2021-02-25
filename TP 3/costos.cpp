@@ -2,7 +2,7 @@
 
 Costos::Costos(string elemento, Mapa* mapa) {
   int i, j;
-  Coordenada* coor(0);
+  Coordenada* coor = new Coordenada(0);
   costo = new int*[64];
   recorridos = new int*[64];
   for (i = 0; i < 64; i++) {
@@ -16,12 +16,13 @@ Costos::Costos(string elemento, Mapa* mapa) {
       } else if (((j == i + 1 || j == i - 1) && ((j / 8 == i / 8))) ||
                  j == i + 8 || j == i - 8)
         costo[i][j] =
-            mapa->consulta(coor)->obtenerDato()->obtenerCosto(elemento);
+            mapa->consulta(*coor)->obtenerDato()->obtenerCosto(elemento);
       else
         costo[i][j] = 0xffff;
       recorridos[i][j] = j;
     }
   }
+  delete coor;
 }
 
 void Costos::minimizar() {
