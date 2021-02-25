@@ -2,17 +2,16 @@
 
 Menu::Menu() { opcion = "0"; }
 
-void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida,
-                          int fila, int columna) {
+void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) {
   Personaje* personajeCreado;
   if (elemento == "tierra") {
-    personajeCreado = new Tierra(nombre, escudo, vida, fila, columna);
+    personajeCreado = new Tierra(nombre, escudo, vida);
   } else if (elemento == "agua") {
-    personajeCreado = new Agua(nombre, escudo, vida, fila, columna);
+    personajeCreado = new Agua(nombre, escudo, vida);
   } else if (elemento == "aire") {
-    personajeCreado = new Aire(nombre, escudo, vida, fila, columna);
+    personajeCreado = new Aire(nombre, escudo, vida);
   } else if (elemento == "fuego") {
-    personajeCreado = new Fuego(nombre, escudo, vida, fila, columna);
+    personajeCreado = new Fuego(nombre, escudo, vida);
   }
   diccionarioPersonajes.alta(personajeCreado);
 }
@@ -169,7 +168,7 @@ void Menu::imprimirUsado() {
 }
 
 void Menu::seleccionarPersonaje(Personaje* jugador[MAX_PERSONAJES], int* tope,
-                                string* nombre) {
+string* nombre) {
   if ((diccionarioPersonajes.consultaNodo(*nombre))->obtenerCondicion()) {
     imprimirUsado();
   } else {
@@ -179,10 +178,7 @@ void Menu::seleccionarPersonaje(Personaje* jugador[MAX_PERSONAJES], int* tope,
   }
 }
 
-void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],
-                             int* topeUno,
-                             Personaje* jugadorDos[MAX_PERSONAJES],
-                             int* topeDos) {
+void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
   string* nombre;
   if (((*topeUno + *topeDos) % 2 == 0) &&
       (*topeUno < MAX_PERSONAJES)) {  // le toca al jugador 1 y no llegó al tope
@@ -200,10 +196,7 @@ void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],
   }
 }
 
-void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES],
-                               int* topeUno,
-                               Personaje* jugadorDos[MAX_PERSONAJES],
-                               int* topeDos) {
+void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
   switch (stoi(opcion)) {
     case OPCION_LISTAR:
       mostrarNombres();
@@ -220,10 +213,7 @@ void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES],
 void Menu::limpiarOpcion() { this->opcion = "0"; }
 
 // BUEN NOMBRE??? creo que si jej soy edu, el de la pregunta no fui yo ja
-void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],
-                             int* topeUno,
-                             Personaje* jugadorDos[MAX_PERSONAJES],
-                             int* topeDos) {
+void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
   limpiarOpcion();
   while (stoi(opcion) != SALIDA_JUEGO) {
     mostrarMenuJuego();
@@ -318,10 +308,14 @@ void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos
 void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
   switch (stoi(opcion)) {
     case OPCION_ATACAR:
-      personaje->ataque(enemigos);
+			if (personaje->puedeAtacar()){
+		 		personaje->ataque(enemigos);
+			}
       break;
     case OPCION_DEFENDER:
-      personaje->defensa();
+			if (personaje->puedeDefender()){
+      	personaje->defensa();
+			}
       break;
   }
 }
