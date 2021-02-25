@@ -49,7 +49,7 @@ class Mapa {
   // de los tipos monta�a, precipicio, lago, volcan, camino o vacio
   // POS: crea el mapa del archivo
 
-  void mapear(ifstream* archivo);
+  void mapear(string nombreArchivo);
 
   // POS: libera la memoria
   virtual ~Mapa();

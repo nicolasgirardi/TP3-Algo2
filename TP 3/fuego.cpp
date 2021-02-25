@@ -36,7 +36,7 @@ int Fuego::obtenerDanio(string elemento) {
 void Fuego::ataque(Personaje* enemigos[]) {
   gastarEnergia(ENERGIA_ATAQUE_FUEGO);
   for (int i = 0; i < MAX_PERSONAJES; i++) {
-    if (abs(this->coordenada->obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
+    if (abs(this->coordenada.obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
       enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
     }
   }

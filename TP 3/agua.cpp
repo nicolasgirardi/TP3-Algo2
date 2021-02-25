@@ -89,7 +89,7 @@ void Agua::ataque(Personaje* enemigos[]) {
   delete lugar;
 }
 
-void Agua::defensa(Personaje* aliados[]) {
+void Agua::defensa() {
   int i;
   gastarEnergia(ENERGIA_DEFENSA_AGUA);
   asignarVida(this->vida + 50);

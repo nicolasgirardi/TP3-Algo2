@@ -89,8 +89,10 @@ void Mapa::baja(Coordenada coor) {
   if (fila == 1 && columna == 1) inicio == 0;
 }
 
-void Mapa::mapear(ifstream* archivo) {
+void Mapa::mapear(string nombreArchivo) {
   int i, j;
+  ifstream archivo;
+  archivo.open(nombreArchivo);
   Coordenada coor(0, 0);
   string tipo;
   for (i = 1; i <= 8; i++) {
@@ -98,10 +100,10 @@ void Mapa::mapear(ifstream* archivo) {
     for (j = 1; j <= 8; j++) {
       coor.cambiarColumna(j);
       if (j < 8) {
-        getline(*archivo, tipo, ';');
+        getline(archivo, tipo, ';');
         this->alta(coor, tipo);
       } else {
-        getline(*archivo, tipo);
+        getline(archivo, tipo);
         this->alta(coor, tipo);
       }
     }

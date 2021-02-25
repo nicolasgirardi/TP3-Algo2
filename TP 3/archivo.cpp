@@ -36,7 +36,7 @@ void Archivo::abrirArchivoEscritura(){
 void Archivo::escribirLinea(Personaje* personaje){
     archivo << personaje->obtenerElemento() << "," << personaje->obtenerNombre() << ",";
     archivo << personaje->obtenerEscudo() << "," << personaje->obtenerVida() << ",";
-    archivo << personaje->obtenerEnergia() << "," << personaje->obtenerFila() << "," << personaje->obtenerColumna() << endl;
+    archivo << personaje->obtenerEnergia() << "," << personaje->obtenerCoordenada()->obtenerFila() << "," << personaje->obtenerCoordenada()->obtenerColumna() << endl;
 }
 
 void Archivo::escribirArchivo(Personaje* personajesUno[MAX_PERSONAJES], int topeUno, Personaje* personajesDos[MAX_PERSONAJES], int topeDos){
@@ -95,13 +95,11 @@ void Archivo::leerColumna(int* columna){
 }
 
 
-void Archivo::descomponerLineaBasica(string* elemento, string* nombre, int* escudo, int* vida, int* fila, int* columna){
+void Archivo::descomponerLineaBasica(string* elemento, string* nombre, int* escudo, int* vida){
     leerElemento(elemento,';');
     leerNombre(nombre,';');
     leerEscudo(escudo,';');
     leerVida(vida,'\n');
-    leerFila(fila,';');
-    leerColumna(columna);
 }
 
 void Archivo::descomponerLineaPartida(string* elemento, string* nombre, int* escudo, int* vida, int* energia, int* fila, int* columna){

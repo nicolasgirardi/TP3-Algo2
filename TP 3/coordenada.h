@@ -9,6 +9,9 @@ class Coordenada {
   int columna;
 
  public:
+ //Constructor
+  Coordenada();
+
   // recibe 2 numeros y crea esa coordenada
   // PRE: fila y columna deben ser entre 1 y 8 y caso particular ambas 0
   // POS: constructor, ambas cero se debe entender como que no est� en tablero

@@ -6,7 +6,7 @@ Personaje::Personaje(string nombre, int escudo, int vida) {
   this->escudo = escudo;
   this->vida = vida;
   this->energia = rand() % 21;
-  this->Coordenada(0,0);
+
 }
 
 int Personaje::obtenerEscudo() { return escudo; }
@@ -17,7 +17,7 @@ int Personaje::obtenerEnergia() { return energia; }
 
 int Personaje::obtenerVida() { return vida; }
 
-Coordenada* Personaje::obtenerCoordenada() { return coordenada; }
+Coordenada* Personaje::obtenerCoordenada() { return &coordenada; }
 
 bool Personaje::obtenerCondicion() { return jugando; }
 
@@ -56,5 +56,5 @@ void Personaje::daniar(int daniar) {
   this->vida = this->vida - daniar;
 }
 
-void Personaje::reseteoDefensa();
+void Personaje::reseteoDefensa(){};
 

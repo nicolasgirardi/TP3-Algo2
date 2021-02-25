@@ -1,5 +1,10 @@
 #include "coordenada.h"
 
+Coordenada::Coordenada() {
+    this->fila = 0;
+    this->columna = 0;
+}
+
 Coordenada::Coordenada(int fila, int columna) {
   this->fila = fila;
   this->columna = columna;
@@ -23,8 +28,8 @@ void Coordenada::cambiarFila(int fila) { this->fila = fila; }
 void Coordenada::cambiarColumna(int columna) { this->columna = columna; }
 
 void Coordenada::cambiarFilaYColumna(int fila,int columna){
-	cambiarFila(int fila);
-	cambiarColumna(int columna);
+	cambiarFila(fila);
+	cambiarColumna(columna);
 }
 
 void Coordenada::cambiarCoordenada(int coordenada) {

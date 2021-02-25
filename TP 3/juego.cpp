@@ -3,18 +3,20 @@
 Juego::Juego() {
     cantidadPersonajesUno = 0;
     cantidadPersonajesDos = 0;
+
     mapaPartida.mapear("mapa.csv");//crea el tablero
     cargarPersonajes();
 }
 
-void Menu::cargarPersonajes() {
+void Juego::cargarPersonajes() {
   string elemento, nombre;
   int escudo, vida, fila, columna;
   archivoPersonajes.asignarPath("personajes.csv");
   if(archivoPersonajes.procesarArchivo()){
     while (!archivoPersonajes.finArchivo()) {
-        archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida, &fila, &columna);
-        menuPartida.crearPersonaje(elemento, nombre, escudo, vida, fila, columna);
+        archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
+        menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
+    }
   }
 }
 

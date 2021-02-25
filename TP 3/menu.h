@@ -28,8 +28,9 @@ class Menu {
   void procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeUno,
                          Personaje* jugadorDos[MAX_PERSONAJES], int* topeDos);
 
-  // POST: el archivo personajes.csv queda procesado
-  void procesarArchivo();
+  // PRE: escudo= 0, 1 ó 2 ; 10 <= vida <= 100 ; elemento es tierra,agua,fuego o
+  // aire POST: crea un personaje en la memoria dinámica y lo agrega a la lista
+  void crearPersonaje(string elemento, string nombre, int escudo, int vida);
 
   // POST: procesa cada turno del juego.
   void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos);
@@ -40,13 +41,9 @@ class Menu {
   // POST:libera la memoria
   virtual ~Menu();
 
- private:
-  // PRE: escudo= 0, 1 ó 2 ; 10 <= vida <= 100 ; elemento es tierra,agua,fuego o
-  // aire POST: crea un personaje en la memoria dinámica y lo agrega a la lista
-  void crearPersonaje(string elemento, string nombre, int escudo, int vida,
-                      int fila, int columna);
+private:
 
-  // POST: pide y guarda la opción ingresada por el usuario
+    // POST: pide y guarda la opción ingresada por el usuario
   void elegirOpcion();
 
   // POST: imprime por pantalla el menú principal

@@ -44,7 +44,7 @@ public:
     void leerColumna(int* columna);
 
     //POST: guarda los strings separados por ; y convierte en entero el string escudo y vida
-    void descomponerLineaBasica(string* elemento, string* nombre, int* escudo, int* vida, int* fila, int* columna);
+    void descomponerLineaBasica(string* elemento, string* nombre, int* escudo, int* vida);
 
     void descomponerLineaPartida(string* elemento, string* nombre, int* escudo, int* vida, int* energia, int* fila, int* columna);
 

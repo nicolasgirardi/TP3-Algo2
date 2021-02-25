@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp
+agua.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
+
 /home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
 personaje.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
@@ -80,10 +84,6 @@ fstream
 ctime
 -
 
-/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp
-juego.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
-
 /home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
 camino.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
@@ -149,6 +149,10 @@ nodo_pila.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
 casilla.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.cpp
+tierra.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
 personaje.h

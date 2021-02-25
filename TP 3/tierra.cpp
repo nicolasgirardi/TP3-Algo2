@@ -40,8 +40,8 @@ int Tierra::obtenerDanio(string elemento, int zona) {
 int Tierra::zona(Coordenada* objetivo) {
   int dfila;
   int dcolumna;
-  dfila = abs(this->coordenada->obtenerFila() - objetivo->obtenerFila());
-  dcolumna = abs(this->coordenada->obtenerColumna() - objetivo->obtenerColumna());
+  dfila = abs(this->coordenada.obtenerFila() - objetivo->obtenerFila());
+  dcolumna = abs(this->coordenada.obtenerColumna() - objetivo->obtenerColumna());
   if (dfila <= 2 && dcolumna <= 2)
     return 0;
   else if (dfila <= 4 && dcolumna <= 4)
