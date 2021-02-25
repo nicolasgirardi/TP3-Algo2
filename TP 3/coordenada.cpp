@@ -43,3 +43,7 @@ bool Coordenada::comparar(Coordenada* coor) {
   else
     return false;
 }
+
+Coordenada::~Coordenada(){
+
+}
