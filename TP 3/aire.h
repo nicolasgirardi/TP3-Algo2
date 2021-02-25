@@ -4,7 +4,6 @@
 
 class Aire : public Personaje {
  private:
-  string elemento;
   string alimento;
   bool defensaActivada;
 
@@ -12,7 +11,7 @@ class Aire : public Personaje {
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje de aire con el nombre, escudo, energía y vida
   // adecuados.
-  Aire(string nombre, int escudo, int vida, int fila, int columna);
+  Aire(string nombre, int escudo, int vida);
 
   // POST: devuelve el elemento del personaje
   string obtenerElemento();
