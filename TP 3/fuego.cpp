@@ -58,7 +58,7 @@ bool Fuego::puedeAtacar(){
 		return false;	
 }
 
-bool Tierra::puedeDefender(){
+bool Fuego::puedeDefender(){
 	if(this->energia >= 10)
 		return true;
 	else
