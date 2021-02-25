@@ -33,16 +33,14 @@ void Diccionario::alta(Dato d) {
   cantidad++;
 }
 
-void Diccionario::modificarContenido(string nombre,int escudo,int vida,int energia,int fila,int columna, Coordenada coordenadas){
+void Diccionario::modificarContenido(string nombre,int escudo,int vida,int energia,int fila,int columna){
 
     Personaje* personajeBuscado = consultaNodo(nombre);
 
     personajeBuscado->asignarEscudo(escudo);
     personajeBuscado->asignarVida(vida);
     personajeBuscado->asignarEnergia(energia);
-    personajeBuscado->asignarCoordenadas(coordenadas);
-    //personajeBuscado->asignarFila(fila);
-    //personajeBuscado->asignarColumna(columna);
+    personajeBuscado->asignarCoordenada(fila, columna);
 }
 
 Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
