@@ -20,7 +20,7 @@ class Diccionario {
   // incrementa cantidad en 1
   void alta(Dato d);
 
-  void modificarContenido(string nombre,int escudo,int vida,int energia,int fila,int columna);
+  void modificarContenido(string nombre,int escudo,int vida, int energia, int fila, int columna);
 
   // POST: devuelve el nodo que esta en la clave
   Nodo* obtenerNodo(string clave, bool* encontrado);
