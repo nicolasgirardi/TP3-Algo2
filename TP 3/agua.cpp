@@ -75,3 +75,17 @@ void Agua::defensa(Personaje* aliados[]) {
     aliados[i]->asignarVida(this->vida + 10);
   }
 }
+
+bool Agua::puedeAtacar(){
+	if(this->energia >= 5)
+		return true;
+	else
+		return false;	
+}
+
+bool Agua::puedeDefender(){
+	if(this->energia >= 12)
+		return true;
+	else
+		return false;	
+}

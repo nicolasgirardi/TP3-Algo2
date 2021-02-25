@@ -43,6 +43,18 @@ class Agua : public Personaje {
   // PRE: debe tener energia suficiente para atacar
   // POST: ejecuta la defensa sobre el equipo aliado y sobre si mismo.
   void defensa(Personaje* aliados[]);
+  
+  //dice si el personaje tiene energia suficiente para atacar
+  //PRE:
+  //POS: devuelve true si tiene energia para atacar
+    
+  bool puedeAtacar();
+  
+  //dice si el personaje tiene energia suficiente para defender
+  //PRE:
+  //POS: devuelve true si tiene energia para defender
+  
+  bool puedeDefender();
 };
 
 #endif  // MAIN_CPP_AGUA_H
