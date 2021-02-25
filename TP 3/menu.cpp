@@ -243,15 +243,15 @@ void Menu::procesarMenuPrincipal(char estadoJuego) {
 
 void Menu::alimentarPersonaje(Personaje* personaje) { personaje->alimentar(); }
 
-bool Juego::filaValida(int fila){
+bool Menu::filaValida(int fila){
     return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
 }
 
-bool Juego::columnaValida(int columna){
+bool Menu::columnaValida(int columna){
     return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
 }
 
-void Juego::pedirFila(int* fila){
+void Menu::pedirFila(int* fila){
     cout << "Ingrese fila: ";
     cin >> fila;
     while (!filaValida(*fila)){
@@ -260,7 +260,7 @@ void Juego::pedirFila(int* fila){
     }
 }
 
-void Juego::pedirColumna(int* columna){
+void Menu::pedirColumna(int* columna){
     cout << "Ingrese columna: ";
     cin >> columna;
     while (!columnaValida(*columna)){
@@ -314,13 +314,6 @@ void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos
   }
 }
 
-// nuevo, posible metodo de Personaje
-void Menu::atacarPersonaje(Mapa* mapa, Personaje* personaje) {
-  if (personaje->obtenerElemento() == "aire") ataqueAire(mapa, personaje);
-  if (personaje->obtenerElemento() == "agua") ataqueAgua(mapa, personaje);
-  if (personaje->obtenerElemento() == "fuego") ataqueFuego(mapa, personaje);
-  if (personaje->obtenerElemento() == "tierra") ataqueTierra(mapa, personaje);
-}
 
 void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
   switch (stoi(opcion)) {
@@ -347,6 +340,8 @@ void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos) {
   }
 }
 
+
+//ESTO ES VIEJO, HAY QUE CAMBIARLO 
 Menu::~Menu() {
   int posicion = 1;
   Personaje* personajeEncontrado;
