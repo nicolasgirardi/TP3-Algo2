@@ -20,6 +20,16 @@ class Agua : public Personaje {
 
   // POST: devuelve el elemento del personaje
   string obtenerElemento();
+ 
+  bool filaValida(int fila);
+ 
+  bool columnaValida(int columna);
+  
+  void pedirFila(int* fila);
+   
+  void pedirColumna(int* columna);
+
+ 
 
   // Pide un objetivo a atacar
   // PRE: debe tener energia suficiente para atacar
