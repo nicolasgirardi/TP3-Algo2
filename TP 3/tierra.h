@@ -55,7 +55,13 @@ class Tierra : public Personaje {
   //PRE:
   //POS: devuelve true si tiene energia para atacar
     
-  void puedeAtacar();
+  bool puedeAtacar();
+  
+  //dice si el personaje tiene energia suficiente para defender
+  //PRE:
+  //POS: devuelve true si tiene energia para defender
+  
+  bool puedeDefender();
 };
 
 #endif  // TP2_TIERRA_H

@@ -82,3 +82,10 @@ bool Tierra::puedeAtacar(){
 	else
 		return false;	
 }
+
+bool Tierra::puedeDefender(){
+	if(this->energia >= 5)
+		return true;
+	else
+		return false;	
+}
