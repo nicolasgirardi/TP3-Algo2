@@ -11,7 +11,7 @@ class Agua : public Personaje {
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje de agua con el nombre, escudo, energía y vida
   // adecuados
-  Agua(string nombre, int escudo, int vida, int fila, int columna);
+  Agua(string nombre, int escudo, int vida);
 
   // POST: deja al personaje alimentado, con 10 puntos más de energía. La
   // energía no superará los 20 puntos. Solo se puede alimentar 3 veces a cada
