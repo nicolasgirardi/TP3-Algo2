@@ -37,6 +37,18 @@ class Fuego : public Personaje {
   // PRE: debe tener energia suficiente para atacar
   // POST: ejecuta la defensa del personaje propio.
   void defensa();
+  
+  //dice si el personaje tiene energia suficiente para atacar
+  //PRE:
+  //POS: devuelve true si tiene energia para atacar
+    
+  bool puedeAtacar();
+  
+  //dice si el personaje tiene energia suficiente para defender
+  //PRE:
+  //POS: devuelve true si tiene energia para defender
+  
+  bool puedeDefender();  
 };
 
 #endif  // MAIN_CPP_FUEGO_H

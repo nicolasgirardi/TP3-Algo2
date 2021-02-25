@@ -50,3 +50,17 @@ void Fuego::defensa() {
   gastarEnergia(10);
   asignarVida(this->vida + 10);
 }
+
+bool Fuego::puedeAtacar(){
+	if(this->energia >= 5)
+		return true;
+	else
+		return false;	
+}
+
+bool Tierra::puedeDefender(){
+	if(this->energia >= 10)
+		return true;
+	else
+		return false;	
+}
