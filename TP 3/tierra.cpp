@@ -50,7 +50,7 @@ int Tierra::zona(Coordenada* objetivo) {
     return 2;
 }
 
-void Tierra::ataque(Personaje* aliados[MAX_PERSONAJES]) {
+void Tierra::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_TIERRA);
   int zona;
   for (int i = 0; i < MAX_PERSONAJES; i++) {

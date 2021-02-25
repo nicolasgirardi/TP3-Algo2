@@ -104,13 +104,13 @@ void Menu::cargarVida(int* vida) { (*vida) = rand() % 100 + 10; }
 
 void Menu::agregarPersonaje() {
   string elemento, nombre;
-  int escudo, vida, fila, columna;
+  int escudo, vida;
 
   pedirElemento(&elemento);
   pedirNombre(&nombre);
   determinarEscudo(&escudo);
   cargarVida(&vida);
-  crearPersonaje(elemento, nombre, escudo, vida, fila, columna);
+  crearPersonaje(elemento, nombre, escudo, vida);
 }
 
 Personaje* Menu::buscarNombre(string* nombre) {
@@ -243,19 +243,19 @@ bool Menu::columnaValida(int columna){
 
 void Menu::pedirFila(int* fila){
     cout << "Ingrese fila: ";
-    cin >> fila;
+    cin >> *fila;
     while (!filaValida(*fila)){
         cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
-        cin >> fila;
+        cin >> *fila;
     }
 }
 
 void Menu::pedirColumna(int* columna){
     cout << "Ingrese columna: ";
-    cin >> columna;
+    cin >> *columna;
     while (!columnaValida(*columna)){
         cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
-        cin >> columna;
+        cin >> *columna;
     }
 }
 
@@ -269,8 +269,8 @@ void Menu::pedirCoordenada(Coordenada* destino, Personaje* personaje){
 
 void Menu::concretarMovimiento(Mapa* mapa, Personaje* personaje, Coordenada destino, int costo, bool* mover){
 	mapa->consulta(destino)->obtenerDato()->ocupar(personaje);
-    mapa->consulta(personaje->consultarCoordenada)->obtenerDato()->vaciar();
-    personaje->asignarCoordenada(destino);
+    mapa->consulta(*(personaje->obtenerCoordenada()))->obtenerDato()->vaciar();
+    personaje->asignarCoordenada(destino.obtenerFila(), destino.obtenerColumna());
     personaje->gastarEnergia(costo);
     (*mover) = true;
 }
@@ -281,9 +281,9 @@ void Menu::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos) {
   bool mover = false;
   do {
     pedirCoordenada(&destino,personaje);
-    costoMovimiento = costos->consultarCosto(personaje->consultarCoordenada, destino);
+    costoMovimiento = costos->consultarCosto(personaje->obtenerCoordenada(), &destino);
     if (costoMovimiento <= personaje->obtenerEnergia())
-      if (mapa->consulta(destino)->obtenerDato()->ocupacion)
+      if (mapa->consulta(destino)->obtenerDato()->ocupacion())
         cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
       else {
 		concretarMovimiento(mapa,personaje,destino,costoMovimiento,&mover);
@@ -292,20 +292,29 @@ void Menu::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos) {
       cout << "El personaje no cuenta con suficiente energia para ese movimiento, elija otra casilla" << endl;
   } while (!mover);
 }
+Costos* Menu::determinarCosto(string elemento, Costos* costos[4]){
+    int i = 0;
+    while (costos[i]->consultarElemento() != elemento)
+    {
+        i++;
+    }
+    return costos[i];
+}
 
-void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos) {
-  switch (stoi(opcion)) {
+void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos[4]) {
+    switch (stoi(opcion)) {
     case OPCION_ALIMENTAR:
       alimentarPersonaje(personaje);
       break;
     case OPCION_MOVER:
-      moverPersonaje(mapa, personaje, costos);
+      moverPersonaje(mapa, personaje, determinarCosto(personaje->obtenerElemento(), costos));
       break;
   }
 }
 
 
-void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
+void Menu::ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES], Personaje* aliados[MAX_PERSONAJES])
+{
   switch (stoi(opcion)) {
     case OPCION_ATACAR:
 			if (personaje->puedeAtacar()){
@@ -314,13 +323,13 @@ void Menu::ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje) {
       break;
     case OPCION_DEFENDER:
 			if (personaje->puedeDefender()){
-      	personaje->defensa();
+			    personaje->defensa(aliados);
 			}
       break;
   }
 }
 
-void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4]) {
+void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
   personaje->reseteoDefensa();
   mostrarSubmenuUno();
   elegirOpcion();
@@ -330,20 +339,14 @@ void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4]) {
   mostrarSubmenuDos();
   elegirOpcion();
   if (stoi(opcion) != PASAR) {
-    ejecutarOpcionSubDos(mapa, personaje);
+    ejecutarOpcionSubDos(personaje, enemigos, aliados);
   }
 }
 
 
 //ESTO ES VIEJO, HAY QUE CAMBIARLO 
 Menu::~Menu() {
-  int posicion = 1;
-  Personaje* personajeEncontrado;
-  while (posicion <= diccionarioPersonajes.obtenerCantidad()) {
-    personajeEncontrado = diccionarioPersonajes.consulta(posicion);
-    delete personajeEncontrado;
-    posicion++;
-  }
+
 }
 
 // los metodos de atacar, mover, alimentar personaje, no deberian de ir en la

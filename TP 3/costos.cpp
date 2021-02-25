@@ -28,7 +28,9 @@ Costos::Costos(string elemento, Mapa* mapa) {
   }
   delete coor;
 }
-
+string Costos::consultarElemento(){
+    return elemento;
+}
 void Costos::minimizar() {
   int i, j, k;
   j = 0;

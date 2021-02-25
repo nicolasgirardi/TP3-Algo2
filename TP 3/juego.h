@@ -62,7 +62,7 @@ class Juego {
 
   // PRE: siempre se juega el turno si quedan jugadores vivos de ambos equipos.
   // POST: se realiza el turno de un jugador.
-  void jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i);
+  void jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]);
 
   // POST: devuelve si la opcion es valida (entre AFIRMATIVO o NEGATIVO).
   bool opcionValida(char opcion);

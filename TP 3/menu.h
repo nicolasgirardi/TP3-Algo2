@@ -33,7 +33,7 @@ class Menu {
   void crearPersonaje(string elemento, string nombre, int escudo, int vida);
 
   // POST: procesa cada turno del juego.
-  void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4]);
+  void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);
 
   // POST: devuelve el diccionario con los personajes.
   Diccionario obtenerDiccionario();
@@ -130,21 +130,26 @@ private:
   // POST: lleva a cabo la alimentación de un personaje a elección
   void alimentarPersonaje(Personaje* personaje);
 
+
+  bool filaValida(int fila);
+
+  bool columnaValida(int columna);
+
+  void pedirFila(int* fila);
+
+  void pedirColumna(int* columna);
+
+  void pedirCoordenada(Coordenada* destino, Personaje* personaje);
+
+  void concretarMovimiento(Mapa* mapa, Personaje* personaje, Coordenada destino, int costo, bool* mover);
+
   void moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos);
 
-  void ataqueAire(Mapa* mapa, Personaje* personaje);
+  Costos* determinarCosto(string elemento, Costos* costos[4]);
 
-  void ataqueAgua(Mapa* mapa, Personaje* personaje);
+  void ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos[4]);
 
-  void ataqueFuego(Mapa* mapa, Personaje* personaje);
-
-  void ataqueTierra(Mapa* mapa, Personaje* personaje);
-
-  void atacarPersonaje(Mapa* mapa, Personaje* personaje);
-
-  void ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos);
-
-  void ejecutarOpcionSubDos(Mapa* mapa, Personaje* personaje);
+  void ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);
 };
 
 #endif  // TP2_MENU_H

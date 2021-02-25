@@ -37,8 +37,8 @@ const char NEGATIVO = 1;
 const char OPCION_ATACAR = 1;
 const char OPCION_DEFENDER = 2;
 const char PASAR = 3;
-const char JUGANDO = 0;
-//const char GUARDADO = ???;
-const char FINALIZADO = 1;
+const char JUGANDO = 'j';
+const char GUARDADO = 'g';
+const char FINALIZADO = 'f';
 
 #endif  // TP2_CONSTANTES_H

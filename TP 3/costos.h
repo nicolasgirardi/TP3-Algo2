@@ -15,6 +15,7 @@ class Costos {
   // cruzar
   Costos(string elemento, Mapa* mapa);
 
+  string consultarElemento();
   // POS: cambia la matriz de costo para minimizarlos y actualiza la matriz de
   // direcciones
   void minimizar();

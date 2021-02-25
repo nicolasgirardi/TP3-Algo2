@@ -145,15 +145,15 @@ void Juego::asignarEstadoJuego(char estado){
 }
 
 // si entra acá es porque hay alguno con vida
-void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i) {
+void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]) {
     if ((*i) >= (topeUno)) {
         (*i) = 0;
     }
     if (personajes[*i]->obtenerVida() != 0) {
-        return menuPartida.procesarTurno(&mapaPartida,personajes[*i], this->costos);//Costos* costos)
+        return menuPartida.procesarTurno(&mapaPartida,personajes[*i], this->costos, personajes, enemigos);
     }
     (*i)++;
-    return jugarTurno(personajes, topeUno, i);
+    return jugarTurno(personajes, topeUno, i, enemigos);
 }
 
 bool Juego::opcionValida(char opcion) {
@@ -186,8 +186,8 @@ void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int top
     int i = 0, j = 0;
     bool guardo = false;
     while (!consultaEliminado() && !guardo) {
-        jugarTurno(personajesPrimero, topeUno, &i);
-        jugarTurno(personajesSegundo, topeDos, &j);
+        jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
+        jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);
         if (!consultaEliminado()) {
             consultarGuardado(&guardo);
         }

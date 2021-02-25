@@ -38,6 +38,10 @@ cstring
 libraries.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/costos.cpp
+costos.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/costos.h
+
 /home/facundo/Downloads/TP3-Algo2/TP 3/costos.h
 mapa.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
@@ -80,6 +84,10 @@ fstream
 ctime
 -
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp
+juego.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
+
 /home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
 camino.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
@@ -97,6 +105,10 @@ vacio.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/vacio.h
 volcan.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/volcan.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.cpp
+menu.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
 agua.h
