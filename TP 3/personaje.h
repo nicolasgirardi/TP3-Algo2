@@ -89,9 +89,9 @@ class Personaje {
   
   virtual void reseteoDefensa();
   
-  virtual void puedeAtacar() = 0;
+  virtual bool puedeAtacar() = 0;
   
-  virtual void puedeDefender() = 0;
+  virtual bool puedeDefender() = 0;
 
   virtual ~Personaje();
 };

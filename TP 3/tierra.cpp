@@ -75,3 +75,10 @@ void Tierra::reseteoDefensa() {
 		defensaActivada = false;
 	}
 }
+
+bool Tierra::puedeAtacar(){
+	if(this->energia >= 6)
+		return true;
+	else
+		return false;	
+}

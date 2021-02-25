@@ -49,7 +49,13 @@ class Tierra : public Personaje {
   //PRE:
   //POS: resetea a falso variables relacionadas con la defensa
   
-  void reseteoDefensa();  
+  void reseteoDefensa();
+  
+  //dice si el personaje tiene energia suficiente para atacar
+  //PRE:
+  //POS: devuelve true si tiene energia para atacar
+    
+  void puedeAtacar();
 };
 
 #endif  // TP2_TIERRA_H
