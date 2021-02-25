@@ -243,33 +243,67 @@ void Menu::procesarMenuPrincipal(char estadoJuego) {
 
 void Menu::alimentarPersonaje(Personaje* personaje) { personaje->alimentar(); }
 
+bool Juego::filaValida(int fila){
+    return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
+}
+
+bool Juego::columnaValida(int columna){
+    return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
+}
+
+void Juego::pedirFila(int* fila){
+    cout << "Ingrese fila: ";
+    cin >> fila;
+    while (!filaValida(*fila)){
+        cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
+        cin >> fila;
+    }
+}
+
+void Juego::pedirColumna(int* columna){
+    cout << "Ingrese columna: ";
+    cin >> columna;
+    while (!columnaValida(*columna)){
+        cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
+        cin >> columna;
+    }
+}
+
+void Menu::pedirCoordenada(Coordenada* destino, Personaje* personaje){
+    int fila, columna;
+    cout << "Indique las coordenadas a donde desea mover "<< personaje->obtenerNombre() << ":" << endl;
+    pedirFila(&fila);
+    pedirColumna(&columna);
+    destino->cambiarFilaYColumna(fila,columna);
+}
+
+void Menu::concretarMovimiento(Mapa* mapa, Personaje* personaje, Coordenada destino, int costo, bool* mover){
+	mapa->consulta(destino)->obtenerDato()->ocupar(personaje);
+    mapa->consulta(personaje->consultarCoordenada)->obtenerDato()->vaciar();
+    personaje->asignarCoordenada(destino);
+    personaje->gastarEnergia(costo);
+    (*mover) = true;
+}
+																			  
 void Menu::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos) {
   Coordenada destino(0);
-  int costo;
+  int costoMovimiento;
   bool mover = false;
   do {
-    pedirCoordenada(&destino);
-    costo = costos->consultarCosto(personaje->consultarCoordenada, destino);
-    if (costo <= personaje->obtenerEnergia())
+    pedirCoordenada(&destino,personaje);
+    costoMovimiento = costos->consultarCosto(personaje->consultarCoordenada, destino);
+    if (costoMovimiento <= personaje->obtenerEnergia())
       if (mapa->consulta(destino)->obtenerDato()->ocupacion)
-        cout << "La casilla de destino se encuentra ocupada, elija otra casilla"
-             << endl;
+        cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
       else {
-        mapa->consulta(destino)->obtenerDato()->ocupar(personaje);
-        mapa->consulta(personaje->consultarCoordenada)->obtenerDato()->vaciar();
-        personaje->asignarCoordenada(destino);
-        personaje->gastarEnergia(costo);
-        mover = true;
+		concretarMovimiento(mapa,personaje,destino,costoMovimiento,&mover);
       }
     else
-      cout << "El personaje no cuenta con suficiente energia para ese "
-              "movimiento, elija otra casilla"
-           << endl;
+      cout << "El personaje no cuenta con suficiente energia para ese movimiento, elija otra casilla" << endl;
   } while (!mover);
 }
 
-void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje,
-                                Costos* costos) {
+void Menu::ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos) {
   switch (stoi(opcion)) {
     case OPCION_ALIMENTAR:
       alimentarPersonaje(personaje);

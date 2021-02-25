@@ -1,16 +1,11 @@
 #include "agua.h"
 
-//holaaaa soy edu
-// https://youtu.be/dQw4w9WgXcQ
 
-Agua::Agua(string nombre, int escudo, int vida, int fila, int columna)
-    : Personaje(nombre, escudo, vida, fila, columna) {
+Agua::Agua(string nombre, int escudo, int vida, int fila, int columna): Personaje(nombre, escudo, vida, fila, columna) {
   alimento = "plancton";
   vecesAlimentado = 0;
-  elemento = "agua";
 }
 
-string Agua::obtenerElemento() { return elemento; }
 
 string Agua::obtenerAlimento() { return alimento; }
 
@@ -61,11 +56,10 @@ void Agua::pedirObjetivo(Coordenada* lugar) {
 
 void Agua::ataque(Personaje* enemigos[]) {
   gastarEnergia(5);
-
   int i;
   Coordenada* lugar = new Coordenada(0);
   this->pedirObjetivo(lugar);
-  for (i = 0; i < MAX_PERSONAJES; i++) {
+  for (i = 0; i < MAX_PERSONAJES; i++) { //tiene en cuenta que solo puede haber como máximo
     if (lugar->comparar(enemigos[i]->obtenerCoordenada())) {
       enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
     }
