@@ -26,13 +26,11 @@ class Costos {
   // POS: devuelve el costo de ir de la primera a la segunda coordenada
   int consultarCosto(Coordenada* inicial, Coordenada* final);
 
-  // Recibe 2 coordenadas, inicial y final, junto a un puntero a una pila vacia
-  // y devuelve una pila con el camino
+  // Recibe 2 coordenadas, inicial y final, e imprime el camino
   // incluyendo tanto la coordenada final como inicial
   // pre: las 2 coordenadas deben ser distintas
-  // POS: devuelve la pila modificada
-  void consultarCaminoMinimo(Pila* camino, Coordenada* inicial,
-                             Coordenada* final);
+  // POS: imprime por pantalla el camino tomado
+  void consultarCaminoMinimo(Coordenada* inicial,Coordenada* final);
 
   // Destructor
   ~Costos();

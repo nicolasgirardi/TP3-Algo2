@@ -50,25 +50,30 @@ int Costos::consultarCosto(Coordenada* inicial, Coordenada* final) {
   return this->costo[inicial->obtenerCoordenada()][final->obtenerCoordenada()];
 }
 
-void Costos::consultarCaminoMinimo(Pila* camino, Coordenada* inicial,
-                                   Coordenada* final) {
+void Costos::consultarCaminoMinimo(Coordenada* inicial,Coordenada* final) {
   int i, j;
-
+  Pila camino;
   i = inicial->obtenerCoordenada();
   j = final->obtenerCoordenada();
   Coordenada* aux = new Coordenada(j);
-  camino->apilar(aux);
+  camino.apilar(aux);
 
   while (j != this->recorridos[i][j]) {
     aux = new Coordenada(this->recorridos[i][j]);
 
-    camino->apilar(aux);
+    camino.apilar(aux);
 
     j = aux->obtenerCoordenada();
   }
   aux = new Coordenada(i);
 
-  camino->apilar(aux);
+  camino.apilar(aux);
+  cout<<"Camino tomado: "<<endl;
+  i = 1;
+  while(!camino.vacia()){
+  	cout<<i<<"º: "<<camino.consultar()->obtenerFila()<<" - "<<camino.consultar()->obtenerColumna()<<endl;
+  	camino.desapilar();
+  }
 }
 
 Costos::~Costos() {
