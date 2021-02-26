@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TP_3"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_3">
+				<Option output="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/TP_3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_3"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_3/fast">
+				<Option output="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/TP_3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_3/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nicolas/Dropbox/TP3-Algo2/TP\ 3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/agua.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/agua.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/aire.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/aire.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/archivo.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/archivo.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/camino.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/camino.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/constantes.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/coordenada.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/coordenada.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/costos.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/costos.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/fuego.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/fuego.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/libraries.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/main.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/mapa.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/mapa.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/montana.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/montana.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_grafo.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_grafo.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_pila.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_pila.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/pila.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/pila.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/precipicio.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/precipicio.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/tierra.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/tierra.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.cpp">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.h">
+			<Option target="TP_3"/>
+		</Unit>
+		<Unit filename="/home/nicolas/Dropbox/TP3-Algo2/TP 3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
