@@ -239,7 +239,9 @@ void Juego::imprimirMensajeDos(){
 }
 
 void Juego::procesarJuego() {
-    menuPartida.procesarMenuPrincipal(estadoJuego);
+    char estado;
+    menuPartida.procesarMenuPrincipal(&estado);
+    estadoJuego = estado;
     if (estadoJuego == JUGANDO) {
         revisarPartida();
         bool empiezaUno;

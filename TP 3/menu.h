@@ -22,7 +22,7 @@ class Menu {
   Menu();
 
   // POST: ejecuta todos los métodos principales del menú principal
-  void procesarMenuPrincipal(char estadoJuego);
+  void procesarMenuPrincipal(char* estadoJuego);
 
   // POST: se procesa el menu del juego para comenzar a jugar
   void procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeUno,
@@ -102,9 +102,9 @@ private:
   void verDetalles();
 
   // no deberia ser un metodo de la clase Juego?
-  void iniciarJuego(char estadoJuego);
+  void iniciarJuego(char* estadoJuego);
 
-  void ejecutarOpcionPrincipal(char estadoJuego);
+  void ejecutarOpcionPrincipal(char* estadoJuego);
 
   // POST: imprime por pantalla que se ha alcanzado el numero maximo de
   // personajes elegidos

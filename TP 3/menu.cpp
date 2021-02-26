@@ -131,9 +131,9 @@ void Menu::verDetalles() {
   diccionarioPersonajes.consultaInfo(nombre);
 }
 
-void Menu::iniciarJuego(char estadoJuego) { estadoJuego = JUGANDO; }
+void Menu::iniciarJuego(char* estadoJuego) { *estadoJuego = JUGANDO; }
 
-void Menu::ejecutarOpcionPrincipal(char estadoJuego) {
+void Menu::ejecutarOpcionPrincipal(char* estadoJuego) {
   switch (stoi(opcion)) {
     case OPCION_NUEVO_PERSONAJE:
       agregarPersonaje();
@@ -217,7 +217,7 @@ void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
   }
 }
 
-void Menu::procesarMenuPrincipal(char estadoJuego) {
+void Menu::procesarMenuPrincipal(char* estadoJuego) {
   while (stoi(opcion) != SALIDA_MENU_PRINCIPAL && stoi(opcion) != OPCION_JUGAR) {
     mostrarMenuPrincipal();
     elegirOpcion();

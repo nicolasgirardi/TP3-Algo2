@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/aire.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.h
+libraries.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+libraries.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
 /home/facundo/Downloads/TP3-Algo2/TP 3/constantes.h
 cstring
 -
@@ -14,13 +38,31 @@ cstring
 libraries.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
 
-/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.cpp
-diccionario.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/costos.h
+mapa.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
+pila.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/pila.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.h
 nodo.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/nodo.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/fuego.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/juego.cpp
+juego.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
+menu.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/lago.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
 string
@@ -38,13 +80,89 @@ fstream
 ctime
 -
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp
+juego.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
+camino.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
+coordenada.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
+lago.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/lago.h
+montana.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/montana.h
+nodo_grafo.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.h
+precipicio.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
+vacio.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.h
+volcan.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.cpp
+menu.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
+agua.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/agua.h
+aire.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/aire.h
+archivo.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.h
+costos.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/costos.h
+diccionario.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.h
+fuego.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/fuego.h
+mapa.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
+tierra.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/montana.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
 /home/facundo/Downloads/TP3-Algo2/TP 3/nodo.h
 personaje.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_pila.h
+coordenada.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
 coordenada.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
 libraries.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/pila.h
+nodo_pila.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_pila.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
 
