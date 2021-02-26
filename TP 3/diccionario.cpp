@@ -141,39 +141,35 @@ void Diccionario::baja(string clave)
 
   Nodo* nodoBuscado = obtenerNodo(clave, &encontrado);
   if (encontrado) {
-    if ((nodoBuscado->obtenerIzquierdo() != 0) && (nodoBuscado->obtenerDerecho() != 0))
-    {
-        // caso 1: tiene 2 hijos
-        Nodo* menor = minimo(nodoBuscado->obtenerDerecho());
-        delete nodoBuscado->obtenerDato();
-        nodoBuscado->cambiarDato(menor->obtenerDato());  // tengo que cambiar los atributos
-        nodoBuscado->asignarClave(menor->obtenerClave());
-        descolgar(menor,menor->obtenerPadre());
-        delete menor;
-    }
-    else if (nodoBuscado->obtenerIzquierdo() != 0)
-    {
-      // caso 2: tiene un solo hijo y es izq
-      reemplazar(nodoBuscado, nodoBuscado->obtenerIzquierdo());
-      delete nodoBuscado->obtenerDato();
-      delete nodoBuscado;  // no es otro método?
-    }
-    else if (nodoBuscado->obtenerDerecho() != 0)
-    {
-      // caso 2: tiene un solo hijo y es izq
-      reemplazar(nodoBuscado, nodoBuscado->obtenerDerecho());
-      delete nodoBuscado->obtenerDato();
-      delete nodoBuscado;
-    }
-    else
-    {
-      reemplazar(nodoBuscado, 0);  // no tiene hijos
-      delete nodoBuscado->obtenerDato();
-      delete nodoBuscado;
-    }
-  }
+      if ((nodoBuscado->obtenerIzquierdo() != 0) && (nodoBuscado->obtenerDerecho() != 0)) {
+          // caso 1: tiene 2 hijos
+          Nodo *menor = minimo(nodoBuscado->obtenerDerecho());
+          delete nodoBuscado->obtenerDato();
+          nodoBuscado->cambiarDato(menor->obtenerDato());  // tengo que cambiar los atributos
+          nodoBuscado->asignarClave(menor->obtenerClave());
+          descolgar(menor, menor->obtenerPadre());
+          delete menor;
+      } else if (nodoBuscado->obtenerIzquierdo() != 0) {
+          // caso 2: tiene un solo hijo y es izq
+          reemplazar(nodoBuscado, nodoBuscado->obtenerIzquierdo());
+          delete nodoBuscado->obtenerDato();
+          delete nodoBuscado;  // no es otro método?
+      } else if (nodoBuscado->obtenerDerecho() != 0) {
+          // caso 2: tiene un solo hijo y es izq
+          reemplazar(nodoBuscado, nodoBuscado->obtenerDerecho());
+          delete nodoBuscado->obtenerDato();
+          delete nodoBuscado;
+      } else {
+          reemplazar(nodoBuscado, 0);  // no tiene hijos
+          delete nodoBuscado->obtenerDato();
+          delete nodoBuscado;
+      }
 
-  cantidad--;
+      cantidad--;
+  }
+  else{
+      cout << "Nombre no encontrado." << endl;
+  }
 }
 
 void Diccionario::inOrden(Nodo* d) {

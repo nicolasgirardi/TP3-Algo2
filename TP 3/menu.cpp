@@ -39,8 +39,7 @@ void Menu::mostrarMenuPrincipal() {
 void Menu::mostrarMenuJuego() {
   cout << endl;
   cout << "Menú" << endl;
-  cout << "1) Buscar por nombre los detalles de un personaje en particular"
-       << endl;
+  cout << "1) Buscar por nombre los detalles de un personaje en particular" << endl;
   cout << "2) Mostrar todos los nombres de los personajes" << endl;
   cout << "3) Seleccionar personaje" << endl;
   cout << "4) Salir" << endl;
@@ -119,7 +118,7 @@ Personaje* Menu::buscarNombre(string* nombre) {
 
 void Menu::eliminarPersonaje() {
   string nombre;
-  delete buscarNombre(&nombre);
+  pedirNombre(&nombre);
   diccionarioPersonajes.baja(nombre);  // Hechar vistazo a dicc.
 }
 
@@ -235,14 +234,21 @@ void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeU
 void Menu::limpiarOpcion() { this->opcion = "0"; }
 
 // BUEN NOMBRE??? creo que si jej soy edu, el de la pregunta no fui yo ja
-void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
-  limpiarOpcion();
-  while (stoi(opcion) != SALIDA_JUEGO) {
-    mostrarMenuJuego();
-    elegirOpcion();
-    ejecutarOpcionJuego(jugadorUno, topeUno, jugadorDos, topeDos);
-    cout << this->opcion << endl;
-  }
+void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos)
+{
+    limpiarOpcion();
+    while (stoi(opcion) != SALIDA_JUEGO){
+        do{
+            mostrarMenuJuego();
+            elegirOpcion();
+            if ((stoi(opcion) == SALIDA_JUEGO ) && (*topeUno) < MAX_PERSONAJES){
+                cout << "No puede salir de este menú hasta no seleccionar a sus personajes." << endl;
+            }
+        } while((stoi(opcion) == SALIDA_JUEGO ) && (*topeUno) < MAX_PERSONAJES);
+
+        ejecutarOpcionJuego(jugadorUno, topeUno, jugadorDos, topeDos);
+    }
+
 }
 
 void Menu::procesarMenuPrincipal(char* estadoJuego) {

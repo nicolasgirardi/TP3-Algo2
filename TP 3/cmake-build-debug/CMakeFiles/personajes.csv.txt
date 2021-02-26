@@ -1,6 +1,0 @@
-tierra;marcos;2;20
-agua;julia;1;30
-fuego;marcelo;0;40
-tierra;marta;2;60
-tierra;camila;0;50
-fuego;hugo;2;80
