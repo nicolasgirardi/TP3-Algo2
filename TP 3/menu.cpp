@@ -218,8 +218,7 @@ void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
 }
 
 void Menu::procesarMenuPrincipal(char estadoJuego) {
-  while (stoi(opcion) != SALIDA_MENU_PRINCIPAL &&
-         stoi(opcion) != OPCION_JUGAR) {
+  while (stoi(opcion) != SALIDA_MENU_PRINCIPAL && stoi(opcion) != OPCION_JUGAR) {
     mostrarMenuPrincipal();
     elegirOpcion();
     ejecutarOpcionPrincipal(estadoJuego);
@@ -339,10 +338,7 @@ void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Pe
 }
 
 
-//ESTO ES VIEJO, HAY QUE CAMBIARLO 
-Menu::~Menu() {
-
-}
+Menu::~Menu() {}
 
 // los metodos de atacar, mover, alimentar personaje, no deberian de ir en la
 // clase Personaje?? Hecho, solo falta el de moverr

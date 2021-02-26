@@ -14,7 +14,7 @@ class Diccionario {
   Diccionario();
 
   // POST: devuelve true si la lista está vacía
-  bool vacio() const;
+  bool vacio();
 
   // POST: inserta el dato d en la posición 1 que es la primera y ademas
   // incrementa cantidad en 1
@@ -56,6 +56,8 @@ class Diccionario {
 
   // POST: devuelve la cantidad de nodos
   int obtenerCantidad();
+
+  void descolgar(Nodo* exhijo,Nodo* padre);
 
   // POST: libera la memoria
   virtual ~Diccionario();
