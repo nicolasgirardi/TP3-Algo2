@@ -87,7 +87,9 @@ void Mapa::baja(Coordenada coor) {
   if (columna != 1) borrar->obtenerIzquierda()->cambiarDerecha(0);
   delete borrar->obtenerDato();
   delete borrar;
-  if (fila == 1 && columna == 1) inicio == 0;
+  if (fila == 1 && columna == 1) {
+      inicio = 0;
+  }
 }
 
 void Mapa::mapear(string nombreArchivo) {
