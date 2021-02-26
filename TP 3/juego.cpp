@@ -124,11 +124,19 @@ void Juego::elegirPersonajes() {
     int i;
     int topeUno = 0;
     int topeDos = 0;
+    Personaje* personajesUno[MAX_PERSONAJES];
+    Personaje* personajesDos[MAX_PERSONAJES];
 
-    menuPartida.procesarMenuJuego(personajesJugadorUno, &topeUno, personajesJugadorDos, &topeDos);
+    menuPartida.procesarMenuJuego(personajesUno, &topeUno, personajesDos, &topeDos);
+
+    for (i = 0; i < MAX_PERSONAJES; i++) {
+        personajesJugadorUno[i] = personajesUno[i];
+        personajesJugadorDos[i] = personajesDos[i];
+    }
+
+
 
     if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR){
-
         cantidadPersonajesUno = topeUno;
         cantidadPersonajesDos = topeDos;
 

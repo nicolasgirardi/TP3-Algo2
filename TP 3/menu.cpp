@@ -159,63 +159,57 @@ void Menu::imprimirUsado() {
 }
 
 void Menu::seleccionarPersonaje(Personaje* jugador[MAX_PERSONAJES], int* tope, string* nombre) {
-  if ((diccionarioPersonajes.consultaNodo(*nombre))->obtenerCondicion()) {
-    imprimirUsado();
-  } else {
+    cout << *nombre << endl;
     jugador[*tope] = diccionarioPersonajes.consultaNodo(*nombre);
+    cout << jugador[*tope]->obtenerNombre() << endl;
     jugador[*tope]->asignarCondicion(true);
+
+    diccionarioPersonajes.todoDetalles(diccionarioPersonajes.obtenerRaiz());
+
     (*tope)++;
-  }
 }
 
 void Menu::nombreValido(string *nombre)
 {
-    cout << *nombre << endl;
     if(!(diccionarioPersonajes.consultaClave(*nombre))) {
         cout << "Este nombre no se encuentra en la lista de personajes." << endl;
         pedirNombre(nombre);
         nombreValido(nombre);
     }
-    if(diccionarioPersonajes.consultaNodo(*nombre)->obtenerCondicion()){
+    if((diccionarioPersonajes.consultaNodo(*nombre))->obtenerCondicion()){
+        diccionarioPersonajes.todoDetalles(diccionarioPersonajes.obtenerRaiz());
         imprimirUsado();
         pedirNombre(nombre);
         nombreValido(nombre);
-       }
+    }
 }
 
 
 void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
 
-    string* nombre = new string;
 
-    while ((*topeUno < MAX_PERSONAJES) && (*topeDos < MAX_PERSONAJES))
-    {
-        if ((((*topeUno) + (*topeDos)) % 2 == 0) && (*topeUno < MAX_PERSONAJES)){
-            // le toca al jugador 1 y no llegó al tope
-            cout << "Jugador uno:" << endl;
-            pedirNombre(nombre);
 
-            //nombreValido(nombre);
+    for (int i = 0; i < MAX_PERSONAJES; ++i){
+        string* nombre1 = new string;
+        string* nombre2 = new string;
 
-            seleccionarPersonaje(jugadorUno, topeUno, nombre);
-            cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+        cout << "Jugador uno:" << endl;
+        pedirNombre(nombre1);
+        nombreValido(nombre1);
+        seleccionarPersonaje(jugadorUno, topeUno, nombre1);
+        cout << *nombre1 << " ha sido seleccionado con éxito." << endl << endl;
 
-        } else if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno >= MAX_PERSONAJES)) {
-            // le toca a j1 y llegó al tope
-            imprimirError();
-        }
-        if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
-            cout << "Jugador dos:" << endl;
-            pedirNombre(nombre);
-            //nombreValido(nombre);
-            seleccionarPersonaje(jugadorDos, topeDos, nombre);
-            cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+        cout << "Jugador dos:" << endl;
+        pedirNombre(nombre2);
+        nombreValido(nombre2);
+        seleccionarPersonaje(jugadorDos, topeDos, nombre2);
+        cout << *nombre2 << " ha sido seleccionado con éxito." << endl << endl;
 
-        } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
-            imprimirError();
-        }
+        delete nombre1;
+        delete nombre2;
     }
-    delete nombre;
+
+
 
 }
 

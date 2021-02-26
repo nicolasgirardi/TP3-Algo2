@@ -10,6 +10,9 @@ class Diccionario {
   int cantidad;
 
  public:
+
+  void todoDetalles(Nodo* d);
+
   // POST: crea una lista vacia. Deja primero y cantidad en 0.
   Diccionario();
 
