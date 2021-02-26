@@ -6,3 +6,89 @@
 
 #IncludeRegexTransform: 
 
+/home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+libraries.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+personaje.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/constantes.h
+cstring
+-
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
+libraries.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/lago.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+string
+-
+cstring
+-
+cstdlib
+-
+iostream
+-
+constantes.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/constantes.h
+fstream
+-
+ctime
+-
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.cpp
+mapa.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
+camino.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/camino.h
+coordenada.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
+lago.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/lago.h
+montana.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/montana.h
+nodo_grafo.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.h
+precipicio.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
+vacio.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.h
+volcan.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/montana.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
+coordenada.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.h
+libraries.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/libraries.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+
+/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.h
+casilla.h
+/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
+

@@ -92,7 +92,7 @@ void Mapa::baja(Coordenada coor) {
 void Mapa::mapear(string nombreArchivo) {
   int i, j;
   fstream archivo;
-  archivo.open("mapa.csv");
+  archivo.open(nombreArchivo);
   Coordenada coor(0, 0);
   string tipo;
   if(archivo.is_open()){tipo = "esta abierto";}
