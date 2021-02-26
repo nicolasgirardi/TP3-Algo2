@@ -11,14 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460d3983-ccb5-49e8-9765-ba816b36fe35" name="Default Changelist" comment="arreglamos la salida del menu de seleccion de personajes">
+    <list default="true" id="460d3983-ccb5-49e8-9765-ba816b36fe35" name="Default Changelist" comment="emprolijamos la interfaz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archivo.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/archivo.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TP_3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TP_3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constantes.h" beforeDir="false" afterPath="$PROJECT_DIR$/constantes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/juego.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/juego.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/menu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/menu.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614351601664</updated>
       <workItem from="1614351603320" duration="13386000" />
-      <workItem from="1614367755874" duration="5281000" />
+      <workItem from="1614367755874" duration="10249000" />
     </task>
     <task id="LOCAL-00001" summary="hicimos mucho">
       <created>1614356396653</created>
@@ -119,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614370449690</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="emprolijamos la interfaz">
+      <created>1614373087062</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614373087063</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +148,7 @@
     <MESSAGE value="hicimos mucho" />
     <MESSAGE value="hicimos mucho pero marta esta jugando" />
     <MESSAGE value="arreglamos la salida del menu de seleccion de personajes" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglamos la salida del menu de seleccion de personajes" />
+    <MESSAGE value="emprolijamos la interfaz" />
+    <option name="LAST_COMMIT_MESSAGE" value="emprolijamos la interfaz" />
   </component>
 </project>

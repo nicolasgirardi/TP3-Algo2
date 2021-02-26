@@ -38,6 +38,8 @@ class Menu {
   // POST: devuelve el diccionario con los personajes.
   Diccionario obtenerDiccionario();
 
+  string obtenerOpcion();
+
   // POST:libera la memoria
   virtual ~Menu();
 

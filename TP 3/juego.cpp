@@ -124,14 +124,27 @@ void Juego::elegirPersonajes() {
     int i;
     int topeUno = 0;
     int topeDos = 0;
+
     menuPartida.procesarMenuJuego(personajesJugadorUno, &topeUno, personajesJugadorDos, &topeDos);
-    cantidadPersonajesUno = topeUno;
-    cantidadPersonajesDos = topeDos;
-    for(i=0;i<3;i++){
-        cout << personajesJugadorUno[i]->obtenerNombre() << endl;
-        cout << personajesJugadorDos[i]->obtenerNombre() << endl;
+
+    if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR){
+
+        cantidadPersonajesUno = topeUno;
+        cantidadPersonajesDos = topeDos;
+
+        cout << "Personajes Jugador 1:" << endl << endl;
+        for(i = 0; i < MAX_PERSONAJES; i++){
+            cout << i+1 << ". "<< personajesJugadorUno[i]->obtenerNombre() << endl;
+        }
+        cout << endl << endl;
+        cout << "Personajes Jugador 2:" << endl << endl;
+        for(i = 0; i < MAX_PERSONAJES; i++){
+            cout << i+1 << ". "<< personajesJugadorDos[i]->obtenerNombre() << endl;
+        }
+        cout << endl << endl;
+
+        ubicarPersonajes();
     }
-    ubicarPersonajes();
 }
 
 void Juego::elegirPrimerLugar(bool* empiezaUno) { (*empiezaUno) = rand() % 2; }
@@ -267,15 +280,21 @@ void Juego::procesarJuego() {
     estadoJuego = estado;
     if (estadoJuego == JUGANDO) {
         revisarPartida();
-        bool empiezaUno;
-        elegirPrimerLugar(&empiezaUno);
-        if (empiezaUno) {
-            imprimirMensajeUno();
-            procesarTurnos(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
-        } else {
-            imprimirMensajeDos();
-            procesarTurnos(personajesJugadorDos, cantidadPersonajesDos, personajesJugadorUno, cantidadPersonajesUno);
+        if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR)
+        {
+            bool empiezaUno;
+            elegirPrimerLugar(&empiezaUno);
+            if (empiezaUno) {
+                imprimirMensajeUno();
+                procesarTurnos(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
+            } else {
+                imprimirMensajeDos();
+                procesarTurnos(personajesJugadorDos, cantidadPersonajesDos, personajesJugadorUno, cantidadPersonajesUno);
+            }
         }
+    }
+    if (stoi(menuPartida.obtenerOpcion()) == SALIDA_JUEGO){
+        estadoJuego = FINALIZADO;
     }
     if (estadoJuego == FINALIZADO) {
         archivoPartida.eliminarArchivo();

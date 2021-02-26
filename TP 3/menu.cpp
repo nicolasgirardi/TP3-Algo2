@@ -42,8 +42,8 @@ void Menu::mostrarMenuJuego() {
   cout << "1) Buscar por nombre los detalles de un personaje en particular" << endl;
   cout << "2) Mostrar todos los nombres de los personajes" << endl;
   cout << "3) Seleccionar personaje" << endl;
-  cout << "4) Salir" << endl;
-  cout << endl;
+  cout << "4) Salir" << endl << endl;
+
 }
 
 void Menu::mostrarSubmenuUno() {
@@ -67,13 +67,10 @@ bool Menu::elementoValido(string elemento) {
 
 void Menu::pedirElemento(string* elemento) {
   cout << endl;
-  cout << "Ingrese el elemento del personaje. Puede ser: fuego, tierra, aire o "
-          "agua"
-       << endl;
+  cout << "Ingrese el elemento del personaje. Puede ser: fuego, tierra, aire o agua" << endl;
   cin >> (*elemento);
   while (!elementoValido(*elemento)) {
-    cout << "Elemento incorrecto. Favor de ingresar: fuego, tierra, aire o agua"
-         << endl;
+    cout << "Elemento incorrecto. Favor de ingresar: fuego, tierra, aire o agua" << endl;
     cin >> (*elemento);
   }
 }
@@ -186,32 +183,40 @@ void Menu::nombreValido(string *nombre)
        }
 }
 
+
 void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
-  string* nombre = new string;
 
-  if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno < MAX_PERSONAJES)){
-      // le toca al jugador 1 y no llegó al tope
-      cout << "Jugador uno:" << endl;
-      pedirNombre(nombre);
-      //nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
-      seleccionarPersonaje(jugadorUno, topeUno, nombre);
-      cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+    string* nombre = new string;
 
-  } else if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno >= MAX_PERSONAJES)) {
-      // le toca a j1 y llegó al tope
-      imprimirError();
-  }
-  if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
-      cout << "Jugador dos:" << endl;
-      pedirNombre(nombre);
-      //nombreValido(nombre);
-      seleccionarPersonaje(jugadorDos, topeDos, nombre);
-      cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+    while ((*topeUno < MAX_PERSONAJES) && (*topeDos < MAX_PERSONAJES))
+    {
+        if ((((*topeUno) + (*topeDos)) % 2 == 0) && (*topeUno < MAX_PERSONAJES)){
+            // le toca al jugador 1 y no llegó al tope
+            cout << "Jugador uno:" << endl;
+            pedirNombre(nombre);
 
-  } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
-    imprimirError();
-  }
-  delete nombre;
+            //nombreValido(nombre);
+
+            seleccionarPersonaje(jugadorUno, topeUno, nombre);
+            cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+
+        } else if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno >= MAX_PERSONAJES)) {
+            // le toca a j1 y llegó al tope
+            imprimirError();
+        }
+        if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
+            cout << "Jugador dos:" << endl;
+            pedirNombre(nombre);
+            //nombreValido(nombre);
+            seleccionarPersonaje(jugadorDos, topeDos, nombre);
+            cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+
+        } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
+            imprimirError();
+        }
+    }
+    delete nombre;
+
 }
 
 void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeUno, Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
@@ -235,18 +240,12 @@ void Menu::limpiarOpcion() { this->opcion = "0"; }
 void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos)
 {
     limpiarOpcion();
-    while (stoi(opcion) != SALIDA_JUEGO){
-        do{
-            mostrarMenuJuego();
-            elegirOpcion();
-            if ((stoi(opcion) == SALIDA_JUEGO ) && (*topeUno) < MAX_PERSONAJES){
-                cout << "No puede salir de este menú hasta no seleccionar a sus personajes." << endl;
-            }
-        } while((stoi(opcion) == SALIDA_JUEGO ) && (*topeUno) < MAX_PERSONAJES);
 
+    while (stoi(opcion) != SALIDA_JUEGO && stoi(opcion) != OPCION_SELECCIONAR){
+        mostrarMenuJuego();
+        elegirOpcion();
         ejecutarOpcionJuego(jugadorUno, topeUno, jugadorDos, topeDos);
     }
-
 }
 
 void Menu::procesarMenuPrincipal(char* estadoJuego) {
@@ -372,6 +371,10 @@ void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Pe
     ejecutarOpcionSubDos(personaje, enemigos, aliados);
   }
 }
+
+string Menu::obtenerOpcion(){
+    return opcion;
+};
 
 
 Menu::~Menu() {}
