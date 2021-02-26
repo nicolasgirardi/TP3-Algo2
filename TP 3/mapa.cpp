@@ -112,6 +112,7 @@ void Mapa::mapear(string nombreArchivo) {
       }
     }
   }
+  archivo.close();
 }
 
 Mapa::~Mapa() {

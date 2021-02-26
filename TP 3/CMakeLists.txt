@@ -19,7 +19,6 @@ add_executable(tp3
         constantes.h
         coordenada.cpp
         coordenada.h
-        costos.cpp
         costos.h
         diccionario.cpp
         diccionario.h
@@ -54,4 +53,4 @@ add_executable(tp3
         vacio.cpp
         vacio.h
         volcan.cpp
-        volcan.h)
+        volcan.h costos.cpp)

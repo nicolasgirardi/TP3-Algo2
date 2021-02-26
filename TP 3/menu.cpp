@@ -30,8 +30,7 @@ void Menu::mostrarMenuPrincipal() {
   cout << "1) Agregar personaje" << endl;
   cout << "2) Eliminar personaje" << endl;
   cout << "3) Mostrar todos los nombres de los personajes" << endl;
-  cout << "4) Buscar por nombre los detalles de un personaje en particular"
-       << endl;
+  cout << "4) Buscar por nombre los detalles de un personaje en particular" << endl;
   cout << "5) Comenzar juego" << endl;
   cout << "6) Salir" << endl;
   cout << endl;
@@ -87,13 +86,9 @@ void Menu::pedirNombre(string* nombre) {
 }
 
 void Menu::ingresarNombre(string* nombre) {
-  cout << endl;
-  cout << "Recuerde que no puede crear un personaje con un nombre ya utilizado"
-       << endl;
   pedirNombre(nombre);
   while (diccionarioPersonajes.consultaClave(*nombre)) {
-    cout << "Este nombre ya está en uso. Favor de ingresar un nuevo nombre"
-         << endl;
+    cout << "Este nombre ya está en uso. Favor de ingresar un nuevo nombre" << endl;
     pedirNombre(nombre);
   }
 }
