@@ -28,9 +28,7 @@ void Juego::cargarPersonajes() {
   string elemento, nombre;
   int escudo, vida, fila, columna;
   archivoPersonajes.asignarPath("personajes.csv");
-  cout << "por aca si pasa"<<endl;
   if(archivoPersonajes.procesarArchivo()){
-      cout << "abriro archivo"<<endl;
     while (!archivoPersonajes.finArchivo()) {
         archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
         menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
@@ -69,12 +67,12 @@ void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERS
     int fila, columna;
     bool puedoConsultar =  true;
     while (puedoConsultar){
-        cout << "Indique las coordenadas donde desea posicionar a "<< personajes[i]->obtenerNombre() << ":" << endl;
+        cout << "Indique las coordenadas donde desea posicionar a "<< personajes[i]->obtenerNombre() << ":" << endl << endl;
         pedirFila(&fila);
         pedirColumna(&columna);
         coor->cambiarFilaYColumna(fila,columna);
         if(mapaPartida.ocupado(*coor)) {
-            cout << "El lugar elegido se encuentra ocupado, vuelva a elegir uno.";
+            cout << "El lugar elegido se encuentra ocupado, vuelva a elegir uno." << endl << endl;
         } else {
             puedoConsultar = false;
         }
@@ -97,17 +95,16 @@ void Juego::posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int i){
 void Juego::procesarUbicacion(bool empiezaUno) {
     int i = 0;
     if (empiezaUno)
-        while ((i <
-                MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
+        while ((i < MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
             posicionarPersonaje(personajesJugadorUno, i);
             posicionarPersonaje(personajesJugadorDos, i);
             i++;
         }
     else
-        while ((i <
-                MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
+        while ((i < MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
             posicionarPersonaje(personajesJugadorDos, i);
             posicionarPersonaje(personajesJugadorUno, i);
+            i++;
         }
 }
 
@@ -176,7 +173,7 @@ void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* 
 }
 
 bool Juego::opcionValida(char opcion) {
-    return (opcion == AFIRMATIVO || opcion == NEGATIVO);
+    return (opcion == SI|| opcion == NO);
 }
 
 void Juego::pedirGuardado(char* opcion) {
@@ -189,7 +186,7 @@ void Juego::pedirGuardado(char* opcion) {
 }
 
 void Juego::procesarGuardado(char opcion, bool* guardo) {
-    if (opcion == AFIRMATIVO) {
+    if (opcion == SI) {
         archivoPartida.asignarPath("partida.csv");
         archivoPartida.escribirArchivo(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
     }
@@ -210,9 +207,9 @@ void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int top
     int i = 0, j = 0;
     bool guardo = false;
     while (!consultaEliminado() && !guardo) {
-        cout << "jugador uno " << mensajeRandom() << endl;
+        cout << "Jugador uno " << mensajeRandom() << endl << endl;
         jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
-        cout << "jugador dos" << mensajeRandom() << endl;
+        cout << "Jugador dos" << mensajeRandom() << endl << endl;
         jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);
         if (!consultaEliminado()) {
             consultarGuardado(&guardo);

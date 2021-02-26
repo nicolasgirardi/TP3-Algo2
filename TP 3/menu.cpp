@@ -80,7 +80,7 @@ void Menu::pedirElemento(string* elemento) {
 
 void Menu::pedirNombre(string* nombre) {
   cout << endl;
-  cout << "Ingrese el nombre del personaje" << endl;
+  cout << "Ingrese el nombre del personaje:" << endl;
   cin >> (*nombre);
 }
 
@@ -158,17 +158,15 @@ void Menu::imprimirError() {
 }
 
 void Menu::imprimirUsado() {
-  cout << "Este personaje ya está seleccionado" << endl;
+  cout << "Este personaje ya está seleccionado." << endl;
 }
 
 void Menu::seleccionarPersonaje(Personaje* jugador[MAX_PERSONAJES], int* tope, string* nombre) {
   if ((diccionarioPersonajes.consultaNodo(*nombre))->obtenerCondicion()) {
     imprimirUsado();
   } else {
-    cout << *tope << endl;
     jugador[*tope] = diccionarioPersonajes.consultaNodo(*nombre);
     jugador[*tope]->asignarCondicion(true);
-    cout << jugador[*tope]->obtenerNombre() << endl;
     (*tope)++;
   }
 }
@@ -177,12 +175,12 @@ void Menu::nombreValido(string *nombre)
 {
     cout << *nombre << endl;
     if(!(diccionarioPersonajes.consultaClave(*nombre))) {
-        cout << "este nombre no existe" << endl;
+        cout << "Este nombre no se encuentra en la lista de personajes." << endl;
         pedirNombre(nombre);
         nombreValido(nombre);
     }
     if(diccionarioPersonajes.consultaNodo(*nombre)->obtenerCondicion()){
-        cout << "este nombre esta en uso" <<endl;
+        imprimirUsado();
         pedirNombre(nombre);
         nombreValido(nombre);
        }
@@ -190,26 +188,26 @@ void Menu::nombreValido(string *nombre)
 
 void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
   string* nombre = new string;
-  cout << nombre <<endl;
-    cout << this->opcion << endl;
-  if (((*topeUno + *topeDos) % 2 == 0) &&
-      (*topeUno < MAX_PERSONAJES)) {  // le toca al jugador 1 y no llegó al tope
-    cout << "jugador uno:" << endl;
+
+  if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno < MAX_PERSONAJES)){
+      // le toca al jugador 1 y no llegó al tope
+      cout << "Jugador uno:" << endl;
       pedirNombre(nombre);
-     // nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
-   seleccionarPersonaje(jugadorUno, topeUno, nombre);
-      cout << this->opcion << endl;
-  } else if (((*topeUno + *topeDos) % 2 == 0) &&
-             (*topeUno >= MAX_PERSONAJES)) {  // le toca a j1 y llegó al tope
-    imprimirError();
+      //nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
+      seleccionarPersonaje(jugadorUno, topeUno, nombre);
+      cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+
+  } else if (((*topeUno + *topeDos) % 2 == 0) && (*topeUno >= MAX_PERSONAJES)) {
+      // le toca a j1 y llegó al tope
+      imprimirError();
   }
   if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
-      cout << this->opcion << endl;
-      cout << "ya elegi 1 ahora el otro" << endl;
-    pedirNombre(nombre);
-   // nombreValido(nombre);
-    cout << "se pidio bien el nombre de 2 " << endl;
-    seleccionarPersonaje(jugadorDos, topeDos, nombre);
+      cout << "Jugador dos:" << endl;
+      pedirNombre(nombre);
+      //nombreValido(nombre);
+      seleccionarPersonaje(jugadorDos, topeDos, nombre);
+      cout << *nombre << " ha sido seleccionado con éxito." << endl << endl;
+
   } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
     imprimirError();
   }
@@ -359,7 +357,10 @@ void Menu::ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PE
 
 void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
   personaje->reseteoDefensa();
-  cout << "está jugando con " << personaje->obtenerNombre() << endl;
+  cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
+  cout << "Estos son sus detalles:" << endl << endl;
+  diccionarioPersonajes.consultaInfo(personaje->obtenerNombre());
+
   mostrarSubmenuUno();
   elegirOpcion();
   if (stoi(opcion) != PASAR) {
