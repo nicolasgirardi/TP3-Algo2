@@ -150,6 +150,8 @@ private:
   void ejecutarOpcionSubUno(Mapa* mapa, Personaje* personaje, Costos* costos[4]);
 
   void ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);
+
+  void nombreValido(string* nombre);
 };
 
 #endif  // TP2_MENU_H

@@ -80,6 +80,7 @@ void Diccionario::consultaInfo(string clave) {
   cout << "Escudo:" << (personajeBuscado->obtenerEscudo()) << endl;
   cout << "Energía:" << (personajeBuscado->obtenerEnergia()) << endl;
   cout << "Alimento:" << (personajeBuscado->obtenerAlimento()) << endl;
+  cout << "Jugando:" << (personajeBuscado->obtenerCondicion()) << endl;
   cout << endl;
 }
 

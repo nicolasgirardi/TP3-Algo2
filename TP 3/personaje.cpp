@@ -6,6 +6,7 @@ Personaje::Personaje(string nombre, int escudo, int vida) {
   this->escudo = escudo;
   this->vida = vida;
   this->energia = rand() % 21;
+  this->jugando = false;
 
 }
 
