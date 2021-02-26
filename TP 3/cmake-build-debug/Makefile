@@ -224,33 +224,6 @@ archivo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp3.dir/build.make CMakeFiles/tp3.dir/archivo.cpp.s
 .PHONY : archivo.cpp.s
 
-ataques.o: ataques.cpp.o
-
-.PHONY : ataques.o
-
-# target to build an object file
-ataques.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp3.dir/build.make CMakeFiles/tp3.dir/ataques.cpp.o
-.PHONY : ataques.cpp.o
-
-ataques.i: ataques.cpp.i
-
-.PHONY : ataques.i
-
-# target to preprocess a source file
-ataques.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp3.dir/build.make CMakeFiles/tp3.dir/ataques.cpp.i
-.PHONY : ataques.cpp.i
-
-ataques.s: ataques.cpp.s
-
-.PHONY : ataques.s
-
-# target to generate assembly for a file
-ataques.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp3.dir/build.make CMakeFiles/tp3.dir/ataques.cpp.s
-.PHONY : ataques.cpp.s
-
 camino.o: camino.cpp.o
 
 .PHONY : camino.o
@@ -836,9 +809,6 @@ help:
 	@echo "... archivo.o"
 	@echo "... archivo.i"
 	@echo "... archivo.s"
-	@echo "... ataques.o"
-	@echo "... ataques.i"
-	@echo "... ataques.s"
 	@echo "... camino.o"
 	@echo "... camino.i"
 	@echo "... camino.s"

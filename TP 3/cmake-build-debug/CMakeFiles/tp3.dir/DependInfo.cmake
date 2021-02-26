@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/agua.cpp.o"
   "/home/facundo/Downloads/TP3-Algo2/TP 3/aire.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/aire.cpp.o"
   "/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/archivo.cpp.o"
-  "/home/facundo/Downloads/TP3-Algo2/TP 3/ataques.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/ataques.cpp.o"
   "/home/facundo/Downloads/TP3-Algo2/TP 3/camino.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/camino.cpp.o"
   "/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/casilla.cpp.o"
   "/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.cpp" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/tp3.dir/coordenada.cpp.o"

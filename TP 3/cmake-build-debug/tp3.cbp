@@ -102,9 +102,6 @@
 		<Unit filename="/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.h">
 			<Option target="tp3"/>
 		</Unit>
-		<Unit filename="/home/facundo/Downloads/TP3-Algo2/TP 3/ataques.cpp">
-			<Option target="tp3"/>
-		</Unit>
 		<Unit filename="/home/facundo/Downloads/TP3-Algo2/TP 3/camino.cpp">
 			<Option target="tp3"/>
 		</Unit>

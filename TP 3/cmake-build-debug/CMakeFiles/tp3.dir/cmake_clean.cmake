@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tp3.dir/agua.cpp.o"
   "CMakeFiles/tp3.dir/aire.cpp.o"
   "CMakeFiles/tp3.dir/archivo.cpp.o"
-  "CMakeFiles/tp3.dir/ataques.cpp.o"
   "CMakeFiles/tp3.dir/camino.cpp.o"
   "CMakeFiles/tp3.dir/casilla.cpp.o"
   "CMakeFiles/tp3.dir/coordenada.cpp.o"

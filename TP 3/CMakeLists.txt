@@ -12,7 +12,6 @@ add_executable(tp3
         aire.h
         archivo.cpp
         archivo.h
-        ataques.cpp
         camino.cpp
         camino.h
         casilla.cpp

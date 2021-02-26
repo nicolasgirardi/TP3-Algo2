@@ -22,8 +22,6 @@ CMakeFiles/tp3.dir/archivo.cpp.o: ../coordenada.h
 CMakeFiles/tp3.dir/archivo.cpp.o: ../libraries.h
 CMakeFiles/tp3.dir/archivo.cpp.o: ../personaje.h
 
-CMakeFiles/tp3.dir/ataques.cpp.o: ../ataques.cpp
-
 CMakeFiles/tp3.dir/camino.cpp.o: ../camino.cpp
 CMakeFiles/tp3.dir/camino.cpp.o: ../camino.h
 CMakeFiles/tp3.dir/camino.cpp.o: ../casilla.h
