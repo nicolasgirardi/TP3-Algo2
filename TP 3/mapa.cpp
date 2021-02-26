@@ -32,9 +32,9 @@ nodoGrafo* Mapa::consulta(Coordenada coor) {
 }
 
 void Mapa::alta(Coordenada coor, string tipo) {
-  Casilla* casilla = 0;
-  nodoGrafo* nuevo = 0;
-  nodoGrafo* aux = 0;
+  Casilla* casilla;
+  nodoGrafo* nuevo;
+  nodoGrafo* aux;
   int fila = coor.obtenerFila();
   int columna = coor.obtenerColumna();
   Coordenada coorAux(fila, columna);
@@ -61,16 +61,17 @@ void Mapa::alta(Coordenada coor, string tipo) {
   nuevo = new nodoGrafo(casilla);
   if (this->vacio()) {
     inicio = nuevo;
-  } else {
-    if (fila != 1) {
-      coorAux.cambiarFila(fila - 1);
+  }
+  else {
+    if(fila != 1) {
+      coorAux.cambiarFilaYColumna(fila - 1, columna);
       aux = this->consulta(coorAux);
       aux->cambiarAbajo(nuevo);
       nuevo->cambiarArriba(aux);
-      coorAux.cambiarFila(fila + 1);
+
     }
-    if (columna != 1) {
-      coorAux.cambiarColumna(columna - 1);
+    if(columna != 1) {
+      coorAux.cambiarFilaYColumna(fila, columna - 1);
       aux = this->consulta(coorAux);
       aux->cambiarDerecha(nuevo);
       nuevo->cambiarIzquierda(aux);
@@ -95,8 +96,7 @@ void Mapa::mapear(string nombreArchivo) {
   archivo.open(nombreArchivo);
   Coordenada coor(0, 0);
   string tipo;
-  if(archivo.is_open()){tipo = "esta abierto";}
-
+  //if(archivo.is_open()){tipo = "esta abierto";}
   for (i = 1; i <= 8; i++) {
     coor.cambiarFila(i);
     for (j = 1; j <= 8; j++) {
