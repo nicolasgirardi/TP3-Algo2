@@ -91,16 +91,18 @@ void Mapa::baja(Coordenada coor) {
 
 void Mapa::mapear(string nombreArchivo) {
   int i, j;
-  ifstream archivo;
-  archivo.open(nombreArchivo);
+  fstream archivo;
+  archivo.open("mapa.csv");
   Coordenada coor(0, 0);
   string tipo;
+  if(archivo.is_open()){tipo = "esta abierto";}
+
   for (i = 1; i <= 8; i++) {
     coor.cambiarFila(i);
     for (j = 1; j <= 8; j++) {
       coor.cambiarColumna(j);
       if (j < 8) {
-        getline(archivo, tipo);
+        getline(archivo, tipo, ';');
         this->alta(coor, tipo);
       } else {
         getline(archivo, tipo);

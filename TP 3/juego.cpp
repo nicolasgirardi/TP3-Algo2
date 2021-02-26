@@ -4,7 +4,7 @@ Juego::Juego() {
     cantidadPersonajesUno = 0;
     cantidadPersonajesDos = 0;
 
-    mapaPartida.mapear("mapa.csv.txt");//crea el tablero
+    mapaPartida.mapear("mapa.csv");//crea el tablero
     cargarPersonajes();
     inicializarCostos();
 }
