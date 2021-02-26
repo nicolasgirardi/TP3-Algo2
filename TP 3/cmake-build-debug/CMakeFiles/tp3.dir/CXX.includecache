@@ -52,14 +52,6 @@ nodo.h
 personaje.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/personaje.h
 
-/home/facundo/Downloads/TP3-Algo2/TP 3/juego.cpp
-juego.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
-
-/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
-menu.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/menu.h
-
 /home/facundo/Downloads/TP3-Algo2/TP 3/lago.h
 casilla.h
 /home/facundo/Downloads/TP3-Algo2/TP 3/casilla.h
@@ -79,10 +71,6 @@ fstream
 -
 ctime
 -
-
-/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp
-juego.h
-/home/facundo/Downloads/TP3-Algo2/TP 3/juego.h
 
 /home/facundo/Downloads/TP3-Algo2/TP 3/mapa.h
 camino.h

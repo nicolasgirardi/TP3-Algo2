@@ -109,10 +109,10 @@ void Menu::agregarPersonaje() {
 }
 
 Personaje* Menu::buscarNombre(string* nombre) {
-  ingresarNombre(nombre);  // esto no va en otro metodo?
+  pedirNombre(nombre);  // esto no va en otro metodo?
   while (!diccionarioPersonajes.consultaClave(*nombre)) {
     cout << "Nombre no encontrado. Vuelva a ingresar un nombre" << endl;
-    ingresarNombre(nombre);
+    pedirNombre(nombre);
   }
   return diccionarioPersonajes.consultaNodo(*nombre);
 }
@@ -177,27 +177,28 @@ void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
   string* nombre;
   if (((*topeUno + *topeDos) % 2 == 0) &&
       (*topeUno < MAX_PERSONAJES)) {  // le toca al jugador 1 y no llegó al tope
-    ingresarNombre(nombre);
+    pedirNombre(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
     seleccionarPersonaje(jugadorUno, topeUno, nombre);
   } else if (((*topeUno + *topeDos) % 2 == 0) &&
              (*topeUno >= MAX_PERSONAJES)) {  // le toca a j1 y llegó al tope
     imprimirError();
   }
   if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
-    ingresarNombre(nombre);
+    pedirNombre(nombre);
     seleccionarPersonaje(jugadorDos, topeDos, nombre);
   } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
     imprimirError();
   }
 }
 
-void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
+void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeUno, Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
   switch (stoi(opcion)) {
-    case OPCION_LISTAR:
-      mostrarNombres();
-      break;
+
     case OPCION_DETALLAR:
       verDetalles();
+      break;
+    case OPCION_LISTAR:
+      mostrarNombres();
       break;
     case OPCION_SELECCIONAR:
       procesarSeleccion(jugadorUno, topeUno, jugadorDos, topeDos);
