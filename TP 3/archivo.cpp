@@ -26,7 +26,13 @@ bool Archivo::procesarArchivo(){
 }
 
 bool Archivo::finArchivo() {
-    return (archivo.eof() != 0);
+    cout << "finarchivo"<<endl;
+    if(archivo.eof() != 0){
+        cout << "asdas"<<endl;
+        return true;
+    }
+    else
+        return false;
 }
 
 void Archivo::abrirArchivoEscritura(){

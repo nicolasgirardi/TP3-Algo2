@@ -174,21 +174,34 @@ string* nombre) {
 }
 
 void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
-  string* nombre;
+  string* nombre = new string;
+  cout << nombre <<endl;
+    cout << this->opcion << endl;
   if (((*topeUno + *topeDos) % 2 == 0) &&
       (*topeUno < MAX_PERSONAJES)) {  // le toca al jugador 1 y no llegó al tope
-    pedirNombre(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
+    cout << "jugador uno:" << endl;
+    nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
+    while(!diccionarioPersonajes.consultaClave(*nombre)){
+        cout << "nombre inexistente" << endl;
+        pedirNombre(nombre);
+    }
+
     seleccionarPersonaje(jugadorUno, topeUno, nombre);
+      cout << this->opcion << endl;
   } else if (((*topeUno + *topeDos) % 2 == 0) &&
              (*topeUno >= MAX_PERSONAJES)) {  // le toca a j1 y llegó al tope
     imprimirError();
   }
   if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos < MAX_PERSONAJES)) {
+      cout << this->opcion << endl;
+      cout << "ya elegi 1 ahora el otro" << endl;
     pedirNombre(nombre);
+    cout << "se pidio bien el nombre de 2 " << endl;
     seleccionarPersonaje(jugadorDos, topeDos, nombre);
   } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
     imprimirError();
   }
+  delete nombre;
 }
 
 void Menu::ejecutarOpcionJuego(Personaje* jugadorUno[MAX_PERSONAJES], int* topeUno, Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos) {
@@ -215,6 +228,7 @@ void Menu::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
     mostrarMenuJuego();
     elegirOpcion();
     ejecutarOpcionJuego(jugadorUno, topeUno, jugadorDos, topeDos);
+    cout << this->opcion << endl;
   }
 }
 

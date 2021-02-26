@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 3.17)
-project(tp3)
+project(TP_3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
-
-add_executable(tp3
+add_executable(TP_3
         agua.cpp
         agua.h
         aire.cpp
@@ -19,6 +17,7 @@ add_executable(tp3
         constantes.h
         coordenada.cpp
         coordenada.h
+        costos.cpp
         costos.h
         diccionario.cpp
         diccionario.h
@@ -53,4 +52,4 @@ add_executable(tp3
         vacio.cpp
         vacio.h
         volcan.cpp
-        volcan.h costos.cpp)
+        volcan.h)

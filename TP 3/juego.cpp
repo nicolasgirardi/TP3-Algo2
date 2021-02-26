@@ -29,7 +29,9 @@ void Juego::cargarPersonajes() {
   string elemento, nombre;
   int escudo, vida, fila, columna;
   archivoPersonajes.asignarPath("personajes.csv");
+  cout << "por aca si pasa"<<endl;
   if(archivoPersonajes.procesarArchivo()){
+      cout << "abriro archivo"<<endl;
     while (!archivoPersonajes.finArchivo()) {
         archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
         menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
