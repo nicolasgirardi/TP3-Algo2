@@ -10,7 +10,7 @@ bool Mapa::vacio() {
 }
 
 bool Mapa::ocupado(Coordenada coor) {
-  if (!!(this->consulta(coor)))
+  if (!!(this->consulta(coor)->obtenerDato()->obtenerPersonaje()))
     return true;
   else
     return false;

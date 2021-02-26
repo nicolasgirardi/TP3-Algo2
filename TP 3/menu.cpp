@@ -197,7 +197,7 @@ void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
       (*topeUno < MAX_PERSONAJES)) {  // le toca al jugador 1 y no llegó al tope
     cout << "jugador uno:" << endl;
       pedirNombre(nombre);
-      nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
+     // nombreValido(nombre);//ACA HAY QUE VERIFICAR SI EL NOMBRE ESTA
    seleccionarPersonaje(jugadorUno, topeUno, nombre);
       cout << this->opcion << endl;
   } else if (((*topeUno + *topeDos) % 2 == 0) &&
@@ -208,7 +208,7 @@ void Menu::procesarSeleccion(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,
       cout << this->opcion << endl;
       cout << "ya elegi 1 ahora el otro" << endl;
     pedirNombre(nombre);
-    nombreValido(nombre);
+   // nombreValido(nombre);
     cout << "se pidio bien el nombre de 2 " << endl;
     seleccionarPersonaje(jugadorDos, topeDos, nombre);
   } else if (((*topeUno + *topeDos) % 2 != 0) && (*topeDos >= MAX_PERSONAJES)) {
@@ -353,6 +353,7 @@ void Menu::ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PE
 
 void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
   personaje->reseteoDefensa();
+  cout << "está jugando con " << personaje->obtenerNombre() << endl;
   mostrarSubmenuUno();
   elegirOpcion();
   if (stoi(opcion) != PASAR) {

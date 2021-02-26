@@ -3,7 +3,6 @@
 Juego::Juego() {
     cantidadPersonajesUno = 0;
     cantidadPersonajesDos = 0;
-
     mapaPartida.mapear("mapa.csv");//crea el tablero
     cargarPersonajes();
     inicializarCostos();
@@ -66,11 +65,11 @@ void Juego::pedirColumna(int* columna){
     }
 }
 
-void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int* i){
+void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int i){
     int fila, columna;
     bool puedoConsultar =  true;
     while (puedoConsultar){
-        cout << "Indique las coordenadas donde desea posicionar a "<< personajes[*i]->obtenerNombre() << ":" << endl;
+        cout << "Indique las coordenadas donde desea posicionar a "<< personajes[i]->obtenerNombre() << ":" << endl;
         pedirFila(&fila);
         pedirColumna(&columna);
         coor->cambiarFilaYColumna(fila,columna);
@@ -84,23 +83,32 @@ void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERS
 
 
 
-void Juego::posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* i){
+void Juego::posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int i){
     Coordenada* coor = new Coordenada(0,0);
     //MUESTRO EL MAPA POR PANTALLA
     consultarCoordenada(coor,personajes,i);
-    personajes[*i]->asignarCoordenada(coor->obtenerFila(),coor->obtenerColumna());
-    mapaPartida.consulta(*coor)->obtenerDato()->ocupar(personajes[*i]);
-    (*i)++;
+    personajes[i]->asignarCoordenada(coor->obtenerFila(),coor->obtenerColumna());
+    mapaPartida.consulta(*coor)->obtenerDato()->ocupar(personajes[i]);
+    i++;
     delete coor;
 }
 
 
-void Juego::procesarUbicacion(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos) {
-    int i = 0, j = 0;
-    while ( (i < topeUno) && (j < topeDos)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
-        posicionarPersonaje(personajesPrimero,&i);
-        posicionarPersonaje(personajesSegundo,&j);
-    }
+void Juego::procesarUbicacion(bool empiezaUno) {
+    int i = 0;
+    if (empiezaUno)
+        while ((i <
+                MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
+            posicionarPersonaje(personajesJugadorUno, i);
+            posicionarPersonaje(personajesJugadorDos, i);
+            i++;
+        }
+    else
+        while ((i <
+                MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
+            posicionarPersonaje(personajesJugadorDos, i);
+            posicionarPersonaje(personajesJugadorUno, i);
+        }
 }
 
 void Juego::ubicarPersonajes() {
@@ -108,15 +116,24 @@ void Juego::ubicarPersonajes() {
     elegirPrimerLugar(&empiezaUno);
     if (empiezaUno) {
         imprimirMensajeUno();
-        procesarUbicacion(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
+        procesarUbicacion(empiezaUno);
     } else {
         imprimirMensajeDos();
-        procesarUbicacion(personajesJugadorDos, cantidadPersonajesDos, personajesJugadorUno, cantidadPersonajesUno);
+        procesarUbicacion(empiezaUno);
     }
 }
 
 void Juego::elegirPersonajes() {
-    menuPartida.procesarMenuJuego(personajesJugadorUno, &cantidadPersonajesUno, personajesJugadorDos, &cantidadPersonajesDos);
+    int i;
+    int topeUno = 0;
+    int topeDos = 0;
+    menuPartida.procesarMenuJuego(personajesJugadorUno, &topeUno, personajesJugadorDos, &topeDos);
+    cantidadPersonajesUno = topeUno;
+    cantidadPersonajesDos = topeDos;
+    for(i=0;i<3;i++){
+        cout << personajesJugadorUno[i]->obtenerNombre() << endl;
+        cout << personajesJugadorDos[i]->obtenerNombre() << endl;
+    }
     ubicarPersonajes();
 }
 

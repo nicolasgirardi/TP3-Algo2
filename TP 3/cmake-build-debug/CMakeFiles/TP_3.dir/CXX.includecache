@@ -52,6 +52,14 @@ nodo.h
 personaje.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.h
 
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.cpp
+juego.h
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.h
+
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.h
+menu.h
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.h
+
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.h
 casilla.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.h
@@ -89,10 +97,6 @@ vacio.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.h
 volcan.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.h
-
-/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.cpp
-menu.h
-/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.h
 
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.h
 agua.h

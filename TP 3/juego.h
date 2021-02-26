@@ -77,11 +77,11 @@ class Juego {
    
   void pedirColumna(int* columna);
     
-  void consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int* i);
+  void consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int i);
      
-  void posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* i);
+  void posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int i);
  
-  void procesarUbicacion(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos);
+  void procesarUbicacion(bool empiezaUno);
 
 
 

@@ -11,15 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460d3983-ccb5-49e8-9765-ba816b36fe35" name="Default Changelist" comment="hicimos mucho">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="460d3983-ccb5-49e8-9765-ba816b36fe35" name="Default Changelist" comment="hicimos mucho pero marta esta jugando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP_3.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TP_3.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TP_3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TP_3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diccionario.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/diccionario.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juego.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/juego.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/juego.h" beforeDir="false" afterPath="$PROJECT_DIR$/juego.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapa.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mapa.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/menu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/menu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personaje.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/personaje.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614351601664</updated>
-      <workItem from="1614351603320" duration="10303000" />
+      <workItem from="1614351603320" duration="13077000" />
     </task>
     <task id="LOCAL-00001" summary="hicimos mucho">
       <created>1614356396653</created>
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614356438491</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hicimos mucho pero marta esta jugando">
+      <created>1614362221839</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614362221839</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="hicimos mucho" />
-    <option name="LAST_COMMIT_MESSAGE" value="hicimos mucho" />
+    <MESSAGE value="hicimos mucho pero marta esta jugando" />
+    <option name="LAST_COMMIT_MESSAGE" value="hicimos mucho pero marta esta jugando" />
   </component>
 </project>
