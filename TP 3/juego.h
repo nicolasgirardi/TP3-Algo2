@@ -83,7 +83,7 @@ class Juego {
  
   void procesarUbicacion(bool empiezaUno);
 
-
+  string mensajeRandom();
 
   // POST: pide al usuario si quiere guardar la partida o no.
   void pedirGuardado(char* opcion);

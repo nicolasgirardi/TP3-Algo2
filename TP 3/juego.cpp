@@ -201,11 +201,18 @@ void Juego::consultarGuardado(bool* guardo) {
     procesarGuardado(opcion, guardo);
 }
 
+string Juego::mensajeRandom() {
+    int i;
+    string mensaje = "";
+    return mensaje;
+}
 void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos) {
     int i = 0, j = 0;
     bool guardo = false;
     while (!consultaEliminado() && !guardo) {
+        cout << "jugador uno " << mensajeRandom() << endl;
         jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
+        cout << "jugador dos" << mensajeRandom() << endl;
         jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);
         if (!consultaEliminado()) {
             consultarGuardado(&guardo);
