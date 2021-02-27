@@ -32,7 +32,7 @@ void Personaje::asignarCoordenada(int fila,int columna) {
   coordenada.cambiarFilaYColumna(fila,columna);
 }
 
-void Personaje::asignarCondicion(bool condicion) { this->jugando = condicion; }
+void Personaje::asignarCondicion(bool condicion) { jugando = condicion; }
 
 bool Personaje::energiaValida(int energiaGastada) {
   int nuevaEnergia;

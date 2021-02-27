@@ -54,19 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/139/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/facundo/Downloads/TP3-Algo2/TP 3"
+CMAKE_SOURCE_DIR = "/home/nicolas/Dropbox/TP3-Algo2/TP 3"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TP_3.dir/depend.make
@@ -79,315 +79,315 @@ include CMakeFiles/TP_3.dir/flags.make
 
 CMakeFiles/TP_3.dir/agua.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/agua.cpp.o: ../agua.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP_3.dir/agua.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/agua.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP_3.dir/agua.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/agua.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/agua.cpp"
 
 CMakeFiles/TP_3.dir/agua.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/agua.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp" > CMakeFiles/TP_3.dir/agua.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/agua.cpp" > CMakeFiles/TP_3.dir/agua.cpp.i
 
 CMakeFiles/TP_3.dir/agua.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/agua.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/agua.cpp" -o CMakeFiles/TP_3.dir/agua.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/agua.cpp" -o CMakeFiles/TP_3.dir/agua.cpp.s
 
 CMakeFiles/TP_3.dir/aire.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/aire.cpp.o: ../aire.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP_3.dir/aire.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/aire.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/aire.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP_3.dir/aire.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/aire.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/aire.cpp"
 
 CMakeFiles/TP_3.dir/aire.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/aire.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/aire.cpp" > CMakeFiles/TP_3.dir/aire.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/aire.cpp" > CMakeFiles/TP_3.dir/aire.cpp.i
 
 CMakeFiles/TP_3.dir/aire.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/aire.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/aire.cpp" -o CMakeFiles/TP_3.dir/aire.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/aire.cpp" -o CMakeFiles/TP_3.dir/aire.cpp.s
 
 CMakeFiles/TP_3.dir/archivo.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/archivo.cpp.o: ../archivo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP_3.dir/archivo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/archivo.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP_3.dir/archivo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/archivo.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/archivo.cpp"
 
 CMakeFiles/TP_3.dir/archivo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/archivo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.cpp" > CMakeFiles/TP_3.dir/archivo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/archivo.cpp" > CMakeFiles/TP_3.dir/archivo.cpp.i
 
 CMakeFiles/TP_3.dir/archivo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/archivo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/archivo.cpp" -o CMakeFiles/TP_3.dir/archivo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/archivo.cpp" -o CMakeFiles/TP_3.dir/archivo.cpp.s
 
 CMakeFiles/TP_3.dir/camino.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/camino.cpp.o: ../camino.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP_3.dir/camino.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/camino.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/camino.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP_3.dir/camino.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/camino.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/camino.cpp"
 
 CMakeFiles/TP_3.dir/camino.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/camino.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/camino.cpp" > CMakeFiles/TP_3.dir/camino.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/camino.cpp" > CMakeFiles/TP_3.dir/camino.cpp.i
 
 CMakeFiles/TP_3.dir/camino.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/camino.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/camino.cpp" -o CMakeFiles/TP_3.dir/camino.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/camino.cpp" -o CMakeFiles/TP_3.dir/camino.cpp.s
 
 CMakeFiles/TP_3.dir/casilla.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/casilla.cpp.o: ../casilla.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP_3.dir/casilla.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/casilla.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP_3.dir/casilla.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/casilla.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.cpp"
 
 CMakeFiles/TP_3.dir/casilla.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/casilla.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.cpp" > CMakeFiles/TP_3.dir/casilla.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.cpp" > CMakeFiles/TP_3.dir/casilla.cpp.i
 
 CMakeFiles/TP_3.dir/casilla.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/casilla.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/casilla.cpp" -o CMakeFiles/TP_3.dir/casilla.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/casilla.cpp" -o CMakeFiles/TP_3.dir/casilla.cpp.s
 
 CMakeFiles/TP_3.dir/coordenada.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/coordenada.cpp.o: ../coordenada.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP_3.dir/coordenada.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/coordenada.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP_3.dir/coordenada.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/coordenada.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/coordenada.cpp"
 
 CMakeFiles/TP_3.dir/coordenada.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/coordenada.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.cpp" > CMakeFiles/TP_3.dir/coordenada.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/coordenada.cpp" > CMakeFiles/TP_3.dir/coordenada.cpp.i
 
 CMakeFiles/TP_3.dir/coordenada.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/coordenada.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/coordenada.cpp" -o CMakeFiles/TP_3.dir/coordenada.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/coordenada.cpp" -o CMakeFiles/TP_3.dir/coordenada.cpp.s
 
 CMakeFiles/TP_3.dir/costos.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/costos.cpp.o: ../costos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TP_3.dir/costos.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/costos.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/costos.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TP_3.dir/costos.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/costos.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/costos.cpp"
 
 CMakeFiles/TP_3.dir/costos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/costos.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/costos.cpp" > CMakeFiles/TP_3.dir/costos.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/costos.cpp" > CMakeFiles/TP_3.dir/costos.cpp.i
 
 CMakeFiles/TP_3.dir/costos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/costos.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/costos.cpp" -o CMakeFiles/TP_3.dir/costos.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/costos.cpp" -o CMakeFiles/TP_3.dir/costos.cpp.s
 
 CMakeFiles/TP_3.dir/diccionario.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/diccionario.cpp.o: ../diccionario.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TP_3.dir/diccionario.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/diccionario.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TP_3.dir/diccionario.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/diccionario.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.cpp"
 
 CMakeFiles/TP_3.dir/diccionario.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/diccionario.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.cpp" > CMakeFiles/TP_3.dir/diccionario.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.cpp" > CMakeFiles/TP_3.dir/diccionario.cpp.i
 
 CMakeFiles/TP_3.dir/diccionario.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/diccionario.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/diccionario.cpp" -o CMakeFiles/TP_3.dir/diccionario.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.cpp" -o CMakeFiles/TP_3.dir/diccionario.cpp.s
 
 CMakeFiles/TP_3.dir/fuego.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/fuego.cpp.o: ../fuego.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TP_3.dir/fuego.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/fuego.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/fuego.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TP_3.dir/fuego.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/fuego.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/fuego.cpp"
 
 CMakeFiles/TP_3.dir/fuego.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/fuego.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/fuego.cpp" > CMakeFiles/TP_3.dir/fuego.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/fuego.cpp" > CMakeFiles/TP_3.dir/fuego.cpp.i
 
 CMakeFiles/TP_3.dir/fuego.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/fuego.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/fuego.cpp" -o CMakeFiles/TP_3.dir/fuego.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/fuego.cpp" -o CMakeFiles/TP_3.dir/fuego.cpp.s
 
 CMakeFiles/TP_3.dir/juego.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/juego.cpp.o: ../juego.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TP_3.dir/juego.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/juego.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/juego.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TP_3.dir/juego.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/juego.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.cpp"
 
 CMakeFiles/TP_3.dir/juego.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/juego.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/juego.cpp" > CMakeFiles/TP_3.dir/juego.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.cpp" > CMakeFiles/TP_3.dir/juego.cpp.i
 
 CMakeFiles/TP_3.dir/juego.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/juego.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/juego.cpp" -o CMakeFiles/TP_3.dir/juego.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/juego.cpp" -o CMakeFiles/TP_3.dir/juego.cpp.s
 
 CMakeFiles/TP_3.dir/lago.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/lago.cpp.o: ../lago.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TP_3.dir/lago.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/lago.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/lago.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TP_3.dir/lago.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/lago.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.cpp"
 
 CMakeFiles/TP_3.dir/lago.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/lago.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/lago.cpp" > CMakeFiles/TP_3.dir/lago.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.cpp" > CMakeFiles/TP_3.dir/lago.cpp.i
 
 CMakeFiles/TP_3.dir/lago.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/lago.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/lago.cpp" -o CMakeFiles/TP_3.dir/lago.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/lago.cpp" -o CMakeFiles/TP_3.dir/lago.cpp.s
 
 CMakeFiles/TP_3.dir/main.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TP_3.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/main.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TP_3.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/main.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/main.cpp"
 
 CMakeFiles/TP_3.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp" > CMakeFiles/TP_3.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/main.cpp" > CMakeFiles/TP_3.dir/main.cpp.i
 
 CMakeFiles/TP_3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/main.cpp" -o CMakeFiles/TP_3.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/main.cpp" -o CMakeFiles/TP_3.dir/main.cpp.s
 
 CMakeFiles/TP_3.dir/mapa.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/mapa.cpp.o: ../mapa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TP_3.dir/mapa.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/mapa.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TP_3.dir/mapa.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/mapa.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/mapa.cpp"
 
 CMakeFiles/TP_3.dir/mapa.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/mapa.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.cpp" > CMakeFiles/TP_3.dir/mapa.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/mapa.cpp" > CMakeFiles/TP_3.dir/mapa.cpp.i
 
 CMakeFiles/TP_3.dir/mapa.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/mapa.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/mapa.cpp" -o CMakeFiles/TP_3.dir/mapa.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/mapa.cpp" -o CMakeFiles/TP_3.dir/mapa.cpp.s
 
 CMakeFiles/TP_3.dir/menu.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/menu.cpp.o: ../menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/TP_3.dir/menu.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/menu.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/menu.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/TP_3.dir/menu.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/menu.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.cpp"
 
 CMakeFiles/TP_3.dir/menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/menu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/menu.cpp" > CMakeFiles/TP_3.dir/menu.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.cpp" > CMakeFiles/TP_3.dir/menu.cpp.i
 
 CMakeFiles/TP_3.dir/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/menu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/menu.cpp" -o CMakeFiles/TP_3.dir/menu.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/menu.cpp" -o CMakeFiles/TP_3.dir/menu.cpp.s
 
 CMakeFiles/TP_3.dir/montana.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/montana.cpp.o: ../montana.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TP_3.dir/montana.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/montana.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/montana.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TP_3.dir/montana.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/montana.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/montana.cpp"
 
 CMakeFiles/TP_3.dir/montana.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/montana.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/montana.cpp" > CMakeFiles/TP_3.dir/montana.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/montana.cpp" > CMakeFiles/TP_3.dir/montana.cpp.i
 
 CMakeFiles/TP_3.dir/montana.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/montana.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/montana.cpp" -o CMakeFiles/TP_3.dir/montana.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/montana.cpp" -o CMakeFiles/TP_3.dir/montana.cpp.s
 
 CMakeFiles/TP_3.dir/nodo.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/nodo.cpp.o: ../nodo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TP_3.dir/nodo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TP_3.dir/nodo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.cpp"
 
 CMakeFiles/TP_3.dir/nodo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/nodo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo.cpp" > CMakeFiles/TP_3.dir/nodo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.cpp" > CMakeFiles/TP_3.dir/nodo.cpp.i
 
 CMakeFiles/TP_3.dir/nodo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/nodo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo.cpp" -o CMakeFiles/TP_3.dir/nodo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.cpp" -o CMakeFiles/TP_3.dir/nodo.cpp.s
 
 CMakeFiles/TP_3.dir/nodo_grafo.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/nodo_grafo.cpp.o: ../nodo_grafo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TP_3.dir/nodo_grafo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo_grafo.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TP_3.dir/nodo_grafo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo_grafo.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_grafo.cpp"
 
 CMakeFiles/TP_3.dir/nodo_grafo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/nodo_grafo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.cpp" > CMakeFiles/TP_3.dir/nodo_grafo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_grafo.cpp" > CMakeFiles/TP_3.dir/nodo_grafo.cpp.i
 
 CMakeFiles/TP_3.dir/nodo_grafo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/nodo_grafo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_grafo.cpp" -o CMakeFiles/TP_3.dir/nodo_grafo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_grafo.cpp" -o CMakeFiles/TP_3.dir/nodo_grafo.cpp.s
 
 CMakeFiles/TP_3.dir/nodo_pila.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/nodo_pila.cpp.o: ../nodo_pila.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TP_3.dir/nodo_pila.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo_pila.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_pila.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TP_3.dir/nodo_pila.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/nodo_pila.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_pila.cpp"
 
 CMakeFiles/TP_3.dir/nodo_pila.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/nodo_pila.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_pila.cpp" > CMakeFiles/TP_3.dir/nodo_pila.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_pila.cpp" > CMakeFiles/TP_3.dir/nodo_pila.cpp.i
 
 CMakeFiles/TP_3.dir/nodo_pila.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/nodo_pila.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/nodo_pila.cpp" -o CMakeFiles/TP_3.dir/nodo_pila.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo_pila.cpp" -o CMakeFiles/TP_3.dir/nodo_pila.cpp.s
 
 CMakeFiles/TP_3.dir/personaje.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/personaje.cpp.o: ../personaje.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TP_3.dir/personaje.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/personaje.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TP_3.dir/personaje.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/personaje.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.cpp"
 
 CMakeFiles/TP_3.dir/personaje.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/personaje.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.cpp" > CMakeFiles/TP_3.dir/personaje.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.cpp" > CMakeFiles/TP_3.dir/personaje.cpp.i
 
 CMakeFiles/TP_3.dir/personaje.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/personaje.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/personaje.cpp" -o CMakeFiles/TP_3.dir/personaje.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.cpp" -o CMakeFiles/TP_3.dir/personaje.cpp.s
 
 CMakeFiles/TP_3.dir/pila.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/pila.cpp.o: ../pila.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TP_3.dir/pila.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/pila.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/pila.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TP_3.dir/pila.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/pila.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/pila.cpp"
 
 CMakeFiles/TP_3.dir/pila.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/pila.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/pila.cpp" > CMakeFiles/TP_3.dir/pila.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/pila.cpp" > CMakeFiles/TP_3.dir/pila.cpp.i
 
 CMakeFiles/TP_3.dir/pila.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/pila.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/pila.cpp" -o CMakeFiles/TP_3.dir/pila.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/pila.cpp" -o CMakeFiles/TP_3.dir/pila.cpp.s
 
 CMakeFiles/TP_3.dir/precipicio.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/precipicio.cpp.o: ../precipicio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TP_3.dir/precipicio.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/precipicio.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TP_3.dir/precipicio.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/precipicio.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/precipicio.cpp"
 
 CMakeFiles/TP_3.dir/precipicio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/precipicio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.cpp" > CMakeFiles/TP_3.dir/precipicio.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/precipicio.cpp" > CMakeFiles/TP_3.dir/precipicio.cpp.i
 
 CMakeFiles/TP_3.dir/precipicio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/precipicio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/precipicio.cpp" -o CMakeFiles/TP_3.dir/precipicio.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/precipicio.cpp" -o CMakeFiles/TP_3.dir/precipicio.cpp.s
 
 CMakeFiles/TP_3.dir/tierra.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/tierra.cpp.o: ../tierra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TP_3.dir/tierra.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/tierra.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TP_3.dir/tierra.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/tierra.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/tierra.cpp"
 
 CMakeFiles/TP_3.dir/tierra.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/tierra.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.cpp" > CMakeFiles/TP_3.dir/tierra.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/tierra.cpp" > CMakeFiles/TP_3.dir/tierra.cpp.i
 
 CMakeFiles/TP_3.dir/tierra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/tierra.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/tierra.cpp" -o CMakeFiles/TP_3.dir/tierra.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/tierra.cpp" -o CMakeFiles/TP_3.dir/tierra.cpp.s
 
 CMakeFiles/TP_3.dir/vacio.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/vacio.cpp.o: ../vacio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TP_3.dir/vacio.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/vacio.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TP_3.dir/vacio.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/vacio.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.cpp"
 
 CMakeFiles/TP_3.dir/vacio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/vacio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.cpp" > CMakeFiles/TP_3.dir/vacio.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.cpp" > CMakeFiles/TP_3.dir/vacio.cpp.i
 
 CMakeFiles/TP_3.dir/vacio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/vacio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/vacio.cpp" -o CMakeFiles/TP_3.dir/vacio.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/vacio.cpp" -o CMakeFiles/TP_3.dir/vacio.cpp.s
 
 CMakeFiles/TP_3.dir/volcan.cpp.o: CMakeFiles/TP_3.dir/flags.make
 CMakeFiles/TP_3.dir/volcan.cpp.o: ../volcan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TP_3.dir/volcan.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/volcan.cpp.o -c "/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TP_3.dir/volcan.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TP_3.dir/volcan.cpp.o -c "/home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.cpp"
 
 CMakeFiles/TP_3.dir/volcan.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_3.dir/volcan.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.cpp" > CMakeFiles/TP_3.dir/volcan.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.cpp" > CMakeFiles/TP_3.dir/volcan.cpp.i
 
 CMakeFiles/TP_3.dir/volcan.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_3.dir/volcan.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/facundo/Downloads/TP3-Algo2/TP 3/volcan.cpp" -o CMakeFiles/TP_3.dir/volcan.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/nicolas/Dropbox/TP3-Algo2/TP 3/volcan.cpp" -o CMakeFiles/TP_3.dir/volcan.cpp.s
 
 # Object files for target TP_3
 TP_3_OBJECTS = \
@@ -445,7 +445,7 @@ TP_3: CMakeFiles/TP_3.dir/vacio.cpp.o
 TP_3: CMakeFiles/TP_3.dir/volcan.cpp.o
 TP_3: CMakeFiles/TP_3.dir/build.make
 TP_3: CMakeFiles/TP_3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable TP_3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable TP_3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TP_3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -458,6 +458,6 @@ CMakeFiles/TP_3.dir/clean:
 .PHONY : CMakeFiles/TP_3.dir/clean
 
 CMakeFiles/TP_3.dir/depend:
-	cd "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/facundo/Downloads/TP3-Algo2/TP 3" "/home/facundo/Downloads/TP3-Algo2/TP 3" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/TP_3.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/nicolas/Dropbox/TP3-Algo2/TP 3" "/home/nicolas/Dropbox/TP3-Algo2/TP 3" "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug" "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug" "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/TP_3.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/TP_3.dir/depend
 

@@ -72,7 +72,7 @@ Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
 
 Dato Diccionario::consultaNodo(string clave) {  // imprimo la info acá o en
                                                 // menú?
-  bool encontrado;
+  bool encontrado = false;
   return obtenerNodo(clave, &encontrado)->obtenerDato();
 }
 
