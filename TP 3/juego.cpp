@@ -183,7 +183,14 @@ void Juego::asignarEstadoJuego(char estado){
 
 // si entra acá es porque hay alguno con vida
 void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]) {
-    if ((*i) >= (topeUno)) {
+    if (*i < topeUno) {
+        if (personajes[*i]->obtenerVida() <= 0)
+            menuPartida.procesarTurno(&mapaPartida, personajes[*i], this->costos, personajes, enemigos);
+        *i = *i + 1;
+        jugarTurno(personajes, topeUno, i, enemigos);
+    }
+}
+    /*if ((*i) >= (topeUno)) {
         (*i) = 0;
     }
     if (personajes[*i]->obtenerVida() != 0) {
@@ -192,7 +199,7 @@ void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* 
     (*i)++;
     return jugarTurno(personajes, topeUno, i, enemigos);
 }
-
+*/
 bool Juego::opcionValida(char opcion) {
     return (opcion == SI|| opcion == NO);
 }
