@@ -160,17 +160,19 @@ void Juego::elegirPrimerLugar(bool* empiezaUno) { (*empiezaUno) = rand() % 2; }
 Mapa Juego::obtenerMapa() { return mapaPartida; }
 
 int Juego::contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope) {
-    int muertos;
+    int muertos = 0;
     for (int i = 0; i < tope; i++) {
-        if (personajes[i]->obtenerVida() == 0) muertos++;
+        if (personajes[i]->obtenerVida() <= 0) muertos++;
     }
     return muertos;
 }
 
 bool Juego::consultaEliminado() {
     if (contarMuertos(personajesJugadorUno, cantidadPersonajesUno) == cantidadPersonajesUno) {
+        cout << "el jugador 1 perdio" << endl;
         return true;
     } else if (contarMuertos(personajesJugadorDos, cantidadPersonajesDos) == cantidadPersonajesDos) {
+        cout << "el jugador 2 perdio" << endl;
         return true;
     } else {
         return false;
@@ -184,7 +186,7 @@ void Juego::asignarEstadoJuego(char estado){
 // si entra acá es porque hay alguno con vida
 void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]) {
     if (*i < topeUno) {
-        if (personajes[*i]->obtenerVida() <= 0)
+        if (personajes[*i]->obtenerVida() > 0)
             menuPartida.procesarTurno(&mapaPartida, personajes[*i], this->costos, personajes, enemigos);
         *i = *i + 1;
         jugarTurno(personajes, topeUno, i, enemigos);
