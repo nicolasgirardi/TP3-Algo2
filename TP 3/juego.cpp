@@ -222,6 +222,7 @@ void Juego::procesarGuardado(char opcion, bool* guardo) {
     if (opcion == SI) {
         archivoPartida.asignarPath("partida.csv");
         archivoPartida.escribirArchivo(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
+        *guardo = true;
     }
 }
 
@@ -314,8 +315,8 @@ string Juego::mensajeRandom() {
 
 void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos) {
     int i = 0, j = 0;
-    bool guardo = false;
-    while (!consultaEliminado() && !guardo) {
+    bool guardado = false;
+    while (!consultaEliminado() && !guardado) {
         cout << "Jugador uno. " << endl;
         cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
@@ -323,12 +324,12 @@ void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int top
         cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);
         if (!consultaEliminado()) {
-            consultarGuardado(&guardo);
+            consultarGuardado(&guardado);
         }
         i = 0;
         j= 0;
     }
-    if (guardo) {
+    if (guardado) {
         asignarEstadoJuego(GUARDADO);
     } else {
         asignarEstadoJuego(FINALIZADO);
