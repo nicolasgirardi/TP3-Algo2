@@ -19,6 +19,8 @@ class Aire : public Personaje {
   // calcula el da�o segun el elemento del personaje objetivo
   // POS: devuelve el da�o que le hace al objetivo
   int obtenerDanio(string elemento);
+ 
+  void recuperarEnergia();
 
   // POST: imprime un mensaje comunicando que los personajes de aire no se
   // pueden alimentar
