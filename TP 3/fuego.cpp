@@ -12,16 +12,13 @@ void Fuego::alimentar() {
   int vidaSuministrada = 0;
   int energiaSuministrada = 0;
 
-  while (vida < TOPE_VIDA && vidaSuministrada < AUMENTO_FUEGO) {
-    vida++;
-    vidaSuministrada++;
-  }
+  asignarVida(this->vida + AUMENTO_FUEGO);
+  asignarEnergia(this->energia + ENERGIA_LIMITE);
+  cout << "has alimentado a " << this->nombre << " con exito." << endl;
+  cout << "Su vida y energia han aumentado a " << this->vida << " y " << this->energia << " respectivamente." << endl;
+  cout << "Te sientes un poco quemado luego de esto." << endl;
 
-  while (energia < TOPE_ENERGIA &&
-         energiaSuministrada < ENERGIA_LIMITE) {  // Ese 10 puede ser constante. =10
-    energia++;
-    energiaSuministrada++;
-  }
+
 }
 
 int Fuego::obtenerDanio(string elemento) {
@@ -38,6 +35,7 @@ void Fuego::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   for (int i = 0; i < MAX_PERSONAJES; i++) {
     if (abs(this->coordenada.obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
       enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
+      cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
     }
   }
 }
@@ -45,6 +43,7 @@ void Fuego::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
 void Fuego::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_DEFENSA_FUEGO);
   asignarVida(this->vida + 10);
+  cout << this->nombre << " se curo y ahora tiene " << this->vida << " de vida." << endl << endl;
 }
 
 bool Fuego::puedeAtacar(){

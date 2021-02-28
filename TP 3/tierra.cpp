@@ -10,11 +10,11 @@ string Tierra::obtenerElemento() { return "tierra"; }
 string Tierra::obtenerAlimento() { return alimento; }
 
 void Tierra::alimentar() {
-  int energiaSuministrada = 0;
-  while (energia < TOPE_ENERGIA && energiaSuministrada < AUMENTO_TIERRA) {
-    energia++;
-    energiaSuministrada++;
-  }
+
+  asignarEnergia(this->energia + AUMENTO_TIERRA);
+
+  cout << this->nombre << " fue alimentado y ahora tiene " << this->energia << " de energia." << endl;
+
 }
 
 int Tierra::obtenerDanio(string elemento, int zona) {
@@ -56,12 +56,14 @@ void Tierra::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   for (int i = 0; i < MAX_PERSONAJES; i++) {
     zona = this->zona(enemigos[i]->obtenerCoordenada());
     enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento(),zona));
+    cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
     }
 }
 
 void Tierra::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_DEFENSA_TIERRA);
   asignarEscudo(this->escudo + 2);
+  cout << this->nombre << " ahora tiene " << this->escudo << " de escudo." << endl << endl;
   defensaActivada = true;
 }
 

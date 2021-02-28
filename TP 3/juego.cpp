@@ -162,7 +162,10 @@ Mapa Juego::obtenerMapa() { return mapaPartida; }
 int Juego::contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope) {
     int muertos = 0;
     for (int i = 0; i < tope; i++) {
-        if (personajes[i]->obtenerVida() <= 0) muertos++;
+        if (personajes[i]->obtenerVida() <= 0){
+            muertos++;
+            mapaPartida.consulta(*personajes[i]->obtenerCoordenada())->obtenerDato()->vaciar();
+        }
     }
     return muertos;
 }
@@ -187,7 +190,7 @@ void Juego::asignarEstadoJuego(char estado){
 void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]) {
     if (*i < topeUno) {
         if (personajes[*i]->obtenerVida() > 0)
-            menuPartida.procesarTurno(&mapaPartida, personajes[*i], this->costos, personajes, enemigos);
+            menuPartida.procesarTurno(&mapaPartida, personajes[*i], this->costos, enemigos, personajes);
         *i = *i + 1;
         jugarTurno(personajes, topeUno, i, enemigos);
     }
@@ -230,20 +233,100 @@ void Juego::consultarGuardado(bool* guardo) {
 
 string Juego::mensajeRandom() {
     int i;
-    string mensaje = "";
+    string mensaje;
+    i = rand() % 24;
+    switch(i){
+        case(0):
+            mensaje = "yo se que vos podes";
+            break;
+        case(1):
+            mensaje = "no le digas al otro, pero yo apuesto por vos";
+            break;
+        case(3):
+            mensaje = "que tengas un buen turno";
+            break;
+        case(4):
+            mensaje = "mi jugador favorito!";
+            break;
+        case(5):
+            mensaje = "esta fresco afuera, no?";
+            break;
+        case(6):
+            mensaje = "tu puedes carlitos, tu puedes";
+            break;
+        case(7):
+            mensaje = "haz tu jugada, estoy segura de que perderas";
+            break;
+        case(8):
+            mensaje = "hacé lo que quieras";
+            break;
+        case(9):
+            mensaje = "tic tac, el tiempo corre";
+            break;
+        case(10):
+            mensaje = "my family asked me to stop singing wonderwall. I said maybe";
+            break;
+        case(11):
+            mensaje = "today is gonna be the day that they're gonna throw it back to you";
+            break;
+        case(12):
+            mensaje = "bonjour";
+            break;
+        case(13):
+            mensaje = "pro tip: ante la duda, ataca";
+            break;
+        case(14):
+            mensaje = "te prometo que vamos a nerfear a marta";
+            break;
+        case(15):
+            mensaje = "julia necesita alto buff";
+            break;
+        case(16):
+            mensaje = "no es un bug, es un feature";
+            break;
+        case(17):
+            mensaje = "Heed my battle cry";
+            break;
+        case(18):
+            mensaje = "black clouds fill the sky";
+            break;
+        case(19):
+            mensaje = "thunder will bring forth";
+            break;
+        case(20):
+            mensaje = "tenes un momento para hablar de bitcoin?";
+            break;
+        case(21):
+            mensaje = "pro tip: licua tus activos, inverti en andycoins";
+            break;
+        case(22):
+            mensaje = "no existe el nivel de las vacas";
+            break;
+        case(23):
+            mensaje = "all your base are belong to us";
+            break;
+        default:
+            mensaje = "los mejores graficos estan en tu imaginacion";
+            break;
+    }
     return mensaje;
 }
+
 void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int topeUno, Personaje* personajesSegundo[MAX_PERSONAJES], int topeDos) {
     int i = 0, j = 0;
     bool guardo = false;
     while (!consultaEliminado() && !guardo) {
-        cout << "Jugador uno " << mensajeRandom() << endl << endl;
+        cout << "Jugador uno. " << endl;
+        cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
-        cout << "Jugador dos" << mensajeRandom() << endl << endl;
+        cout << "Jugador dos." << endl;
+        cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);
         if (!consultaEliminado()) {
             consultarGuardado(&guardo);
         }
+        i = 0;
+        j= 0;
     }
     if (guardo) {
         asignarEstadoJuego(GUARDADO);

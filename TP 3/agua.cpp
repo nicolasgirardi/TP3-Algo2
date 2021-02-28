@@ -15,17 +15,15 @@ string Agua::obtenerElemento(){
 
 void Agua::alimentar() {
   int energiaSuministrada = 0;
-  while (energia < TOPE_ENERGIA && energiaSuministrada < AUMENTO_AGUA &&
-         vecesAlimentado < MAX_CANTIDAD_AGUA) {
-    energia++;
-    energiaSuministrada++;
-  }
   if (vecesAlimentado == MAX_CANTIDAD_AGUA) {
-    cout << endl;
-    cout << "Ha alcanzado el número máximo de alimentos para este personaje!"
-         << endl;
-  } else {
-    vecesAlimentado++;
+      cout << endl;
+      cout << "Ha alcanzado el número máximo de alimentos para este personaje!" << endl;
+  }
+  else {
+      asignarEnergia(this->energia + AUMENTO_AGUA);
+      cout << this->nombre << " fue alimentado y ahora tiene " << this->energia << " de energia." << endl << endl;
+      cout <<
+      vecesAlimentado++;
   }
 }
 
@@ -84,6 +82,7 @@ void Agua::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   for (i = 0; i < MAX_PERSONAJES; i++) { //tiene en cuenta que solo puede haber como máximo
     if (lugar->comparar(enemigos[i]->obtenerCoordenada())) {
       enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
+      cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
     }
   }
   delete lugar;
@@ -93,8 +92,12 @@ void Agua::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   int i;
   gastarEnergia(ENERGIA_DEFENSA_AGUA);
   asignarVida(this->vida + 50);
+  cout << this->nombre << " se curo y ahora tiene " << this->vida << " de vida." << endl << endl;
   for (i = 0; i < MAX_PERSONAJES; i++) {
-    aliados[i]->asignarVida(this->vida + 10);
+    if(this->nombre != aliados[i]->obtenerNombre()) {
+        aliados[i]->asignarVida(aliados[i]->obtenerVida() + 10);
+        cout << this->nombre << " curo a " << aliados[i]->obtenerNombre() << "y ahora tiene " << aliados[i]->obtenerVida() << " de vida." << endl << endl;
+    }
   }
 }
 

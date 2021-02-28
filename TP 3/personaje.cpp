@@ -24,9 +24,19 @@ bool Personaje::obtenerCondicion() { return jugando; }
 
 void Personaje::asignarEscudo(int escudoNuevo) { escudo = escudoNuevo; }
 
-void Personaje::asignarEnergia(int energiaNueva) { energia = energiaNueva; }
+void Personaje::asignarEnergia(int energiaNueva) {
+    if(energiaNueva < TOPE_ENERGIA)
+        energia = energiaNueva;
+    else
+        energia = TOPE_ENERGIA;
+}
 
-void Personaje::asignarVida(int vidaNueva) { vida = vidaNueva; }
+void Personaje::asignarVida(int vidaNueva) {
+    if(vida < TOPE_VIDA)
+        vida = vidaNueva;
+    else
+        vida = TOPE_VIDA;
+}
 
 void Personaje::asignarCoordenada(int fila,int columna) {
   coordenada.cambiarFilaYColumna(fila,columna);
@@ -55,6 +65,8 @@ void Personaje::daniar(int daniar) {
   else if (this->escudo > 2)
     daniar = daniar * 0.2;
   this->vida = this->vida - daniar;
+    if(this->vida < 0)
+        this->vida = 0;
 }
 
 void Personaje::reseteoDefensa(){}
