@@ -128,6 +128,8 @@ private:
 
   // POST: reinicia la opcion del menu a 0.
   void limpiarOpcion();
+ 
+  void recuperarAire(Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);
 
   // POST: lleva a cabo la alimentación de un personaje a elección
   void alimentarPersonaje(Personaje* personaje);
