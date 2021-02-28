@@ -22,6 +22,10 @@ int Aire::obtenerDanio(string elemento) {
   return danio;
 }
 
+void Aire::recuperarEnergia(){
+    asignarEnergia(this->energia + ENERGIA_TURNO);
+}
+
 void Aire::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_AIRE);
   for (int i = 0; i < MAX_PERSONAJES; i++) {
