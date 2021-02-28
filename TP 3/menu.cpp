@@ -305,6 +305,7 @@ void Menu::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos) {
       if (mapa->consulta(destino)->obtenerDato()->ocupacion())
         cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
       else {
+        costos->consultarCaminoMinimo(personaje->obtenerCoordenada(),&destino);
 		concretarMovimiento(mapa,personaje,destino,costoMovimiento,&mover);
       }
     else
