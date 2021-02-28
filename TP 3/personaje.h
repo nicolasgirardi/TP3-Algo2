@@ -88,6 +88,9 @@ class Personaje {
   //POS: resetea a falso variables relacionadas con la defensa
   
   virtual void reseteoDefensa();
+ 
+  virtual void recuperarEnergia();
+
   
   virtual bool puedeAtacar() = 0;
   
