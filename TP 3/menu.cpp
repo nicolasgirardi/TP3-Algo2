@@ -349,8 +349,20 @@ void Menu::ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PE
   }
 }
 
+void Menu::recuperarAire(Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]){
+    for(int i = 0; i < MAX_PERSONAJES; i++){
+        if(enemigos[i]->obtenerElemento() == "aire"){
+            enemigos[i]->recuperarEnergia();
+        }
+        if(aliados[i]->obtenerElemento() == "aire"){
+            aliados[i]->recuperarEnergia();
+        }
+    }
+}
+
 void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
   personaje->reseteoDefensa();
+	recuperarAire(enemigos,aliados);
   cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
   cout << "Estos son sus detalles:" << endl << endl;
   diccionarioPersonajes.consultaInfo(personaje->obtenerNombre());
