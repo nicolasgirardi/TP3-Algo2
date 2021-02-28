@@ -71,6 +71,8 @@ void Personaje::daniar(int daniar) {
 
 void Personaje::reseteoDefensa(){}
 
+void Personaje::recuperarEnergia(){}
+
 Personaje::~Personaje(){
 
 }
