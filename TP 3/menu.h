@@ -30,7 +30,9 @@ class Menu {
 
   // PRE: escudo= 0, 1 ó 2 ; 10 <= vida <= 100 ; elemento es tierra,agua,fuego o
   // aire POST: crea un personaje en la memoria dinámica y lo agrega a la lista
-  Personaje* crearPersonaje(string elemento, string nombre, int escudo, int vida);
+  void crearPersonaje(string elemento, string nombre, int escudo, int vida);
+
+  Personaje* crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida);
 
   // POST: procesa cada turno del juego.
   void procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);

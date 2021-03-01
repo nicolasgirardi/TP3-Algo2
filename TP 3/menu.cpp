@@ -2,7 +2,7 @@
 
 Menu::Menu() { opcion = "0"; }
 
-Personaje* Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) {
+void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) {
   Personaje* personajeCreado;
   if (elemento == "tierra") {
     personajeCreado = new Tierra(nombre, escudo, vida);
@@ -13,9 +13,22 @@ Personaje* Menu::crearPersonaje(string elemento, string nombre, int escudo, int 
   } else if (elemento == "fuego") {
     personajeCreado = new Fuego(nombre, escudo, vida);
   }
-  return personajeCreado;
+  diccionarioPersonajes.alta(personajeCreado);
 }
 
+Personaje* Menu::crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida) {
+    Personaje* personajeCreado;
+    if (elemento == "tierra") {
+        personajeCreado = new Tierra(nombre, escudo, vida);
+    } else if (elemento == "agua") {
+        personajeCreado = new Agua(nombre, escudo, vida);
+    } else if (elemento == "aire") {
+        personajeCreado = new Aire(nombre, escudo, vida);
+    } else if (elemento == "fuego") {
+        personajeCreado = new Fuego(nombre, escudo, vida);
+    }
+    return personajeCreado;
+}
 Diccionario Menu::obtenerDiccionario() { return diccionarioPersonajes; }
 
 
@@ -101,7 +114,7 @@ void Menu::agregarPersonaje() {
   pedirNombre(&nombre);
   determinarEscudo(&escudo);
   cargarVida(&vida);
-  diccionarioPersonajes.alta(crearPersonaje(elemento, nombre, escudo, vida));
+  crearPersonaje(elemento, nombre, escudo, vida);
 }
 
 Personaje* Menu::buscarNombre(string* nombre) {

@@ -14,6 +14,14 @@ cstring
 libraries.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/libraries.h
 
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.cpp
+diccionario.h
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.h
+
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/diccionario.h
+nodo.h
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.h
+
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/libraries.h
 string
 -
@@ -30,7 +38,7 @@ fstream
 ctime
 -
 
-/home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.cpp
+/home/nicolas/Dropbox/TP3-Algo2/TP 3/nodo.h
 personaje.h
 /home/nicolas/Dropbox/TP3-Algo2/TP 3/personaje.h
 

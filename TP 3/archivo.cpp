@@ -37,10 +37,19 @@ void Archivo::abrirArchivoEscritura(){
     return archivo.open(path,ios::out);
 }
 
-void Archivo::escribirLinea(Personaje* personaje){
-    archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
-    archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
-    archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";" << personaje->obtenerCoordenada()->obtenerColumna() << endl;
+void Archivo::escribirLinea(Personaje* personaje,int i,int ultimoPersonaje){
+    if(i != (ultimoPersonaje - 1)) {
+        archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
+        archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
+        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";"
+                << personaje->obtenerCoordenada()->obtenerColumna() << endl;
+    }
+    else{
+        archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
+        archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
+        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";"
+            << personaje->obtenerCoordenada()->obtenerColumna();
+}
 }
 
 void Archivo::escribirArchivo(Personaje* personajesUno[MAX_PERSONAJES], int topeUno, Personaje* personajesDos[MAX_PERSONAJES], int topeDos){
@@ -49,10 +58,10 @@ void Archivo::escribirArchivo(Personaje* personajesUno[MAX_PERSONAJES], int tope
     }
     abrirArchivoEscritura();
     for(int i = 0; i < topeUno; i++){
-        escribirLinea(personajesUno[i]);
+        escribirLinea(personajesUno[i],i,topeUno + topeDos);
     }
-    for(int i = 0; i < topeDos; i++){
-        escribirLinea(personajesDos[i]);
+    for(int i = topeUno; i < topeUno + topeDos; i++){
+        escribirLinea(personajesDos[i-topeUno],i, topeUno + topeDos);
     }
 }
 

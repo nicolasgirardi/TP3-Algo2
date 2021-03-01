@@ -100,8 +100,8 @@ bool Diccionario::consultaClave(string clave) {
 
 Nodo* Diccionario::minimo(Nodo* d) {
     Nodo* aux = d;
-    while(aux->obtenerIzquierdo())
-        aux = aux->obtenerIzquierdo();
+    while(aux->obtenerDerecho())
+        aux = aux->obtenerDerecho();
 
     return aux;
     /*if (d == 0) {  // si el puntero está vacío retorna 0
@@ -151,17 +151,16 @@ Nodo* Diccionario::obtenerRaiz() { return raiz; }
 void Diccionario::baja(string clave)
 {
   bool encontrado = false;
-
+  cout << clave << endl;
   Nodo* nodoBuscado = obtenerNodo(clave, &encontrado);
   if (encontrado) {
       if ((nodoBuscado->obtenerIzquierdo() != 0) && (nodoBuscado->obtenerDerecho() != 0)) {
           // caso 1: tiene 2 hijos
-          Nodo *menor = minimo(nodoBuscado->obtenerDerecho());
+          Nodo* menor = minimo(nodoBuscado->obtenerIzquierdo());
           delete nodoBuscado->obtenerDato();
           nodoBuscado->cambiarDato(menor->obtenerDato());  // tengo que cambiar los atributos
           nodoBuscado->asignarClave(menor->obtenerClave());
-          descolgar(menor, menor->obtenerPadre());
-          delete nodoBuscado->obtenerDato();
+          descolgar(menor,menor->obtenerPadre());
           delete menor;
       } else if (nodoBuscado->obtenerIzquierdo() != 0) {
           // caso 2: tiene un solo hijo y es izq
@@ -204,10 +203,13 @@ int Diccionario::obtenerCantidad() { return cantidad; }
 
 void Diccionario::descolgar(Nodo* exhijo,Nodo* padre)
 {
-    if(exhijo->obtenerDerecho()) {
-        padre->asignarDerecho(0);
-        exhijo->obtenerDerecho()->asignarPadre(padre);
+    if(exhijo->obtenerIzquierdo()) {
+        padre->asignarIzquierdo(exhijo);
+        exhijo->obtenerIzquierdo()->asignarPadre(padre);
     }
+    else
+        padre->asignarDerecho(0);
+
 }
 
 Diccionario::~Diccionario() {

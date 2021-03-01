@@ -31,7 +31,7 @@ void Juego::cargarPersonajes() {
     if (archivoPersonajes.procesarArchivo()) {
         while (!archivoPersonajes.finArchivo()) {
             archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
-            menuPartida.obtenerDiccionario().alta(menuPartida.crearPersonaje(elemento, nombre, escudo, vida));
+            menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
         }
     }
 }
@@ -348,7 +348,7 @@ void Juego::cargarPartida() {
    while (!archivoPartida.finArchivo()) {
         archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
         //menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
-        Personaje* personajeLeido = menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
+        Personaje* personajeLeido = menuPartida.crearPersonajeNuevo(elemento, nombre, escudo, vida);
         personajeLeido->asignarEnergia(energia);
         personajeLeido->asignarCoordenada(fila,columna);
         this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);

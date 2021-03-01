@@ -25,7 +25,7 @@ public:
 
     void abrirArchivoEscritura();
 
-    void escribirLinea(Personaje* personaje);
+    void escribirLinea(Personaje* personaje,int i,int ultimoPersonaje);
 
     void escribirArchivo(Personaje* personajesUno[MAX_PERSONAJES], int topeUno, Personaje* personajesDos[MAX_PERSONAJES], int topeDos);
 
