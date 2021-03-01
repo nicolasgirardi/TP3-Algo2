@@ -42,13 +42,15 @@ void Diccionario::alta(Dato d) {
 }
 
 void Diccionario::modificarContenido(string nombre,int escudo,int vida,int energia,int fila,int columna){
+    bool encontrado = false;
 
-    Personaje* personajeBuscado = consultaNodo(nombre);
-
-    personajeBuscado->asignarEscudo(escudo);
-    personajeBuscado->asignarVida(vida);
-    personajeBuscado->asignarEnergia(energia);
-    personajeBuscado->asignarCoordenada(fila, columna);
+    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarEscudo(escudo);
+    encontrado = false;
+    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarVida(vida);
+    encontrado = false;
+    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarEnergia(energia);
+    encontrado = false;
+    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarCoordenada(fila, columna);
 }
 
 Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
@@ -97,14 +99,19 @@ bool Diccionario::consultaClave(string clave) {
 }
 
 Nodo* Diccionario::minimo(Nodo* d) {
-  if (d == 0) {  // si el puntero está vacío retorna 0
+    Nodo* aux = d;
+    while(aux->obtenerIzquierdo())
+        aux = aux->obtenerIzquierdo();
+
+    return aux;
+    /*if (d == 0) {  // si el puntero está vacío retorna 0
     return d;
   }
   if (d->obtenerIzquierdo() != 0) {
     return minimo(d->obtenerIzquierdo());  // Si tiene hijo izquierdo,
   } else {     // buscamos la parte más izquierda posible
     return d;  // Si no tiene hijo izquierdo retornamos el mismo nodo
-  }
+  }*/
 }
 
 // lo que hago es al padre asignarle un nuevo hijo, y al hijo un nuevo padre.
@@ -154,6 +161,7 @@ void Diccionario::baja(string clave)
           nodoBuscado->cambiarDato(menor->obtenerDato());  // tengo que cambiar los atributos
           nodoBuscado->asignarClave(menor->obtenerClave());
           descolgar(menor, menor->obtenerPadre());
+          delete nodoBuscado->obtenerDato();
           delete menor;
       } else if (nodoBuscado->obtenerIzquierdo() != 0) {
           // caso 2: tiene un solo hijo y es izq
@@ -196,10 +204,10 @@ int Diccionario::obtenerCantidad() { return cantidad; }
 
 void Diccionario::descolgar(Nodo* exhijo,Nodo* padre)
 {
-    if(exhijo == padre->obtenerIzquierdo())
-        padre->asignarIzquierdo(0);
-    else
+    if(exhijo->obtenerDerecho()) {
         padre->asignarDerecho(0);
+        exhijo->obtenerDerecho()->asignarPadre(padre);
+    }
 }
 
 Diccionario::~Diccionario() {

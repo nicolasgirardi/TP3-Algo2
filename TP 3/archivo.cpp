@@ -38,9 +38,9 @@ void Archivo::abrirArchivoEscritura(){
 }
 
 void Archivo::escribirLinea(Personaje* personaje){
-    archivo << personaje->obtenerElemento() << "," << personaje->obtenerNombre() << ",";
-    archivo << personaje->obtenerEscudo() << "," << personaje->obtenerVida() << ",";
-    archivo << personaje->obtenerEnergia() << "," << personaje->obtenerCoordenada()->obtenerFila() << "," << personaje->obtenerCoordenada()->obtenerColumna() << endl;
+    archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
+    archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
+    archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";" << personaje->obtenerCoordenada()->obtenerColumna() << endl;
 }
 
 void Archivo::escribirArchivo(Personaje* personajesUno[MAX_PERSONAJES], int topeUno, Personaje* personajesDos[MAX_PERSONAJES], int topeDos){

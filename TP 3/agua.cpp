@@ -22,7 +22,6 @@ void Agua::alimentar() {
   else {
       asignarEnergia(this->energia + AUMENTO_AGUA);
       cout << this->nombre << " fue alimentado y ahora tiene " << this->energia << " de energia." << endl << endl;
-      cout <<
       vecesAlimentado++;
   }
 }
@@ -95,8 +94,11 @@ void Agua::defensa(Personaje* aliados[MAX_PERSONAJES]) {
   cout << this->nombre << " se curo y ahora tiene " << this->vida << " de vida." << endl << endl;
   for (i = 0; i < MAX_PERSONAJES; i++) {
     if(this->nombre != aliados[i]->obtenerNombre()) {
-        aliados[i]->asignarVida(aliados[i]->obtenerVida() + 10);
-        cout << this->nombre << " curo a " << aliados[i]->obtenerNombre() << "y ahora tiene " << aliados[i]->obtenerVida() << " de vida." << endl << endl;
+        if(aliados[i]->obtenerVida() > 0) {
+            aliados[i]->asignarVida(aliados[i]->obtenerVida() + 10);
+            cout << this->nombre << " curo a " << aliados[i]->obtenerNombre() << "y ahora tiene "
+                 << aliados[i]->obtenerVida() << " de vida." << endl << endl;
+        }
     }
   }
 }

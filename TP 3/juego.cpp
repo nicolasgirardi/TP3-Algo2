@@ -25,17 +25,16 @@ void Juego::borrarCostos(){
 
 
 void Juego::cargarPersonajes() {
-  string elemento, nombre;
-  int escudo, vida, fila, columna;
-  archivoPersonajes.asignarPath("personajes.csv");
-  if(archivoPersonajes.procesarArchivo()){
-    while (!archivoPersonajes.finArchivo()) {
-        archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
-        menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
+    string elemento, nombre;
+    int escudo, vida, fila, columna;
+    archivoPersonajes.asignarPath("personajes.csv");
+    if (archivoPersonajes.procesarArchivo()) {
+        while (!archivoPersonajes.finArchivo()) {
+            archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
+            menuPartida.obtenerDiccionario().alta(menuPartida.crearPersonaje(elemento, nombre, escudo, vida));
+        }
     }
-  }
 }
-
 
 bool Juego::filaValida(int fila){
     return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
@@ -345,16 +344,20 @@ void Juego::asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope, P
 // personajes (no crearlos)
 void Juego::cargarPartida() {
     string elemento, nombre;
-    int escudo, vida, energia, fila, columna, cant_leidos;
-    while (!archivoPartida.finArchivo()) {
+    int escudo, vida, energia, fila, columna, cant_leidos = 0;
+   while (!archivoPartida.finArchivo()) {
         archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
-        menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
-        Personaje* personajeLeido = menuPartida.obtenerDiccionario().consultaNodo(nombre);
+        //menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
+        Personaje* personajeLeido = menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
+        personajeLeido->asignarEnergia(energia);
+        personajeLeido->asignarCoordenada(fila,columna);
+        this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);
         if (cant_leidos < MAX_PERSONAJES) {
             asignarPersonaje(personajesJugadorUno, &cantidadPersonajesUno, personajeLeido);
         } else {
             asignarPersonaje(personajesJugadorDos, &cantidadPersonajesDos, personajeLeido);
         }
+       cant_leidos++;
     }
 }
 
@@ -381,7 +384,7 @@ void Juego::procesarJuego() {
     estadoJuego = estado;
     if (estadoJuego == JUGANDO) {
         revisarPartida();
-        if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR)
+        if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR || stoi(menuPartida.obtenerOpcion()) == OPCION_JUGAR)
         {
             bool empiezaUno;
             elegirPrimerLugar(&empiezaUno);

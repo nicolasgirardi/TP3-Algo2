@@ -2,7 +2,7 @@
 
 Menu::Menu() { opcion = "0"; }
 
-void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) {
+Personaje* Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) {
   Personaje* personajeCreado;
   if (elemento == "tierra") {
     personajeCreado = new Tierra(nombre, escudo, vida);
@@ -13,7 +13,7 @@ void Menu::crearPersonaje(string elemento, string nombre, int escudo, int vida) 
   } else if (elemento == "fuego") {
     personajeCreado = new Fuego(nombre, escudo, vida);
   }
-  diccionarioPersonajes.alta(personajeCreado);
+  return personajeCreado;
 }
 
 Diccionario Menu::obtenerDiccionario() { return diccionarioPersonajes; }
@@ -101,7 +101,7 @@ void Menu::agregarPersonaje() {
   pedirNombre(&nombre);
   determinarEscudo(&escudo);
   cargarVida(&vida);
-  crearPersonaje(elemento, nombre, escudo, vida);
+  diccionarioPersonajes.alta(crearPersonaje(elemento, nombre, escudo, vida));
 }
 
 Personaje* Menu::buscarNombre(string* nombre) {
@@ -349,23 +349,34 @@ void Menu::ejecutarOpcionSubDos(Personaje* personaje, Personaje* enemigos[MAX_PE
   }
 }
 
-void Menu::recuperarAire(Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]){
-    for(int i = 0; i < MAX_PERSONAJES; i++){
-        if(enemigos[i]->obtenerElemento() == "aire"){
-            enemigos[i]->recuperarEnergia();
+void Menu::recuperarAire(Personaje* personaje){
+
+        if(personaje->obtenerElemento() == "aire"){
+            personaje->recuperarEnergia();
         }
-        if(aliados[i]->obtenerElemento() == "aire"){
-            aliados[i]->recuperarEnergia();
+
+}
+
+void Menu::moverGratis(Mapa *mapa, Personaje *personaje) {
+    Coordenada destino(0);
+    int costoMovimiento = 0;
+    bool mover = false;
+    do {
+        pedirCoordenada(&destino,personaje);
+        if (mapa->consulta(destino)->obtenerDato()->ocupacion())
+            cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
+        else {
+            concretarMovimiento(mapa,personaje,destino,costoMovimiento,&mover);
         }
-    }
+    } while (!mover);
 }
 
 void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
   personaje->reseteoDefensa();
-	recuperarAire(enemigos,aliados);
+  recuperarAire(personaje);
   cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
   cout << "Estos son sus detalles:" << endl << endl;
-  diccionarioPersonajes.consultaInfo(personaje->obtenerNombre());
+  personaje->consultaDatos();
 
   mostrarSubmenuUno();
   elegirOpcion();
@@ -376,6 +387,8 @@ void Menu::procesarTurno(Mapa* mapa, Personaje* personaje, Costos* costos[4], Pe
   elegirOpcion();
   if (stoi(opcion) != PASAR) {
     ejecutarOpcionSubDos(personaje, enemigos, aliados);
+    if((personaje->obtenerElemento() == "aire") && (stoi(opcion) == OPCION_DEFENDER))
+        moverGratis(mapa,personaje);
   }
 }
 

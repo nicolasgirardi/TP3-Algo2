@@ -96,6 +96,8 @@ class Personaje {
   
   virtual bool puedeDefender() = 0;
 
+  void consultaDatos();
+
   virtual ~Personaje();
 };
 

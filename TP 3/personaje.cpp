@@ -73,6 +73,18 @@ void Personaje::reseteoDefensa(){}
 
 void Personaje::recuperarEnergia(){}
 
+void Personaje::consultaDatos() {
+    cout << endl;
+    cout << "Nombre:" << (this->obtenerNombre()) << endl;
+    cout << "Elemento:" << (this->obtenerElemento()) << endl;
+    cout << "Vida:" << (this->obtenerVida()) << endl;
+    cout << "Escudo:" << (this->obtenerEscudo()) << endl;
+    cout << "Energía:" << (this->obtenerEnergia()) << endl;
+    cout << "Alimento:" << (this->obtenerAlimento()) << endl;
+    cout << "Jugando:" << (this->obtenerCondicion()) << endl;
+    cout << endl;
+
+}
 Personaje::~Personaje(){
 
 }

@@ -11,7 +11,7 @@ void Aire::alimentar() {
 
 string Aire::obtenerElemento() { return "aire"; }
 
-string Aire::obtenerAlimento() { return alimento; }
+string Aire::obtenerAlimento() { return "Este personaje no se puede alimentar"; }
 
 int Aire::obtenerDanio(string elemento) {
   int danio = 15;
