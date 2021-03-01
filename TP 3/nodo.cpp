@@ -3,9 +3,9 @@
 Nodo::Nodo(Dato d) {
   dato = d;
   clave = d->obtenerNombre();
-  derecho = 0;
-  izquierdo = 0;
-  padre = 0;
+  derecho = nullptr;
+  izquierdo = nullptr;
+  padre = nullptr;
 }
 
 void Nodo::cambiarDato(Dato d) { dato = d; }
