@@ -19,19 +19,19 @@ bool Diccionario::vacio(){
 void Diccionario::alta(Dato d) {
   Nodo* nuevo = new Nodo(d);  // Esto en otro método??
   Nodo* aux = raiz;
-  Nodo* anterior;
-  while (aux != 0) {
+  Nodo* anterior = nullptr;
+  while (aux != nullptr) {
     anterior = aux;
-    if ((nuevo->obtenerClave()).compare(aux->obtenerClave()) < 0) {
+    if ((nuevo->obtenerClave()) < (aux->obtenerClave())) {
       aux = aux->obtenerIzquierdo();
     } else {
       aux = aux->obtenerDerecho();
     }
   }
-  if (vacio()) {
+  if (anterior == nullptr) {
     raiz = nuevo;
   } else {
-    if((nuevo->obtenerClave()).compare(anterior->obtenerClave()) < 0){
+    if((nuevo->obtenerClave()) < (anterior->obtenerClave())){
       anterior->asignarIzquierdo(nuevo);
     } else {
       anterior->asignarDerecho(nuevo);
@@ -153,34 +153,44 @@ void Diccionario::baja(string clave)
   bool encontrado = false;
   cout << clave << endl;
   Nodo* nodoBuscado = obtenerNodo(clave, &encontrado);
+  string joj = nodoBuscado->obtenerClave(); //para testeo
+  Nodo* izq = nodoBuscado->obtenerIzquierdo(); //para testeo
+  Nodo* der = nodoBuscado->obtenerDerecho();
   if (encontrado) {
-      if ((nodoBuscado->obtenerIzquierdo() != 0) && (nodoBuscado->obtenerDerecho() != 0)) {
+      if (nodoBuscado->obtenerIzquierdo() != nullptr && nodoBuscado->obtenerDerecho() != nullptr) {
           // caso 1: tiene 2 hijos
-          Nodo* menor = minimo(nodoBuscado->obtenerIzquierdo());
-          delete nodoBuscado->obtenerDato();
-          nodoBuscado->cambiarDato(menor->obtenerDato());  // tengo que cambiar los atributos
+          Nodo* menor = minimo(nodoBuscado->obtenerDerecho());
+          nodoBuscado->cambiarDato(menor->obtenerDato());
           nodoBuscado->asignarClave(menor->obtenerClave());
-          descolgar(menor,menor->obtenerPadre());
-          delete menor;
-      } else if (nodoBuscado->obtenerIzquierdo() != 0) {
-          // caso 2: tiene un solo hijo y es izq
-          reemplazar(nodoBuscado, nodoBuscado->obtenerIzquierdo());
-          delete nodoBuscado->obtenerDato();
-          delete nodoBuscado;  // no es otro método?
-      } else if (nodoBuscado->obtenerDerecho() != 0) {
-          // caso 2: tiene un solo hijo y es izq
-          reemplazar(nodoBuscado, nodoBuscado->obtenerDerecho());
+          baja(menor->obtenerClave());
+          //descolgar(menor,menor->obtenerPadre());
+          //delete menor;
+      } else if ((nodoBuscado->obtenerIzquierdo() == nullptr) && (nodoBuscado->obtenerDerecho() == nullptr)) {
+          // caso 2: no tiene hijos
+          if(raiz->obtenerClave() != clave) {
+              reemplazar(nodoBuscado, 0);  // no tiene hijos
+          } else {
+              raiz = 0;
+          }
           delete nodoBuscado->obtenerDato();
           delete nodoBuscado;
-      } else {
-          reemplazar(nodoBuscado, 0);  // no tiene hijos
+      } else { //caso 3: tiene 1 hijo
+          Nodo* hijo;
+          if (nodoBuscado->obtenerIzquierdo()) {
+              hijo = nodoBuscado->obtenerIzquierdo();
+          } else {
+              hijo = nodoBuscado->obtenerDerecho();
+          }
+          if(raiz->obtenerClave() != clave) {
+              reemplazar(nodoBuscado, hijo);
+          } else {
+              raiz = hijo;
+          }
           delete nodoBuscado->obtenerDato();
           delete nodoBuscado;
       }
-
       cantidad--;
-  }
-  else{
+  } else {
       cout << "Nombre no encontrado." << endl;
   }
 }
