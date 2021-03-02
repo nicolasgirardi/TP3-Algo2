@@ -20,7 +20,7 @@ int Coordenada::obtenerFila() { return fila; }
 int Coordenada::obtenerColumna() { return columna; }
 
 int Coordenada::obtenerCoordenada() {
-  return ((fila - 1) / 8) + ((columna - 1) % 8);
+  return ((fila - 1) * 8) + ((columna - 1) % 8);
 }
 
 bool Coordenada::filaValida(int fila){

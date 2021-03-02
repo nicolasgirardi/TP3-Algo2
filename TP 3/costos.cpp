@@ -68,10 +68,10 @@ void Costos::consultarCaminoMinimo(Coordenada* inicial,Coordenada* final) {
     aux = new Coordenada(i);
 
     camino.apilar(aux);
-    cout<<"Camino tomado: "<<endl;
+    cout << "Camino tomado: "<< endl;
     i = 1;
     while(!camino.vacia()){
-        cout<<i<<"-: "<<camino.consultar()->obtenerFila()<<" - "<<camino.consultar()->obtenerColumna()<<endl;
+        cout << i << "-: " << camino.consultar()->obtenerFila() << " - " << camino.consultar()->obtenerColumna() << endl;
         camino.desapilar();
         i++;
     }

@@ -9,6 +9,7 @@ void Menu::asignarOpcion(string d){
 void Menu::elegirOpcion() {
     cout << "Ingrese la opción que desee llevar a cabo: " << endl;
     cin >> this->opcion;
+    cout << endl;
 }
 
 

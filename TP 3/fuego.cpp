@@ -31,10 +31,13 @@ int Fuego::obtenerDanio(string elemento) {
 void Fuego::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   	gastarEnergia(ENERGIA_ATAQUE_FUEGO);
   	for (int i = 0; i < MAX_PERSONAJES; i++) {
-    	if (abs(this->coordenada.obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
-      		enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
-      		cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
-		}
+        if (enemigos[i]->obtenerVida() > 0) {
+            if (abs(this->coordenada.obtenerFila() - enemigos[i]->obtenerCoordenada()->obtenerFila()) <= 1) {
+                enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
+                cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con "
+                     << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
+            }
+        }
 	}
 }
 

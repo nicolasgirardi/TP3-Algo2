@@ -44,14 +44,14 @@ Costos* SubmenuUno::determinarCosto(string elemento, Costos* costos[4]) {
 }
 
 void SubmenuUno::ejecutarOpcion(Mapa* mapa, Personaje* personaje, Costos* costos[4]) {
-  switch (stoi(obtenerOpcion())) {
-    case OPCION_ALIMENTAR:
-      alimentarPersonaje(personaje);
-      break;
-    case OPCION_MOVER:
-      moverPersonaje(mapa, personaje,determinarCosto(personaje->obtenerElemento(), costos));
-      break;
-  }
+    switch (stoi(obtenerOpcion())) {
+        case OPCION_ALIMENTAR:
+        alimentarPersonaje(personaje);
+        break;
+        case OPCION_MOVER:
+        moverPersonaje(mapa, personaje,determinarCosto(personaje->obtenerElemento(), costos));
+        break;
+    }
 }
 
 SubmenuUno::~SubmenuUno(){}

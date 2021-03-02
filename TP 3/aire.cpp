@@ -29,8 +29,11 @@ void Aire::recuperarEnergia(){
 void Aire::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
 	gastarEnergia(ENERGIA_ATAQUE_AIRE);
 	for (int i = 0; i < MAX_PERSONAJES; i++) {
-		enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
-		cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
+        if (enemigos[i]->obtenerVida() > 0) {
+            enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
+            cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con "
+                 << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
+        }
 	}
 }
 

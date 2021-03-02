@@ -140,10 +140,14 @@ int Juego::contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope) {
 
 bool Juego::consultaEliminado() {
     if (contarMuertos(personajesJugadorUno, cantidadPersonajesUno) == cantidadPersonajesUno) {
-        cout << "el jugador 1 perdio" << endl;
+        cout << "FELICITACIONES AL JUGADOR 2!!!! GANASTE EL JUEGO" << endl;
+        cout << endl;
+        cout << "El jugador 1 perdio" << endl;
         return true;
     } else if (contarMuertos(personajesJugadorDos, cantidadPersonajesDos) == cantidadPersonajesDos) {
-        cout << "el jugador 2 perdio" << endl;
+        cout << "FELICITACIONES AL JUGADOR 1!!!! GANASTE EL JUEGO" << endl;
+        cout << endl;
+        cout << "El jugador 2 perdio" << endl;
         return true;
     } else {
         return false;
@@ -318,9 +322,11 @@ void Juego::procesarTurnos(Personaje* personajesPrimero[MAX_PERSONAJES], int top
     int i = 0, j = 0;
     bool guardado = false;
     while (!consultaEliminado() && !guardado) {
+        menuPrincipal.borrarPantalla();
         cout << "Jugador uno. " << endl;
         cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesPrimero, topeUno, &i, personajesSegundo);
+        cout << endl;
         cout << "Jugador dos." << endl;
         cout << mensajeRandom() << endl << endl;
         jugarTurno(personajesSegundo, topeDos, &j, personajesPrimero);

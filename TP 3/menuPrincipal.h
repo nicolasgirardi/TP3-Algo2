@@ -31,8 +31,6 @@ private:
 	//POST: llamada a la función correspondiente de acuerdo a la opcion elegida
     void ejecutarOpcionPrincipal(char* estadoJuego,Diccionario* diccionarioPersonajes);
 
-	//POST: crea un personaje en la memoria dinámica y los da de alta en el diccionario
-    void crearPersonaje(string elemento, string nombre, int escudo, int vida, Diccionario* diccionarioPersonajes);
 	
 	//POST: imprime por pantalla el menu
     void mostrarMenu();
@@ -41,6 +39,9 @@ public:
 
 	//POST: crea un objeto menu con la opcion en 0
     MenuPrincipal();
+
+    //POST: crea un personaje en la memoria dinámica y los da de alta en el diccionario
+    void crearPersonaje(string elemento, string nombre, int escudo, int vida, Diccionario* diccionarioPersonajes);
 
 	//POST: procesa el menu hasta que opcion sea SALIR o Empezar juego
     void procesarMenuPrincipal(char* estadoJuego,Diccionario* diccionarioPersonajes);

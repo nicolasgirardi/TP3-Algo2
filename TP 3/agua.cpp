@@ -47,10 +47,13 @@ void Agua::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
 	Coordenada* lugar = new Coordenada(0);
 	this->pedirObjetivo(lugar);
 	for (i = 0; i < MAX_PERSONAJES; i++) {
-		if (lugar->comparar(enemigos[i]->obtenerCoordenada())) {
-			enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
-			cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
-		}
+        if (enemigos[i]->obtenerVida() > 0) {
+            if (lugar->comparar(enemigos[i]->obtenerCoordenada())) {
+                enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento()));
+                cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con "
+                     << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
+            }
+        }
 	}
 	delete lugar;
 }

@@ -134,6 +134,10 @@ void Mapa::imprimirMapa(char tablero[MAXIMO_TABLERO+1][MAXIMO_TABLERO+1]){
         cout << endl;
     }
     cout<<"  -----------------"<<endl;
+    cout << "J es el personaje que está jugando" << endl;
+    cout << "A son tus aliados" << endl;
+    cout << "E son tus enemigos a muerte" << endl;
+    cout << endl;
 }
 
 void Mapa::rellenarTablero(char tablero[MAXIMO_TABLERO+1][MAXIMO_TABLERO+1],Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES]){

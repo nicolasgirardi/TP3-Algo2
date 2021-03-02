@@ -3,25 +3,27 @@
 SubmenuDos::SubmenuDos() : Menu() {}
 
 void SubmenuDos::mostrarMenu() {
-  cout << "Ingrese una de las siguientes opciones:" << endl;
-  cout << "1) Atacar personaje:" << endl;
-  cout << "2) Defender personaje." << endl;
-  cout << "3) Pasar opcion" << endl;
+    cout << endl;
+    cout << "Ingrese una de las siguientes opciones:" << endl;
+    cout << "1) Atacar personaje:" << endl;
+    cout << "2) Defender personaje." << endl;
+    cout << "3) Pasar opcion" << endl;
 }
 
 void SubmenuDos::ejecutarOpcion(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES], Personaje* aliados[MAX_PERSONAJES]) {
-  switch (stoi(obtenerOpcion())) {
-    case OPCION_ATACAR:
-      if (personaje->puedeAtacar()) {
-        personaje->ataque(enemigos);
-      }
-      break;
-    case OPCION_DEFENDER:
-      if (personaje->puedeDefender()) {
-        personaje->defensa(aliados);
-      }
-      break;
-  }
+    borrarPantalla();
+    switch (stoi(obtenerOpcion())) {
+        case OPCION_ATACAR:
+        if (personaje->puedeAtacar()) {
+            personaje->ataque(enemigos);
+        }
+        break;
+        case OPCION_DEFENDER:
+        if (personaje->puedeDefender()) {
+            personaje->defensa(aliados);
+        }
+        break;
+    }
 }
 
 void SubmenuDos::moverGratis(Mapa *mapa, Personaje *personaje) {

@@ -49,7 +49,7 @@ Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado){
         }
         return aux;
     } else {
-    return raiz;
+        return raiz;
     }
 }
 
@@ -84,7 +84,7 @@ bool Diccionario::consultaClave(string clave) {
     bool encontrado = false;
     obtenerNodo(clave, &encontrado);
     if (encontrado) {
-        cout << "encontrado" << endl;
+        cout << "Encontrado !" << endl;
     }
     return encontrado;
 }

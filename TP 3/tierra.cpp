@@ -54,10 +54,13 @@ void Tierra::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
   gastarEnergia(ENERGIA_ATAQUE_TIERRA);
   int zona;
   for (int i = 0; i < MAX_PERSONAJES; i++) {
-    zona = this->zona(enemigos[i]->obtenerCoordenada());
-    enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento(),zona));
-    cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con " << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
-    }
+      if (enemigos[i]->obtenerVida() > 0) {
+          zona = this->zona(enemigos[i]->obtenerCoordenada());
+          enemigos[i]->daniar(this->obtenerDanio(enemigos[i]->obtenerElemento(), zona));
+          cout << this->nombre << " ataco a " << enemigos[i]->obtenerNombre() << " y quedo con "
+               << enemigos[i]->obtenerVida() << " de vida." << endl << endl;
+      }
+  }
 }
 
 void Tierra::defensa(Personaje* aliados[MAX_PERSONAJES]) {
