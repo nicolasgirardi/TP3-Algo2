@@ -49,6 +49,8 @@ public:
 
   Personaje* buscarNombre(string* nombre,Diccionario* diccionarioPersonajes);
 
+  void borrarPantalla();
+
 private:
 
 

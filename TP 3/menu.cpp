@@ -24,8 +24,7 @@ void Menu::mostrarNombres(Diccionario* diccionarioPersonajes) { diccionarioPerso
 
 
 Personaje* Menu::buscarNombre(string* nombre,Diccionario* diccionarioPersonajes) {
-    pedirNombre(nombre);// esto no va en otro metodo?
-    cout << *nombre << endl;
+    pedirNombre(nombre);
     while (!diccionarioPersonajes->consultaClave(*nombre)) {
         cout << "Nombre no encontrado. Vuelva a ingresar un nombre" << endl;
         pedirNombre(nombre);
@@ -36,7 +35,6 @@ Personaje* Menu::buscarNombre(string* nombre,Diccionario* diccionarioPersonajes)
 void Menu::verDetalles(Diccionario* diccionarioPersonajes) {
     string nombre;
     buscarNombre(&nombre,diccionarioPersonajes);
-    cout << nombre << endl;
     diccionarioPersonajes->consultaInfo(nombre);
 }
 
@@ -49,6 +47,11 @@ void Menu::concretarMovimiento(Mapa* mapa, Personaje* personaje,Coordenada desti
     (*mover) = true;
 }
 
+void Menu::borrarPantalla(){
+    for(int i = 0; i < 30; i++){
+        cout << endl;
+    }
+}
 
 
 
