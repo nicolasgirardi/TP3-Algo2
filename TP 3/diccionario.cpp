@@ -17,7 +17,7 @@ bool Diccionario::vacio(){
 }
 
 void Diccionario::alta(Dato d) {
-  Nodo* nuevo = new Nodo(d);  // Esto en otro método??
+  Nodo* nuevo = new Nodo(d);  // Alta FUNCIONA
   Nodo* aux = raiz;
   Nodo* anterior = nullptr;
   while (aux != nullptr) {
@@ -60,7 +60,7 @@ Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
     while ((aux != 0) && !(*encontrado)) {
       if (clave == (aux->obtenerClave())) {
         (*encontrado) = true;
-      } else if (clave.compare(aux->obtenerClave()) > 0) {
+      } else if (clave > aux->obtenerClave()) {
         aux = aux->obtenerDerecho();
       } else {
         aux = aux->obtenerIzquierdo();
@@ -93,15 +93,18 @@ void Diccionario::consultaInfo(string clave) {
 }
 
 bool Diccionario::consultaClave(string clave) {
-  bool encontrado;
+  bool encontrado = false;
   obtenerNodo(clave, &encontrado);
+  if (encontrado) {
+      cout << "encontrado" << endl;
+  }
   return encontrado;
 }
 
 Nodo* Diccionario::minimo(Nodo* d) {
     Nodo* aux = d;
-    while(aux->obtenerDerecho())
-        aux = aux->obtenerDerecho();
+    while(aux->obtenerIzquierdo() != 0)
+        aux = aux->obtenerIzquierdo();
 
     return aux;
     /*if (d == 0) {  // si el puntero está vacío retorna 0
@@ -117,7 +120,7 @@ Nodo* Diccionario::minimo(Nodo* d) {
 // lo que hago es al padre asignarle un nuevo hijo, y al hijo un nuevo padre.
 void Diccionario::reemplazar(Nodo* nodoViejo, Nodo* nodoNuevo)
 {
-  if (nodoViejo->obtenerPadre() != 0) {  // al padre hay que asignarle su nuevo hijo
+  if (nodoViejo->obtenerPadre() != 0) {  // si no es la raiz, al padre hay que asignarle su nuevo hijo
 
     if((nodoViejo->obtenerClave()) == (nodoViejo->obtenerPadre()->obtenerIzquierdo()->obtenerClave()))
     {
@@ -128,70 +131,49 @@ void Diccionario::reemplazar(Nodo* nodoViejo, Nodo* nodoNuevo)
     {
       nodoViejo->obtenerPadre()->asignarDerecho(nodoNuevo);
     }
-
-    if (nodoNuevo != 0)
-    {
-      nodoNuevo->asignarPadre(nodoViejo->obtenerPadre());
-    }
-
-  }
-
-  else{// se está eliminando la raíz (tiene un solo hijo)
-
-      if (nodoNuevo != 0)
-      {
-        nodoNuevo->asignarPadre(0);
-      }
-      this->raiz = nodoNuevo;
   }
 }
 
 Nodo* Diccionario::obtenerRaiz() { return raiz; }
 
-void Diccionario::baja(string clave)
+void Diccionario::pedirBaja(string clave){
+    bool encontrado = false;
+    Nodo* nodoBuscado = obtenerNodo(clave, &encontrado);
+    delete nodoBuscado->obtenerDato();
+    return baja(nodoBuscado);
+}
+
+void Diccionario::baja(Nodo* nodoBuscado)
 {
-  bool encontrado = false;
-  cout << clave << endl;
-  Nodo* nodoBuscado = obtenerNodo(clave, &encontrado);
-  string joj = nodoBuscado->obtenerClave(); //para testeo
-  Nodo* izq = nodoBuscado->obtenerIzquierdo(); //para testeo
-  Nodo* der = nodoBuscado->obtenerDerecho();
-  if (encontrado) {
-      if (nodoBuscado->obtenerIzquierdo() != nullptr && nodoBuscado->obtenerDerecho() != nullptr) {
-          // caso 1: tiene 2 hijos
-          Nodo* menor = minimo(nodoBuscado->obtenerDerecho());
-          nodoBuscado->cambiarDato(menor->obtenerDato());
-          nodoBuscado->asignarClave(menor->obtenerClave());
-          baja(menor->obtenerClave());
-          //descolgar(menor,menor->obtenerPadre());
-          //delete menor;
-      } else if ((nodoBuscado->obtenerIzquierdo() == nullptr) && (nodoBuscado->obtenerDerecho() == nullptr)) {
-          // caso 2: no tiene hijos
-          if(raiz->obtenerClave() != clave) {
-              reemplazar(nodoBuscado, 0);  // no tiene hijos
-          } else {
-              raiz = 0;
-          }
-          delete nodoBuscado->obtenerDato();
-          delete nodoBuscado;
-      } else { //caso 3: tiene 1 hijo
-          Nodo* hijo;
-          if (nodoBuscado->obtenerIzquierdo()) {
-              hijo = nodoBuscado->obtenerIzquierdo();
-          } else {
-              hijo = nodoBuscado->obtenerDerecho();
-          }
-          if(raiz->obtenerClave() != clave) {
-              reemplazar(nodoBuscado, hijo);
-          } else {
-              raiz = hijo;
-          }
-          delete nodoBuscado->obtenerDato();
-          delete nodoBuscado;
+  if (nodoBuscado->obtenerIzquierdo() != nullptr && nodoBuscado->obtenerDerecho() != nullptr) {
+      // caso 1: tiene 2 hijos
+      Nodo* menor = minimo(nodoBuscado->obtenerDerecho());
+      nodoBuscado->cambiarDato(menor->obtenerDato());
+      nodoBuscado->asignarClave(menor->obtenerClave());
+      baja(menor);
+  } else if ((nodoBuscado->obtenerIzquierdo() == nullptr) && (nodoBuscado->obtenerDerecho() == nullptr)) {
+      // caso 2: no tiene hijos
+      if(raiz != nodoBuscado) { //si no es la raiz
+          reemplazar(nodoBuscado, 0);
+      } else {
+          raiz = 0;
       }
+      delete nodoBuscado;
       cantidad--;
-  } else {
-      cout << "Nombre no encontrado." << endl;
+  } else { //caso 3: tiene 1 hijo
+      Nodo* hijo;
+      if (nodoBuscado->obtenerIzquierdo()) {
+          hijo = nodoBuscado->obtenerIzquierdo();
+      } else {
+          hijo = nodoBuscado->obtenerDerecho();
+      }
+      if(raiz != nodoBuscado) {
+          reemplazar(nodoBuscado, hijo);
+      } else {
+          raiz = hijo;
+      }
+      delete nodoBuscado;
+      cantidad--;
   }
 }
 
@@ -224,7 +206,7 @@ void Diccionario::descolgar(Nodo* exhijo,Nodo* padre)
 
 Diccionario::~Diccionario() {
   while (!vacio()) {
-    baja((this->raiz)->obtenerClave());
+    pedirBaja((this->raiz)->obtenerClave());
   }
 }
 
