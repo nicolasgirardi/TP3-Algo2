@@ -3,10 +3,10 @@
 Casilla::Casilla() { this->ocupante = 0; }
 
 bool Casilla::ocupacion() {
-  if (!!ocupante)
-    return true;
-  else
-    return false;
+    if (!!ocupante)
+        return true;
+    else
+        return false;
 }
 
 void Casilla::ocupar(Personaje* personaje) { ocupante = personaje; }
