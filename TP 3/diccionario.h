@@ -6,6 +6,7 @@
 
 class Diccionario {
     private:
+        
         Nodo* raiz;
         int cantidad;
 
