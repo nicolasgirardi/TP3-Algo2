@@ -1,14 +1,24 @@
 #ifndef MAIN_CPP_JUEGO_H
 #define MAIN_CPP_JUEGO_H
 
-#include "menu.h"
+
+#include "menuPrincipal.h"
+#include "menuJuego.h"
+#include "submenuDos.h"
+#include "submenuUno.h"
+
+
 
 class Juego {
  private:
-  Menu menuPartida;
+  MenuPrincipal menuPrincipal;
+  MenuJuego menuJuego;
+  SubmenuUno submenuUno;
+  SubmenuDos submenuDos;
   Mapa mapaPartida;
   Archivo archivoPartida;
   Archivo archivoPersonajes;
+  Diccionario diccionarioPersonajes;
   char estadoJuego;
   Personaje* personajesJugadorUno[MAX_PERSONAJES];
   int cantidadPersonajesUno;
@@ -23,7 +33,10 @@ class Juego {
   // menu o un juego???
   Juego();
 
+
   void inicializarCostos();
+
+  void recuperarAire(Personaje* personaje);
 
   void borrarCostos();
   // POST: se encarga de definir y procesar los preliminares. Se encarga
@@ -57,6 +70,8 @@ class Juego {
 
   // POST: devuelve verdadero en caso de que un jugador ha perdido.
   bool consultaEliminado();
+
+  void ejecutarTurno(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]);
 
   void asignarEstadoJuego(char estado);
 

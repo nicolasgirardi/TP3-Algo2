@@ -23,6 +23,8 @@ class Diccionario {
   // incrementa cantidad en 1
   void alta(Dato d);
 
+  void pedirBaja(string clave);
+
   void modificarContenido(string nombre,int escudo,int vida, int energia, int fila, int columna);
 
   // POST: devuelve el nodo que esta en la clave
@@ -46,7 +48,7 @@ class Diccionario {
 
   // PRE: 0 < pos <= cantidad
   // POST: saca el elemento que esta en pos
-  void baja(string clave);
+  void baja(Nodo* nodoBuscado);
 
   // POST: metodo recursivo de imprimirClaves, se encarga de imprimir las
   // claves de forma recursiva

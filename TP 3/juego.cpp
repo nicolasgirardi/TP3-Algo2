@@ -22,8 +22,6 @@ void Juego::borrarCostos(){
 }
 
 
-
-
 void Juego::cargarPersonajes() {
     string elemento, nombre;
     int escudo, vida, fila, columna;
@@ -31,7 +29,7 @@ void Juego::cargarPersonajes() {
     if (archivoPersonajes.procesarArchivo()) {
         while (!archivoPersonajes.finArchivo()) {
             archivoPersonajes.descomponerLineaBasica(&elemento, &nombre, &escudo, &vida);
-            menuPartida.crearPersonaje(elemento, nombre, escudo, vida);
+            menuPrincipal.crearPersonaje(elemento, nombre, escudo, vida, &diccionarioPersonajes);
         }
     }
 }
@@ -126,7 +124,7 @@ void Juego::elegirPersonajes() {
     Personaje* personajesUno[MAX_PERSONAJES];
     Personaje* personajesDos[MAX_PERSONAJES];
 
-    menuPartida.procesarMenuJuego(personajesUno, &topeUno, personajesDos, &topeDos);
+    menuJuego.procesarMenuJuego(personajesUno, &topeUno, personajesDos, &topeDos, &diccionarioPersonajes);
 
     for (i = 0; i < MAX_PERSONAJES; i++) {
         personajesJugadorUno[i] = personajesUno[i];
@@ -135,7 +133,7 @@ void Juego::elegirPersonajes() {
 
 
 
-    if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR){
+    if (stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR){
         cantidadPersonajesUno = topeUno;
         cantidadPersonajesDos = topeDos;
 
@@ -185,11 +183,41 @@ void Juego::asignarEstadoJuego(char estado){
     estadoJuego = estado;
 }
 
+void Juego::recuperarAire(Personaje* personaje){
+
+    if(personaje->obtenerElemento() == "aire"){
+        personaje->recuperarEnergia();
+    }
+
+}
+
+
+void Juego::ejecutarTurno(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES],  Personaje* aliados[MAX_PERSONAJES]) {
+    personaje->reseteoDefensa();
+    recuperarAire(personaje);
+    cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
+    cout << "Estos son sus detalles:" << endl << endl;
+    personaje->consultaDatos();
+
+    submenuUno.mostrarMenu();
+    submenuUno.elegirOpcion();
+    if (stoi(submenuUno.obtenerOpcion()) != PASAR) {
+        submenuUno.ejecutarOpcion(&mapaPartida, personaje, costos);
+    }
+    submenuDos.mostrarMenu();
+    submenuDos.elegirOpcion();
+    if (stoi(submenuDos.obtenerOpcion()) != PASAR) {
+        submenuDos.ejecutarOpcion(personaje, enemigos, aliados);
+        if((personaje->obtenerElemento() == "aire") && (stoi(submenuDos.obtenerOpcion()) == OPCION_DEFENDER))
+            submenuDos.moverGratis(&mapaPartida,personaje);
+    }
+}
+
 // si entra acá es porque hay alguno con vida
 void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]) {
     if (*i < topeUno) {
         if (personajes[*i]->obtenerVida() > 0)
-            menuPartida.procesarTurno(&mapaPartida, personajes[*i], this->costos, enemigos, personajes);
+            ejecutarTurno(personajes[*i], enemigos, personajes);
         *i = *i + 1;
         jugarTurno(personajes, topeUno, i, enemigos);
     }
@@ -348,7 +376,7 @@ void Juego::cargarPartida() {
    while (!archivoPartida.finArchivo()) {
         archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
         //menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
-        Personaje* personajeLeido = menuPartida.crearPersonajeNuevo(elemento, nombre, escudo, vida);
+        Personaje* personajeLeido = menuPrincipal.crearPersonajeNuevo(elemento, nombre, escudo, vida);
         personajeLeido->asignarEnergia(energia);
         personajeLeido->asignarCoordenada(fila,columna);
         this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);
@@ -380,11 +408,11 @@ void Juego::imprimirMensajeDos(){
 
 void Juego::procesarJuego() {
     char estado;
-    menuPartida.procesarMenuPrincipal(&estado);
+    menuPrincipal.procesarMenuPrincipal(&estado,&diccionarioPersonajes);
     estadoJuego = estado;
     if (estadoJuego == JUGANDO) {
         revisarPartida();
-        if (stoi(menuPartida.obtenerOpcion()) == OPCION_SELECCIONAR || stoi(menuPartida.obtenerOpcion()) == OPCION_JUGAR)
+        if (stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR || stoi(menuJuego.obtenerOpcion()) == OPCION_JUGAR)
         {
             bool empiezaUno;
             elegirPrimerLugar(&empiezaUno);
@@ -397,7 +425,7 @@ void Juego::procesarJuego() {
             }
         }
     }
-    if (stoi(menuPartida.obtenerOpcion()) == SALIDA_JUEGO){
+    if (stoi(menuJuego.obtenerOpcion()) == SALIDA_JUEGO){
         estadoJuego = FINALIZADO;
     }
     if (estadoJuego == FINALIZADO) {

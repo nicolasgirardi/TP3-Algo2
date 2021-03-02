@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.16)
 project(TP_3)
 
 set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
 
 add_executable(TP_3
         agua.cpp
@@ -33,8 +35,12 @@ add_executable(TP_3
         mapa.h
         menu.cpp
         menu.h
-        montana.h
+        menuJuego.cpp
+        menuJuego.h
+        menuPrincipal.cpp
+        menuPrincipal.h
         montana.cpp
+        montana.h
         nodo.cpp
         nodo.h
         nodo_grafo.cpp
@@ -47,6 +53,10 @@ add_executable(TP_3
         pila.h
         precipicio.cpp
         precipicio.h
+        submenuDos.cpp
+        submenuDos.h
+        submenuUno.cpp
+        submenuUno.h
         tierra.cpp
         tierra.h
         vacio.cpp
