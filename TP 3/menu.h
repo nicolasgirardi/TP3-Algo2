@@ -11,66 +11,50 @@
 #include "tierra.h"
 
 class Menu {
-protected:
-  string opcion;
+    protected:
+        
+        string opcion;
 
-public:
-  // POST: construye un menu. Se inicializa opcion con un valor distinto a la
-  // salida (6 menu, 4 submenu) para asegurarse entrar al ciclo aunque sea una
-  // vez.
-  Menu();
+    public:
+        // POST: construye un menu. Se inicializa opcion con un valor distinto a la
+        // salida (6 menu, 4 submenu) para asegurarse entrar al ciclo aunque sea una
+        // vez.
+        Menu();
 
+        // POST: se realiza el movimiento de un personaje en el transcurso del juego, 
+        // cuando el usuario elige la opcion de jugar. 
+        void concretarMovimiento(Mapa* mapa, Personaje* personaje,Coordenada destino, int costo,bool* mover);
 
+        // POST: asigna una nueva opcion del menu
+        void asignarOpcion(string d);
 
-  void concretarMovimiento(Mapa* mapa, Personaje* personaje,Coordenada destino, int costo,bool* mover);
+        // POST: obtiene la opcion del menu
+        string obtenerOpcion();
 
-  void asignarOpcion(string d);
+        //POST: pide y guarda la opción ingresada por el usuario
+        void elegirOpcion();
 
+        // POST: pide y guarda el nombre ingresado por el usuario
+        void pedirNombre(string* nombre);
 
-  string obtenerOpcion();
+        // POST: procesa para mostrar detalles de un personaje a elección
+        void verDetalles(Diccionario* diccionarioPersonajes);
 
+        // POST: muestra por pantalla un listado con los nombres de cada personaje de
+        // la lista
+        void mostrarNombres(Diccionario* diccionarioPersonajes);
 
+        // POST: busca un nombre en el diccionario y devuelve el personaje
+        Personaje* buscarNombre(string* nombre,Diccionario* diccionarioPersonajes);
+
+        // POST: limpia la pantalla
+        void borrarPantalla();
+
+        // POST: imprime por pantalla el menu del juego.
+        virtual void mostrarMenu() = 0;
 
         // POST:libera la memoria
-  virtual ~Menu();
-
-  //POST: pide y guarda la opción ingresada por el usuario
-  void elegirOpcion();
-
-  // POST: pide y guarda el nombre ingresado por el usuario
-  void pedirNombre(string* nombre);
-
-  // POST: procesa para mostrar detalles de un personaje a elección
-  void verDetalles(Diccionario* diccionarioPersonajes);
-
-  // POST: muestra por pantalla un listado con los nombres de cada personaje de
-  // la lista
-  void mostrarNombres(Diccionario* diccionarioPersonajes);
-
-  Personaje* buscarNombre(string* nombre,Diccionario* diccionarioPersonajes);
-
-  void borrarPantalla();
-
-private:
-
-
-
-  // POST: imprime por pantalla el menu del juego.
-  virtual void mostrarMenu() = 0;
-
-
-  /*
-    // POST: muestra por pantalla un listado con los detalles del personaje cuyo
-    // puntero se pasa por parámetro
-    void mostrarInformacion(Personaje* personajeBuscado);
-  */
-
-
-  // no deberia ser un metodo de la clase Juego?
-  void iniciarJuego(char* estadoJuego);
-
-
-
+        virtual ~Menu();
 };
 
 #endif  // TP2_MENU_H
