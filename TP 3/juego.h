@@ -25,7 +25,7 @@ class Juego {
   Personaje* personajesJugadorDos[MAX_PERSONAJES];
   int cantidadPersonajesDos;
   Costos* costos[4];
-
+  bool partidaCargada;
 
  public:
   // POST: construye un menu. Se inicializa opcion con un valor distinto a la
@@ -37,6 +37,8 @@ class Juego {
   void inicializarCostos();
 
   void recuperarAire(Personaje* personaje);
+
+  Personaje* crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida);
 
   void borrarCostos();
   // POST: se encarga de definir y procesar los preliminares. Se encarga

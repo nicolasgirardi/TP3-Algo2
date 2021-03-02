@@ -25,7 +25,6 @@ public:  //VER CUALES PONER PRIVATE
 
     void crearPersonaje(string elemento, string nombre, int escudo, int vida, Diccionario* diccionarioPersonajes);
 
-    Personaje* crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida);
 
     void mostrarMenu();
 

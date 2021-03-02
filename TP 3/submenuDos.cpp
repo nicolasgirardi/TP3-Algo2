@@ -9,9 +9,7 @@ void SubmenuDos::mostrarMenu() {
   cout << "3) Pasar opcion" << endl;
 }
 
-void SubmenuDos::ejecutarOpcion(Personaje* personaje,
-                                Personaje* enemigos[MAX_PERSONAJES],
-                                Personaje* aliados[MAX_PERSONAJES]) {
+void SubmenuDos::ejecutarOpcion(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJES], Personaje* aliados[MAX_PERSONAJES]) {
   switch (stoi(obtenerOpcion())) {
     case OPCION_ATACAR:
       if (personaje->puedeAtacar()) {

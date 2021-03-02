@@ -14,27 +14,23 @@ void SubmenuUno::alimentarPersonaje(Personaje* personaje) {
 }
 
 
-void SubmenuUno::moverPersonaje(Mapa* mapa, Personaje* personaje,
-                                Costos* costos) {
+void SubmenuUno::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos) {
   Coordenada destino(0);
   int costoMovimiento;
   bool mover = false;
   do {
     pedirCoordenada(&destino, personaje);
-    costoMovimiento =
-        costos->consultarCosto(personaje->obtenerCoordenada(), &destino);
-    if (costoMovimiento <= personaje->obtenerEnergia())
-      if (mapa->consulta(destino)->obtenerDato()->ocupacion())
-        cout << "La casilla de destino se encuentra ocupada, elija otra casilla"
-             << endl;
-      else {
-        costos->consultarCaminoMinimo(personaje->obtenerCoordenada(), &destino);
-        concretarMovimiento(mapa, personaje, destino, costoMovimiento, &mover);
-      }
-    else
-      cout << "El personaje no cuenta con suficiente energia para ese "
-              "movimiento, elija otra casilla"
-           << endl;
+    costoMovimiento = costos->consultarCosto(personaje->obtenerCoordenada(), &destino);
+    if (costoMovimiento <= personaje->obtenerEnergia()) {
+        if (mapa->consulta(destino)->obtenerDato()->ocupacion())
+            cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
+        else {
+            costos->consultarCaminoMinimo(personaje->obtenerCoordenada(), &destino);
+            concretarMovimiento(mapa, personaje, destino, costoMovimiento, &mover);
+        }
+    } else {
+        cout << "El personaje no cuenta con suficiente energia para ese movimiento, elija otra casilla" << endl;
+    }
   } while (!mover);
 }
 
@@ -52,8 +48,7 @@ void SubmenuUno::ejecutarOpcion(Mapa* mapa, Personaje* personaje, Costos* costos
       alimentarPersonaje(personaje);
       break;
     case OPCION_MOVER:
-      moverPersonaje(mapa, personaje,
-                     determinarCosto(personaje->obtenerElemento(), costos));
+      moverPersonaje(mapa, personaje,determinarCosto(personaje->obtenerElemento(), costos));
       break;
   }
 }

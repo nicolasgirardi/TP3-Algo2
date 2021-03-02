@@ -6,6 +6,7 @@ Juego::Juego() {
     mapaPartida.mapear("mapa.csv");//crea el tablero
     cargarPersonajes();
     inicializarCostos();
+    this->partidaCargada = false;
 }
 
 void Juego::inicializarCostos(){
@@ -131,8 +132,6 @@ void Juego::elegirPersonajes() {
         personajesJugadorDos[i] = personajesDos[i];
     }
 
-
-
     if (stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR){
         cantidadPersonajesUno = topeUno;
         cantidadPersonajesDos = topeDos;
@@ -197,7 +196,7 @@ void Juego::ejecutarTurno(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJ
     recuperarAire(personaje);
     cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
 
-    mapaPartida.imprimirMapa(personaje, aliados, enemigos);
+    mapaPartida.mostrarMapa(personaje, aliados, enemigos);
     cout << "Estos son sus detalles:" << endl << endl;
     personaje->consultaDatos();
 
@@ -361,15 +360,29 @@ void Juego::asignarPersonaje(Personaje* personajes[MAX_PERSONAJES], int* tope, P
     (*tope)++;
 }
 
+Personaje* Juego::crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida) {
+    Personaje* personajeCreado;
+    if (elemento == "tierra") {
+        personajeCreado = new Tierra(nombre, escudo, vida);
+    } else if (elemento == "agua") {
+        personajeCreado = new Agua(nombre, escudo, vida);
+    } else if (elemento == "aire") {
+        personajeCreado = new Aire(nombre, escudo, vida);
+    } else if (elemento == "fuego") {
+        personajeCreado = new Fuego(nombre, escudo, vida);
+    }
+    return personajeCreado;
+}
+
 // acá tengo que actualizar la info de los vectoresjugador y de la info de los
 // personajes (no crearlos)
 void Juego::cargarPartida() {
     string elemento, nombre;
     int escudo, vida, energia, fila, columna, cant_leidos = 0;
-   while (!archivoPartida.finArchivo()) {
+    while (!archivoPartida.finArchivo()) {
         archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
         //menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
-        Personaje* personajeLeido = menuPrincipal.crearPersonajeNuevo(elemento, nombre, escudo, vida);
+        Personaje* personajeLeido = crearPersonajeNuevo(elemento, nombre, escudo, vida);
         personajeLeido->asignarEnergia(energia);
         personajeLeido->asignarCoordenada(fila,columna);
         this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);
@@ -386,6 +399,7 @@ void Juego::revisarPartida() {
     archivoPartida.asignarPath("partida.csv");
     if (archivoPartida.procesarArchivo()) {
         cargarPartida();
+        this->partidaCargada = true;
     } else {
         elegirPersonajes();
     }
@@ -402,8 +416,8 @@ void Juego::imprimirMensajeDos(){
 void Juego::procesarJuego() {
     char estado;
     menuPrincipal.procesarMenuPrincipal(&estado,&diccionarioPersonajes);
-    estadoJuego = estado;
-    if (estadoJuego == JUGANDO) {
+    this->estadoJuego = estado;
+    if (this->estadoJuego == JUGANDO) {
         revisarPartida();
         if ((stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR) || (stoi(menuPrincipal.obtenerOpcion()) == OPCION_JUGAR))
         {
@@ -427,5 +441,13 @@ void Juego::procesarJuego() {
 }
 
 Juego::~Juego(){
-
+    for(int i = 0; i < 4; i++){
+        delete costos[i];
+    }
+    if (partidaCargada) {
+        for (int i = 0; i < MAX_PERSONAJES; i++) {
+            delete personajesJugadorUno[i];
+            delete personajesJugadorDos[i];
+        }
+    }
 }

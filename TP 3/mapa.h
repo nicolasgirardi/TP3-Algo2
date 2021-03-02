@@ -51,11 +51,17 @@ class Mapa {
 
   void mapear(string nombreArchivo);
 
-  void determinarCaracter(int i, int j, char* c, Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES]);
+  void inicializarTablero(char tablero[MAXIMO_TABLERO+1][MAXIMO_TABLERO+1]);
 
-  void imprimirMapa(Personaje* personajeActual, Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES]);
+  void imprimirMapa(char tablero[MAXIMO_TABLERO+1][MAXIMO_TABLERO+1]);
 
-  // POS: libera la memoria
+  void mostrarMapa(Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES]);
+
+  void rellenarTablero(char tablero[MAXIMO_TABLERO+1][MAXIMO_TABLERO+1],Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES]);
+
+
+
+        // POS: libera la memoria
   virtual ~Mapa();
 };
 

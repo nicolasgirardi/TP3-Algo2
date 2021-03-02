@@ -67,7 +67,7 @@ Dato Diccionario::consultaNodo(string clave) {
 }
 
 void Diccionario::consultaInfo(string clave) {
-  bool encontrado;
+  bool encontrado = false;
   Personaje* personajeBuscado = obtenerNodo(clave, &encontrado)->obtenerDato();
   cout << endl;
   cout << "Nombre:" << (personajeBuscado->obtenerNombre()) << endl;

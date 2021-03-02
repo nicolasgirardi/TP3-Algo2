@@ -2,6 +2,7 @@
 
 #include "menuPrincipal.h"
 
+
 MenuPrincipal::MenuPrincipal():Menu(){
 
 }
@@ -97,19 +98,7 @@ void MenuPrincipal::crearPersonaje(string elemento, string nombre, int escudo, i
     diccionarioPersonajes->alta(personajeCreado);
 }
 
-Personaje* MenuPrincipal::crearPersonajeNuevo(string elemento, string nombre, int escudo, int vida) {
-    Personaje* personajeCreado;
-    if (elemento == "tierra") {
-        personajeCreado = new Tierra(nombre, escudo, vida);
-    } else if (elemento == "agua") {
-        personajeCreado = new Agua(nombre, escudo, vida);
-    } else if (elemento == "aire") {
-        personajeCreado = new Aire(nombre, escudo, vida);
-    } else if (elemento == "fuego") {
-        personajeCreado = new Fuego(nombre, escudo, vida);
-    }
-    return personajeCreado;
-}
+
 
 void MenuPrincipal::mostrarMenu() {
     cout << endl;
