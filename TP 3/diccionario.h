@@ -13,24 +13,26 @@ class Diccionario {
 
   void todoDetalles(Nodo* d);
 
-  // POST: crea una lista vacia. Deja primero y cantidad en 0.
+  // POST: crea un diccionario vacío. Deja cantidad en 0 y raíz apunta a NULL.
   Diccionario();
 
-  // POST: devuelve true si la lista está vacía
+  // POST: devuelve true si el diccionario está vacío
   bool vacio();
 
-  // POST: inserta el dato d en la posición 1 que es la primera y ademas
-  // incrementa cantidad en 1
+  // PRE: Dato d es un puntero a un personaje que existe
+  // POST: se crea un nodo con el dato d y se lo ubica en el árbol binario.
   void alta(Dato d);
-
+  
+  // PRE: clave corresponde a un nodo del diccionario
+  //POST: llama a baja con el puntero al personaje cuyo nombre corresponde a la clave ingresada por parámetro
   void pedirBaja(string clave);
 
-  void modificarContenido(string nombre,int escudo,int vida, int energia, int fila, int columna);
-
-  // POST: devuelve el nodo que esta en la clave
+  // PRE: no existe más de un nodo con la misma clave
+  // POST: devuelve el nodo que contiene esta clave
   Nodo* obtenerNodo(string clave, bool* encontrado);
 
-  // POST: devuelve el dato de la clave
+  //PRE: 
+  // POST: devuelve el dato del nodo que contiene la clave ingresada por parámetro
   Dato consultaNodo(string clave);
 
   // POST: devuelve la informacion del dato de la clave
