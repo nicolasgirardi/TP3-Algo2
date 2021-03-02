@@ -6,25 +6,28 @@
 typedef Coordenada* coordPtr;
 
 class NodoPila {
-private:
-    // atributos
-    coordPtr dato;
-    NodoPila* siguiente;
+    private:
+        
+        coordPtr dato;
+        NodoPila* siguiente;
 
-public:
-    // metodos
-    // constructor
-    // PRE:
-    // POS: crea un nodo con dato = d y siguiente = 0
-    NodoPila(coordPtr d);
+    public:
+        // Constructor
+        // PRE:
+        // POST: crea un nodo con dato = d y siguiente = 0
+        NodoPila(coordPtr d);
 
-    void cambiar_dato(coordPtr d);
+        // POST: cambia el dato por el dato ingresado
+        void cambiar_dato(coordPtr d);
 
-    void cambiar_siguiente(NodoPila* s);
+        // POST: cambia el nodo siguiente por uno nuevo ingresado
+        void cambiar_siguiente(NodoPila* s);
 
-    coordPtr obtener_dato();
+        // POST: devuelve el dato
+        coordPtr obtener_dato();
 
-    NodoPila* obtener_siguiente();
+        // POST: devuelve el siguiente
+        NodoPila* obtener_siguiente();
 };
 
 #endif // NODO_H_INCLUDED
