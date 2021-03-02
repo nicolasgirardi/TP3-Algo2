@@ -1,18 +1,18 @@
 #include "coordenada.h"
 
 Coordenada::Coordenada() {
-    this->fila = 0;
+	this->fila = 0;
     this->columna = 0;
 }
 
 Coordenada::Coordenada(int fila, int columna) {
-  this->fila = fila;
-  this->columna = columna;
+	this->fila = fila;
+    this->columna = columna;
 }
 
 Coordenada::Coordenada(int coordenada) {
-  fila = 1 + (coordenada / 8);
-  columna = 1 + (coordenada % 8);
+	fila = 1 + (coordenada / 8);
+  	columna = 1 + (coordenada % 8);
 }
 
 int Coordenada::obtenerFila() { return fila; }
@@ -32,7 +32,7 @@ bool Coordenada::columnaValida(int columna){
 }
 
 void Coordenada::pedirFila(int* fila){
-    cout << "Ingrese fila: ";
+	cout << "Ingrese fila: ";
     cin >> *fila;
     while (!filaValida(*fila)){
         cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
@@ -66,15 +66,15 @@ void Coordenada::cambiarFilaYColumna(int fila,int columna){
 }
 
 void Coordenada::cambiarCoordenada(int coordenada) {
-  fila = 1 + (coordenada / 8);
-  columna = 1 + (coordenada % 8);
+	fila = 1 + (coordenada / 8);
+  	columna = 1 + (coordenada % 8);
 }
 
 bool Coordenada::comparar(Coordenada* coor) {
-  if (this->obtenerCoordenada() == coor->obtenerCoordenada())
-    return true;
-  else
-    return false;
+  	if (this->obtenerCoordenada() == coor->obtenerCoordenada())
+		return true;
+  	else
+    	return false;
 }
 
 Coordenada::~Coordenada(){
