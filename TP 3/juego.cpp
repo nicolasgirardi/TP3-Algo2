@@ -196,6 +196,8 @@ void Juego::ejecutarTurno(Personaje* personaje, Personaje* enemigos[MAX_PERSONAJ
     personaje->reseteoDefensa();
     recuperarAire(personaje);
     cout << "Le toca jugar a " << personaje->obtenerNombre() << endl << endl;
+
+    mapaPartida.imprimirMapa(personaje, aliados, enemigos);
     cout << "Estos son sus detalles:" << endl << endl;
     personaje->consultaDatos();
 
@@ -222,16 +224,7 @@ void Juego::jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* 
         jugarTurno(personajes, topeUno, i, enemigos);
     }
 }
-    /*if ((*i) >= (topeUno)) {
-        (*i) = 0;
-    }
-    if (personajes[*i]->obtenerVida() != 0) {
-        return menuPartida.procesarTurno(&mapaPartida,personajes[*i], this->costos, personajes, enemigos);
-    }
-    (*i)++;
-    return jugarTurno(personajes, topeUno, i, enemigos);
-}
-*/
+
 bool Juego::opcionValida(char opcion) {
     return (opcion == SI|| opcion == NO);
 }

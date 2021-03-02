@@ -59,19 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/139/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/nicolas/Dropbox/TP3-Algo2/TP 3"
+CMAKE_SOURCE_DIR = "/home/facundo/Downloads/TP3-Algo2/TP 3"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug"
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/139/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/nicolas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/203.7148.70/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/139/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/nicolas/Dropbox/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/facundo/Downloads/TP3-Algo2/TP 3/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -521,6 +521,60 @@ menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menu.cpp.s
 .PHONY : menu.cpp.s
 
+menuJuego.o: menuJuego.cpp.o
+
+.PHONY : menuJuego.o
+
+# target to build an object file
+menuJuego.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuJuego.cpp.o
+.PHONY : menuJuego.cpp.o
+
+menuJuego.i: menuJuego.cpp.i
+
+.PHONY : menuJuego.i
+
+# target to preprocess a source file
+menuJuego.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuJuego.cpp.i
+.PHONY : menuJuego.cpp.i
+
+menuJuego.s: menuJuego.cpp.s
+
+.PHONY : menuJuego.s
+
+# target to generate assembly for a file
+menuJuego.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuJuego.cpp.s
+.PHONY : menuJuego.cpp.s
+
+menuPrincipal.o: menuPrincipal.cpp.o
+
+.PHONY : menuPrincipal.o
+
+# target to build an object file
+menuPrincipal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuPrincipal.cpp.o
+.PHONY : menuPrincipal.cpp.o
+
+menuPrincipal.i: menuPrincipal.cpp.i
+
+.PHONY : menuPrincipal.i
+
+# target to preprocess a source file
+menuPrincipal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuPrincipal.cpp.i
+.PHONY : menuPrincipal.cpp.i
+
+menuPrincipal.s: menuPrincipal.cpp.s
+
+.PHONY : menuPrincipal.s
+
+# target to generate assembly for a file
+menuPrincipal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/menuPrincipal.cpp.s
+.PHONY : menuPrincipal.cpp.s
+
 montana.o: montana.cpp.o
 
 .PHONY : montana.o
@@ -710,6 +764,60 @@ precipicio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/precipicio.cpp.s
 .PHONY : precipicio.cpp.s
 
+submenuDos.o: submenuDos.cpp.o
+
+.PHONY : submenuDos.o
+
+# target to build an object file
+submenuDos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuDos.cpp.o
+.PHONY : submenuDos.cpp.o
+
+submenuDos.i: submenuDos.cpp.i
+
+.PHONY : submenuDos.i
+
+# target to preprocess a source file
+submenuDos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuDos.cpp.i
+.PHONY : submenuDos.cpp.i
+
+submenuDos.s: submenuDos.cpp.s
+
+.PHONY : submenuDos.s
+
+# target to generate assembly for a file
+submenuDos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuDos.cpp.s
+.PHONY : submenuDos.cpp.s
+
+submenuUno.o: submenuUno.cpp.o
+
+.PHONY : submenuUno.o
+
+# target to build an object file
+submenuUno.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuUno.cpp.o
+.PHONY : submenuUno.cpp.o
+
+submenuUno.i: submenuUno.cpp.i
+
+.PHONY : submenuUno.i
+
+# target to preprocess a source file
+submenuUno.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuUno.cpp.i
+.PHONY : submenuUno.cpp.i
+
+submenuUno.s: submenuUno.cpp.s
+
+.PHONY : submenuUno.s
+
+# target to generate assembly for a file
+submenuUno.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TP_3.dir/build.make CMakeFiles/TP_3.dir/submenuUno.cpp.s
+.PHONY : submenuUno.cpp.s
+
 tierra.o: tierra.cpp.o
 
 .PHONY : tierra.o
@@ -842,6 +950,12 @@ help:
 	@echo "... menu.o"
 	@echo "... menu.i"
 	@echo "... menu.s"
+	@echo "... menuJuego.o"
+	@echo "... menuJuego.i"
+	@echo "... menuJuego.s"
+	@echo "... menuPrincipal.o"
+	@echo "... menuPrincipal.i"
+	@echo "... menuPrincipal.s"
 	@echo "... montana.o"
 	@echo "... montana.i"
 	@echo "... montana.s"
@@ -863,6 +977,12 @@ help:
 	@echo "... precipicio.o"
 	@echo "... precipicio.i"
 	@echo "... precipicio.s"
+	@echo "... submenuDos.o"
+	@echo "... submenuDos.i"
+	@echo "... submenuDos.s"
+	@echo "... submenuUno.o"
+	@echo "... submenuUno.i"
+	@echo "... submenuUno.s"
 	@echo "... tierra.o"
 	@echo "... tierra.i"
 	@echo "... tierra.s"

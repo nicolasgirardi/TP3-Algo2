@@ -85,6 +85,10 @@ void Personaje::consultaDatos() {
     cout << endl;
 
 }
+
+
+
+
 Personaje::~Personaje(){
 
 }

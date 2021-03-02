@@ -12,6 +12,7 @@ class Personaje {
   Coordenada coordenada;
   bool jugando;
 
+
  public:
   // PRE: escudo = 0, 1 ó 2 ;  10 <= vida <= 100
   // POST: construye un personaje con el nombre, escudo, energía y vida

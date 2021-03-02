@@ -114,6 +114,64 @@ void Mapa::mapear(string nombreArchivo) {
   }
   archivo.close();
 }
+void Mapa::determinarCaracter(int i, int j, char* c, Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES])
+{
+    bool encontrado = false;
+    Coordenada coor(i, j);
+    int k = 0;
+
+    if(coor.comparar(personajeActual->obtenerCoordenada())){
+        *c = 'J';
+        encontrado = true;
+    }
+
+    while ((!encontrado) && (k < 3)){
+        if(coor.comparar(personajesJugadorUno[k]->obtenerCoordenada())){
+            *c = 'A';
+            encontrado = true;
+        }
+        k++;
+    }
+    k = 0;
+    while ((!encontrado) && (k < 3)){
+        if(coor.comparar(personajesJugadorDos[k]->obtenerCoordenada())){
+            *c = 'E';
+            encontrado = true;
+        }
+        k++;
+    }
+    if(((j+i) % 2 ==0) && (!encontrado))
+    {
+        *c = 254;
+    }
+}
+
+
+
+void Mapa::imprimirMapa(Personaje* personajeActual,Personaje* personajesJugadorUno[MAX_PERSONAJES], Personaje* personajesJugadorDos[MAX_PERSONAJES])
+{
+    char c = ' ';
+    int i,j;
+
+    cout<<"  -----------------"<<endl;
+    for(i=1;i<=8;i++) {
+        for (j = 1; j <= 8; j++) {
+            determinarCaracter(i, j, &c, personajeActual, personajesJugadorUno, personajesJugadorDos);
+            if (j == 1) {
+                cout << " |";
+            }
+            cout << " " << c;
+            if (j == 8) {
+                cout << " |" << endl;
+            }
+        }
+    }
+    cout<<"  -----------------"<<endl;
+}
+
+
+
+
 
 Mapa::~Mapa() {
   int i, j;
