@@ -15,11 +15,9 @@ Costos::Costos(string elemento, Mapa* mapa) {
             if (j == i){
                 costo[i][j] = 0;
             }
-
             else if (((j == i + 1 || j == i - 1) && ((j / 8 == i / 8))) || j == i + 8 || j == i - 8){
                 costo[i][j] = ((mapa->consulta(*coor))->obtenerDato())->obtenerCosto(elemento);
             }
-
             else{
                 costo[i][j] = 0xffff;
             }
@@ -28,9 +26,11 @@ Costos::Costos(string elemento, Mapa* mapa) {
     }
     delete coor;
 }
+
 string Costos::consultarElemento(){
     return elemento;
 }
+
 void Costos::minimizar() {
     int i, j, k;
     j = 0;
