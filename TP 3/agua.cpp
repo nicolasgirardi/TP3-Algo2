@@ -32,39 +32,13 @@ int Agua::obtenerDanio(string elemento) {
 	return danio;
 }
 
-bool Agua::filaValida(int fila){
-	return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
-}
-
-bool Agua::columnaValida(int columna){
-	return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
-}
-
-void Agua::pedirFila(int* fila){
-	cout << "Ingrese fila: ";
-	cin >> *fila;
-	while (!filaValida(*fila)){
-		cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
-		cin >> *fila;
-	}
-}
-
-void Agua::pedirColumna(int* columna){
-	cout << "Ingrese columna: ";
-	cin >> *columna;
-	while (!columnaValida(*columna)){
-		cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
-		cin >> *columna;
-	}
-}
 
 void Agua::pedirObjetivo(Coordenada* lugar) {
-	int fila, columna;
-	cout << "Ingrese las coordenadas del objetivo: ";
-	pedirFila(&fila);
-	lugar->cambiarFila(fila);
-	pedirColumna(&columna);
-	lugar->cambiarColumna(columna);
+  int fila, columna;
+  Coordenada coor;
+  cout << "Ingrese las coordenadas del objetivo: ";
+  coor.pedirCoordenada();
+  lugar->cambiarFilaYColumna(coor.obtenerFila(),coor.obtenerColumna());
 }
 
 void Agua::ataque(Personaje* enemigos[MAX_PERSONAJES]) {
