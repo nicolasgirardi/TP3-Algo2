@@ -44,19 +44,16 @@ class Aire : public Personaje {
         // Resetea variables relacionadas a la defensa
         // PRE:
         // POST: resetea a falso variables relacionadas con la defensa
-
         void reseteoDefensa();
 
         // Dice si el personaje tiene energia suficiente para atacar
         // PRE:
         // POST: devuelve true si tiene energia para atacar
-
         bool puedeAtacar();
 
         // Dice si el personaje tiene energia suficiente para defender
         // PRE:
         // POST: devuelve true si tiene energia para defender
-
         bool puedeDefender();  
 };
 
