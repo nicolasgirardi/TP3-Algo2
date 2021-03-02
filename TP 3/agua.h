@@ -22,18 +22,6 @@ class Agua : public Personaje {
 
         // POST: devuelve el elemento del personaje
         string obtenerElemento();
-        
-        // POST: verifica si la fila ingresada es valida.
-        bool filaValida(int fila);
-
-        // POST: verifica si la columna ingresada es valida.
-        bool columnaValida(int columna);
-
-        // POST: pide una fila al usuario. Este metodo se utiliza para realizar el ataque de agua.
-        void pedirFila(int* fila);
-
-        // POST: pide una columna al usuario. Este metodo se utiliza para realizar el ataque de agua.
-        void pedirColumna(int* columna);
 
         // Pide un objetivo a atacar
         // PRE: debe tener energia suficiente para atacar
