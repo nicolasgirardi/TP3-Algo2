@@ -28,7 +28,6 @@ bool Archivo::procesarArchivo(){
 bool Archivo::finArchivo() {
     if(archivo.eof() != 0)
         return true;
-
     else
         return false;
 }
@@ -41,14 +40,12 @@ void Archivo::escribirLinea(Personaje* personaje,int i,int ultimoPersonaje){
     if(i != (ultimoPersonaje - 1)) {
         archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
         archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
-        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";"
-                << personaje->obtenerCoordenada()->obtenerColumna() << endl;
+        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";" << personaje->obtenerCoordenada()->obtenerColumna() << endl;
     }
     else{
         archivo << personaje->obtenerElemento() << ";" << personaje->obtenerNombre() << ";";
         archivo << personaje->obtenerEscudo() << ";" << personaje->obtenerVida() << ";";
-        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";"
-            << personaje->obtenerCoordenada()->obtenerColumna();
+        archivo << personaje->obtenerEnergia() << ";" << personaje->obtenerCoordenada()->obtenerFila() << ";" << personaje->obtenerCoordenada()->obtenerColumna();
 }
 }
 
