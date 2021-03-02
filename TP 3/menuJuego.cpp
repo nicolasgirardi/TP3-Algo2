@@ -88,6 +88,7 @@ void MenuJuego::procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* top
     while (stoi(opcion) != SALIDA_JUEGO && stoi(opcion) != OPCION_SELECCIONAR){
         mostrarMenu();
         elegirOpcion();
+        borrarPantalla();
         ejecutarOpcionJuego(jugadorUno, topeUno, jugadorDos, topeDos, diccionarioPersonajes);
     }
 }

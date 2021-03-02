@@ -9,8 +9,10 @@ MenuPrincipal::MenuPrincipal():Menu(){
 
 void MenuPrincipal::procesarMenuPrincipal(char* estadoJuego, Diccionario* diccionarioPersonajes) {
     while (stoi(opcion) != SALIDA_MENU_PRINCIPAL && stoi(opcion) != OPCION_JUGAR) {
+        //borrarPantalla();
         mostrarMenu();
         elegirOpcion();
+        borrarPantalla();
         ejecutarOpcionPrincipal(estadoJuego,diccionarioPersonajes);
     }
 }

@@ -132,6 +132,7 @@ int Juego::contarMuertos(Personaje* personajes[MAX_PERSONAJES], int tope) {
         if (personajes[i]->obtenerVida() <= 0){
             muertos++;
             mapaPartida.consulta(*personajes[i]->obtenerCoordenada())->obtenerDato()->vaciar();
+            personajes[i]->asignarCoordenada(0,0);
         }
     }
     return muertos;
@@ -208,8 +209,18 @@ void Juego::pedirGuardado(char* opcion) {
     }
 }
 
+void Juego::reseteoDefensas(){
+    for(int i = 0; i < cantidadPersonajesUno; i++){
+        personajesJugadorUno[i]->reseteoDefensa();
+    }
+    for(int i = 0; i < cantidadPersonajesDos; i++){
+        personajesJugadorDos[i]->reseteoDefensa();
+    }
+}
+
 void Juego::procesarGuardado(char opcion, bool* guardo) {
     if (opcion == SI) {
+        reseteoDefensas();
         archivoPartida.asignarPath("partida.csv");
         archivoPartida.escribirArchivo(personajesJugadorUno, cantidadPersonajesUno, personajesJugadorDos, cantidadPersonajesDos);
         *guardo = true;
@@ -352,11 +363,12 @@ void Juego::cargarPartida() {
     int escudo, vida, energia, fila, columna, cant_leidos = 0;
     while (!archivoPartida.finArchivo()) {
         archivoPartida.descomponerLineaPartida (&elemento, &nombre, &escudo, &vida, &energia, &fila, &columna);
-        //menuPartida.obtenerDiccionario().modificarContenido(nombre, escudo, vida, energia, fila, columna);
         Personaje* personajeLeido = crearPersonajeNuevo(elemento, nombre, escudo, vida);
         personajeLeido->asignarEnergia(energia);
         personajeLeido->asignarCoordenada(fila,columna);
-        this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);
+        if (personajeLeido->obtenerVida() > 0) {
+            this->mapaPartida.consulta(*personajeLeido->obtenerCoordenada())->obtenerDato()->ocupar(personajeLeido);
+        }
         if (cant_leidos < MAX_PERSONAJES) {
             asignarPersonaje(personajesJugadorUno, &cantidadPersonajesUno, personajeLeido);
         } else {

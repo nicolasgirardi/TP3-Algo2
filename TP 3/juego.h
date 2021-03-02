@@ -77,6 +77,8 @@ class Juego {
 
   void asignarEstadoJuego(char estado);
 
+  void reseteoDefensas();
+
   // PRE: siempre se juega el turno si quedan jugadores vivos de ambos equipos.
   // POST: se realiza el turno de un jugador.
   void jugarTurno(Personaje* personajes[MAX_PERSONAJES], int topeUno, int* i, Personaje* enemigos[MAX_PERSONAJES]);
