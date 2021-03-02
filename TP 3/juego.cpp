@@ -35,40 +35,12 @@ void Juego::cargarPersonajes() {
     }
 }
 
-bool Juego::filaValida(int fila){
-    return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
-}
-
-bool Juego::columnaValida(int columna){
-    return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
-}
-
-void Juego::pedirFila(int* fila){
-    cout << "Ingrese fila: ";
-    cin >> *fila;
-    while (!filaValida(*fila)){
-        cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
-        cin >> *fila;
-    }
-}
-
-void Juego::pedirColumna(int* columna){
-    cout << "Ingrese columna: ";
-    cin >> *columna;
-    while (!columnaValida(*columna)){
-        cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
-        cin >> *columna;
-    }
-}
 
 void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int i){
-    int fila, columna;
     bool puedoConsultar =  true;
     while (puedoConsultar){
         cout << "Indique las coordenadas donde desea posicionar a "<< personajes[i]->obtenerNombre() << ":" << endl << endl;
-        pedirFila(&fila);
-        pedirColumna(&columna);
-        coor->cambiarFilaYColumna(fila,columna);
+        coor->pedirCoordenada();
         if(mapaPartida.ocupado(*coor)) {
             cout << "El lugar elegido se encuentra ocupado, vuelva a elegir uno." << endl << endl;
         } else {
@@ -79,13 +51,12 @@ void Juego::consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERS
 
 
 
-void Juego::posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int i){
+void Juego::posicionarPersonaje(Personaje* aliados[MAX_PERSONAJES], Personaje* enemigos[MAX_PERSONAJES],  int i){
     Coordenada* coor = new Coordenada(0,0);
-    //MUESTRO EL MAPA POR PANTALLA
-    consultarCoordenada(coor,personajes,i);
-    personajes[i]->asignarCoordenada(coor->obtenerFila(),coor->obtenerColumna());
-    mapaPartida.consulta(*coor)->obtenerDato()->ocupar(personajes[i]);
-    i++;
+    mapaPartida.mostrarMapa(aliados[i],aliados,enemigos);
+    consultarCoordenada(coor,aliados,i);
+    aliados[i]->asignarCoordenada(coor->obtenerFila(),coor->obtenerColumna());
+    mapaPartida.consulta(*coor)->obtenerDato()->ocupar(aliados[i]);
     delete coor;
 }
 
@@ -94,14 +65,14 @@ void Juego::procesarUbicacion(bool empiezaUno) {
     int i = 0;
     if (empiezaUno)
         while ((i < MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
-            posicionarPersonaje(personajesJugadorUno, i);
-            posicionarPersonaje(personajesJugadorDos, i);
+            posicionarPersonaje(personajesJugadorUno,personajesJugadorDos,i);
+            posicionarPersonaje(personajesJugadorDos,personajesJugadorUno,i);
             i++;
         }
     else
         while ((i < MAX_PERSONAJES)) { //acá tengo en cuenta que ambos jugadores tienen exactamente 3 personajes elegidos
-            posicionarPersonaje(personajesJugadorDos, i);
-            posicionarPersonaje(personajesJugadorUno, i);
+            posicionarPersonaje(personajesJugadorDos,personajesJugadorUno,i);
+            posicionarPersonaje(personajesJugadorUno,personajesJugadorDos,i);
             i++;
         }
 }

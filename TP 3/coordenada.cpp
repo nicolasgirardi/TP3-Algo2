@@ -23,6 +23,39 @@ int Coordenada::obtenerCoordenada() {
   return ((fila - 1) / 8) + ((columna - 1) % 8);
 }
 
+bool Coordenada::filaValida(int fila){
+    return (fila >= MINIMO_TABLERO && fila <= MAXIMO_TABLERO);
+}
+
+bool Coordenada::columnaValida(int columna){
+    return (columna >= MINIMO_TABLERO && columna <= MAXIMO_TABLERO);
+}
+
+void Coordenada::pedirFila(int* fila){
+    cout << "Ingrese fila: ";
+    cin >> *fila;
+    while (!filaValida(*fila)){
+        cout << "Fila ingresada en el rango incorrecto, debe ingresar una fila entre 1 y 8: ";
+        cin >> *fila;
+    }
+}
+
+void Coordenada::pedirColumna(int* columna){
+    cout << "Ingrese columna: ";
+    cin >> *columna;
+    while (!columnaValida(*columna)){
+        cout << "Columna ingresada en el rango incorrecto, debe ingresar una columna entre 1 y 8: ";
+        cin >> *columna;
+    }
+}
+
+void Coordenada::pedirCoordenada() {
+    int fila, columna;
+    pedirFila(&fila);
+    pedirColumna(&columna);
+    cambiarFilaYColumna(fila, columna);
+}
+
 void Coordenada::cambiarFila(int fila) { this->fila = fila; }
 
 void Coordenada::cambiarColumna(int columna) { this->columna = columna; }

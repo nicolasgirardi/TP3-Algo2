@@ -29,7 +29,8 @@ void SubmenuDos::moverGratis(Mapa *mapa, Personaje *personaje) {
     int costoMovimiento = 0;
     bool mover = false;
     do {
-        pedirCoordenada(&destino,personaje);
+        cout << "Indique las coordenadas a donde desea mover " << personaje->obtenerNombre() << ":" << endl;
+        destino.pedirCoordenada();
         if (mapa->consulta(destino)->obtenerDato()->ocupacion())
             cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
         else {

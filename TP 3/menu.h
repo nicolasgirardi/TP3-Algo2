@@ -29,7 +29,6 @@ public:
 
   string obtenerOpcion();
 
-  void pedirCoordenada(Coordenada* destino, Personaje* personaje);
 
 
         // POST:libera la memoria
@@ -69,15 +68,6 @@ private:
   void iniciarJuego(char* estadoJuego);
 
 
-
-
-  bool filaValida(int fila);
-
-  bool columnaValida(int columna);
-
-  void pedirFila(int* fila);
-
-  void pedirColumna(int* columna);
 
 };
 

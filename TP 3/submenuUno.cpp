@@ -19,9 +19,10 @@ void SubmenuUno::moverPersonaje(Mapa* mapa, Personaje* personaje, Costos* costos
   int costoMovimiento;
   bool mover = false;
   do {
-    pedirCoordenada(&destino, personaje);
-    costoMovimiento = costos->consultarCosto(personaje->obtenerCoordenada(), &destino);
-    if (costoMovimiento <= personaje->obtenerEnergia()) {
+      cout << "Indique las coordenadas a donde desea mover " << personaje->obtenerNombre() << ":" << endl;
+      destino.pedirCoordenada();
+      costoMovimiento = costos->consultarCosto(personaje->obtenerCoordenada(), &destino);
+      if (costoMovimiento <= personaje->obtenerEnergia()) {
         if (mapa->consulta(destino)->obtenerDato()->ocupacion())
             cout << "La casilla de destino se encuentra ocupada, elija otra casilla" << endl;
         else {

@@ -22,7 +22,18 @@ class Coordenada {
   // POS: constructor
   Coordenada(int coordenada);
 
-  // devuelve la fila
+  void pedirCoordenada();
+
+  bool filaValida(int fila);
+
+  bool columnaValida(int columna);
+
+  void pedirFila(int* fila);
+
+  void pedirColumna(int* columna);
+
+
+    // devuelve la fila
   // PRE:
   // POS: devuelve la fila
   int obtenerFila();

@@ -85,19 +85,12 @@ class Juego {
   bool opcionValida(char opcion);
  
   void cargarPersonajes();
- 
-  bool filaValida(int fila);
- 
-  bool columnaValida(int columna);
-  
-  void pedirFila(int* fila);
-   
-  void pedirColumna(int* columna);
-    
+
   void consultarCoordenada(Coordenada* coor, Personaje* personajes[MAX_PERSONAJES], int i);
-     
-  void posicionarPersonaje(Personaje* personajes[MAX_PERSONAJES], int i);
- 
+
+  void posicionarPersonaje(Personaje* aliados[MAX_PERSONAJES], Personaje* enemigos[MAX_PERSONAJES],  int i);
+
+
   void procesarUbicacion(bool empiezaUno);
 
   string mensajeRandom();
