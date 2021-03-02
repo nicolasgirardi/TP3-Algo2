@@ -3,24 +3,22 @@
 #include "casilla.h"
 
 class Lago : public Casilla {
- private:
-  int costo;
+    private:
+        
+        int costo;
 
- public:
-  // PRE:
-  // POS: construje una casilla de lago
+    public:
+        // PRE:
+        // POST: construje una casilla de lago
+        Lago();
 
-  Lago();
+        // PRE:
+        // POST: devuelve el tipo de la casilla
+        string Tipo();
 
-  // PRE:
-  // POS: devuelve el tipo de la casilla
-
-  string Tipo();
-
-  // PRE:
-  // POS: devuelve el costo de llegar
-
-  int obtenerCosto(string elemento);
+        // PRE:
+        // POST: devuelve el costo de llegar
+        int obtenerCosto(string elemento);
 };
 
 #endif  // LAGO_H
