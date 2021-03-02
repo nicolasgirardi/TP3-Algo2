@@ -37,7 +37,7 @@ class MenuJuego: public Menu {
 		void procesarMenuJuego(Personaje* jugadorUno[MAX_PERSONAJES],int* topeUno,Personaje* jugadorDos[MAX_PERSONAJES],int* topeDos,Diccionario* diccionarioPersonajes);
 
 		// Destructor
-		~MenuJuego();
+		~MenuJuego(); 
 };
 
 
