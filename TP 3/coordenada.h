@@ -23,18 +23,23 @@ class Coordenada {
         // POS: constructor
         Coordenada(int coordenada);
 
+        // PRE: 
         // POST: pide una coordenada al usuario
         void pedirCoordenada();
 
+        // PRE: 
         // POST: verifica si la fila ingresada es valida o no
         bool filaValida(int fila);
 
+        // PRE: 
         // POST: verifica si la columna ingresada es valida o no
         bool columnaValida(int columna);
 
+        // PRE:
         // POST: pide una fila al usuario
         void pedirFila(int* fila);
 
+        // PRE:
         // POST: pide una columna al usuario
         void pedirColumna(int* columna);
 
