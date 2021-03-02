@@ -3,24 +3,22 @@
 #include "casilla.h"
 
 class Camino : public Casilla {
- private:
-  int costo;
+    private:
+        
+        int costo;
 
- public:
-  // PRE:
-  // POS: construje una casilla de camino
+   public:
+        // PRE:
+        // POS: construje una casilla de camino
+        Camino();
 
-  Camino();
+        // PRE:
+        // POS: devuelve el tipo de la casilla
+        string Tipo();
 
-  // PRE:
-  // POS: devuelve el tipo de la casilla
-
-  string Tipo();
-
-  // PRE:
-  // POS: devuelve el costo de llegar
-
-  int obtenerCosto(string elemento);
+        // PRE:
+        // POS: devuelve el costo de llegar
+        int obtenerCosto(string elemento);
 };
 
 #endif  // CAMINO_H
