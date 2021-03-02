@@ -405,7 +405,7 @@ void Juego::procesarJuego() {
     estadoJuego = estado;
     if (estadoJuego == JUGANDO) {
         revisarPartida();
-        if (stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR || stoi(menuJuego.obtenerOpcion()) == OPCION_JUGAR)
+        if ((stoi(menuJuego.obtenerOpcion()) == OPCION_SELECCIONAR) || (stoi(menuPrincipal.obtenerOpcion()) == OPCION_JUGAR))
         {
             bool empiezaUno;
             elegirPrimerLugar(&empiezaUno);

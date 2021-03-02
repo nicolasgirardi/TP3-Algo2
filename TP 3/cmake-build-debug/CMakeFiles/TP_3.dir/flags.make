@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/home/facundo/Downloads/TP3-Algo2/TP 3/." 
+CXX_INCLUDES = -I"/home/nicolas/Dropbox/TP3-Algo2/TP 3/." 
 
