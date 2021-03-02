@@ -1,12 +1,5 @@
 #include "diccionario.h"
 
-void Diccionario::todoDetalles(Nodo* d) {
-    if (d != 0) {
-        todoDetalles(d->obtenerIzquierdo());
-        cout << "\t" << d->obtenerClave() << ", condicion: " << d->obtenerDato()->obtenerCondicion()<< endl;
-        todoDetalles(d->obtenerDerecho());
-    }
-}
 Diccionario::Diccionario() {
     raiz = 0;
     cantidad = 0;
@@ -77,6 +70,14 @@ void Diccionario::consultaInfo(string clave) {
     cout << "Alimento:" << (personajeBuscado->obtenerAlimento()) << endl;
     cout << "Jugando:" << (personajeBuscado->obtenerCondicion()) << endl;
     cout << endl;
+}
+
+void Diccionario::todoDetalles(Nodo* d) {
+    if (d != 0) {
+        todoDetalles(d->obtenerIzquierdo());
+        cout << "\t" << d->obtenerClave() << ", condicion: " << d->obtenerDato()->obtenerCondicion()<< endl;
+        todoDetalles(d->obtenerDerecho());
+    }
 }
 
 bool Diccionario::consultaClave(string clave) {
