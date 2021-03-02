@@ -41,17 +41,6 @@ void Diccionario::alta(Dato d) {
   cantidad++;
 }
 
-void Diccionario::modificarContenido(string nombre,int escudo,int vida,int energia,int fila,int columna){
-    bool encontrado = false;
-
-    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarEscudo(escudo);
-    encontrado = false;
-    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarVida(vida);
-    encontrado = false;
-    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarEnergia(energia);
-    encontrado = false;
-    obtenerNodo(nombre, &encontrado)->obtenerDato()->asignarCoordenada(fila, columna);
-}
 
 Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
 {
@@ -72,8 +61,7 @@ Nodo* Diccionario::obtenerNodo(string clave, bool* encontrado)
   }
 }
 
-Dato Diccionario::consultaNodo(string clave) {  // imprimo la info acá o en
-                                                // menú?
+Dato Diccionario::consultaNodo(string clave) {  
   bool encontrado = false;
   return obtenerNodo(clave, &encontrado)->obtenerDato();
 }
@@ -107,14 +95,6 @@ Nodo* Diccionario::minimo(Nodo* d) {
         aux = aux->obtenerIzquierdo();
 
     return aux;
-    /*if (d == 0) {  // si el puntero está vacío retorna 0
-    return d;
-  }
-  if (d->obtenerIzquierdo() != 0) {
-    return minimo(d->obtenerIzquierdo());  // Si tiene hijo izquierdo,
-  } else {     // buscamos la parte más izquierda posible
-    return d;  // Si no tiene hijo izquierdo retornamos el mismo nodo
-  }*/
 }
 
 // lo que hago es al padre asignarle un nuevo hijo, y al hijo un nuevo padre.
@@ -193,16 +173,6 @@ void Diccionario::imprimirClaves() {
 
 int Diccionario::obtenerCantidad() { return cantidad; }
 
-void Diccionario::descolgar(Nodo* exhijo,Nodo* padre)
-{
-    if(exhijo->obtenerIzquierdo()) {
-        padre->asignarIzquierdo(exhijo);
-        exhijo->obtenerIzquierdo()->asignarPadre(padre);
-    }
-    else
-        padre->asignarDerecho(0);
-
-}
 
 Diccionario::~Diccionario() {
   while (!vacio()) {
