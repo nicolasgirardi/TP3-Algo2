@@ -2,22 +2,20 @@
 
 Menu::Menu() { opcion = "0"; }
 
-
-
 void Menu::asignarOpcion(string d){
     this->opcion = d;
 }
 
 void Menu::elegirOpcion() {
-  cout << "Ingrese la opción que desee llevar a cabo: " << endl;
-  cin >> this->opcion;
+    cout << "Ingrese la opción que desee llevar a cabo: " << endl;
+    cin >> this->opcion;
 }
 
 
 void Menu::pedirNombre(string* nombre) {
-  cout << endl;
-  cout << "Ingrese el nombre del personaje:" << endl;
-  cin >> (*nombre);
+    cout << endl;
+    cout << "Ingrese el nombre del personaje:" << endl;
+    cin >> (*nombre);
 }
 
 void Menu::mostrarNombres(Diccionario* diccionarioPersonajes) { diccionarioPersonajes->imprimirClaves(); }
@@ -61,6 +59,3 @@ string Menu::obtenerOpcion(){
 
 
 Menu::~Menu() {}
-
-// los metodos de atacar, mover, alimentar personaje, no deberian de ir en la
-// clase Personaje?? Hecho, solo falta el de moverr
